@@ -1,5 +1,7 @@
 import {
+  Link,
   Links,
+  NavLink,
   LiveReload,
   Meta,
   Outlet,
@@ -7,10 +9,24 @@ import {
   ScrollRestoration
 } from "remix";
 import type { MetaFunction } from "remix";
+import { Menu } from 'antd'
+import antd from 'antd/dist/antd.css';
+import styles from './root.css'
 
 export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
 };
+
+export function links() {
+  return [
+    { rel: "stylesheet", href: antd },
+    { rel: 'stylesheet', href: styles }
+  ];
+}
+
+const activeStyle = {
+  borderBottom: '3px solid #1890ff'
+}
 
 export default function App() {
   return (
@@ -22,17 +38,29 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <div>
-          <header style={{
-            position: 'fixed', top: 0, right: 0, left: 0
-          }}><h1 style={{ fontSize: '1.5rem' }}>jweatherby.dev</h1></header>
-          <div style={{ maxWidth: 700, margin: '4rem auto 0' }}>
+        <header className='site-header'>
+          <nav className='site-container site-nav'>
+            <h1><Link to='/'>jweatherby.dev</Link></h1>
+
+            <ul className='site-nav__menu'>
+              <li className='site-nav__menu-item'>
+                <NavLink to='/history'
+                  style={({ isActive }) => isActive ? activeStyle : undefined}>Work</NavLink>
+              </li>
+              <li className='site-nav__menu-item'>
+                <NavLink to='/posts'
+                  style={({ isActive }) => isActive ? activeStyle : undefined}>Posts</NavLink>
+              </li>
+            </ul>
+          </nav></header>
+        <main className='site-main'>
+          <div className='site-container'>
             <Outlet />
             <ScrollRestoration />
             <Scripts />
             <LiveReload />
           </div>
-        </div>
+        </main>
       </body>
     </html>
   );

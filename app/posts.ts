@@ -8,6 +8,10 @@ import { marked } from "marked";
 export type Post = {
   slug: string;
   title: string;
+  blurb: string;
+  imageSrc: string;
+  dateCreated: string;
+  tags: string;
 };
 
 export type PostMarkdownAttributes = {
@@ -40,7 +44,7 @@ export async function getPosts() {
 
       return {
         slug: filename.replace(/\.md$/, ""),
-        title: attributes.title
+        ...attributes
       };
     })
   );
@@ -57,5 +61,5 @@ export async function getPost(slug: string) {
     `Post ${filepath} is missing attributes`
   );
   const html = marked(body);
-  return { slug, html, title: attributes.title };
+  return { slug, html, ...attributes };
 }

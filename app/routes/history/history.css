@@ -1,0 +1,32 @@
+.work-item-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.work-item {
+  width: 230px;
+  margin: 50px 0;
+}
+
+@media (max-width: 710px) {
+  .work-item {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    margin: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  .work-item:last-child {
+    border-bottom-width: 0px;
+  }
+}
+
+.work-item img {
+  max-height: 75px;
+}
+
+.work-company-name {
+  margin-top: 25px;
+  font-size: 1.1rem;
+}

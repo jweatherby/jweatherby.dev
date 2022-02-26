@@ -1,0 +1,57 @@
+body {
+  color: #777;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #777;
+}
+img {
+  max-width: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+
+.site-header {
+  padding: 10px 10px 5px;
+  background-color: #fff;
+  /* border-bottom: 5px solid navy; */
+}
+
+.site-header h1 a {
+  font-size: 1.2rem;
+  color: #999;
+}
+
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-nav__menu {
+  list-style: none;
+  display: flex;
+
+}
+.site-nav__menu-item {
+  padding: 0px 10px;
+}
+.site-nav__menu-item a {
+  padding: 3px 0;
+}
+
+.site-main {
+  padding: 20px 10px;
+  flex-grow: 1;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.site-container {
+  max-width: 700px;
+  margin: 0 auto;
+}

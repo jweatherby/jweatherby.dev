@@ -1,0 +1,30 @@
+.post-author, .post-date {
+  font-size: 0.8rem;
+}
+.post-content {
+  font-size: 1rem;
+  margin: 25px 0;
+}
+
+.post-author {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.post-date {
+  font-style: italic;
+}
+
+.post-followup {
+  margin-top: 25px;
+  font-style: italic;
+}
+
+.post-image {
+  max-height: 200px;
+  margin-bottom: 25px;
+}
+
+.post-content pre code {
+  font-size: .9rem;
+}
