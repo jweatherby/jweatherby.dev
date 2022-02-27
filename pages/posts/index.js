@@ -27,8 +27,8 @@ export default function Posts({ posts }) {
               </h3>
               <div className='post-item__blurb'>{post.blurb}</div>
               <div className="post-item__meta">
-                <div>{post.dateCreated}</div>
-                <div>{post.tags}</div>
+                <div className='post-item__date'>{post.dateCreated}</div>
+                <div className='post-item__tags'>{post.tags}</div>
               </div>
             </div>
             <div className="post-img">

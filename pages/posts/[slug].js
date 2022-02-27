@@ -49,7 +49,7 @@ export default function Post({ post }) {
         <div className='post-date'>{post.dateCreated}</div>
       </header>
       <article ref={postRef} className='post-content' dangerouslySetInnerHTML={{ __html: post.html }} />
-      <div className='post-tags'><strong>Tags: </strong>{post.tags}</div>
+      <div className='post-tags'><strong>Tags: </strong><em>{post.tags}</em></div>
       <aside className='post-followup'>
         Like what you're reading? Retweet, follow, or send me a message on <a href="https://twitter.com/_jweatherby" target="_blank">Twitter</a>.
       </aside>

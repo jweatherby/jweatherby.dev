@@ -37,7 +37,6 @@ I prefer ReactJS because I've dealt with a lot of the nuances, have a deep famil
 
 To get up and running with your ReactJS application, I've had success with [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) and [RazzleJS](https://razzlejs.org/) to get started with these projects. The question of which one to use is up to whether you want [Server Side Rendering](https://medium.com/@baphemot/whats-server-side-rendering-and-do-i-need-it-cb42dc059b38)  or not.
 
-*\*This blog was built with RazzleJS*
 
 ### React Router
 
@@ -45,7 +44,6 @@ If you're building a frontend app, it probably needs different pages. And those 
 
 How you route your app and which library you choose will impact how your app is structured. React-router lends itself naturally to how ReactJS has been designed. You don't need the routes at the top level, they can be inline throughout the code as needed. This might be counter-intuitive at first, but you'll find that managing the data is easier as a result, especially when dealing with localized components. This structure can make complicated pages declarative since they only fetch the data they need at exactly the right time.
 
-{/* Styled Components */}
 
 ### Styled Components
 
@@ -106,7 +104,7 @@ Code should look consistent with conventional standards.
 
 ### JS Testing Library
 
-Every good codebase needs good tests, and this, (super generically named), [testing library](https://testing-library.com/) , is the best library for testing React. React can be tested with other libraries, but with the introduction of hooks, testing became difficult. This library ensures best testing practices and allows you to create unit tests for your individual units of work.
+Every good codebase needs good tests, and this, (super generically named), [testing library](https://testing-library.com/), is the best library for testing React. React can be tested with other libraries, but with the introduction of hooks, testing became difficult. This library ensures best testing practices and allows you to create unit tests for your individual units of work.
 We'll chat more about testing at a later time.
 
 This testing library has all the add-ons to test your app:
