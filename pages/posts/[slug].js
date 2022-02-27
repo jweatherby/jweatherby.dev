@@ -1,43 +1,41 @@
-import { RefObject, useEffect, useRef } from 'react'
-import { useLoaderData } from "remix";
-import type { LoaderFunction, MetaFunction } from "remix";
-import invariant from "tiny-invariant";
+import { useEffect, useRef } from 'react'
 import hljs from "highlight.js";
 
-import styles from './post.css'
-import hljsStyled from 'highlight.js/styles/default.css'
-
-import { getPost } from "~/postsApi";
+import { getPost, getPosts } from "../../lib/postsApi";
 
 hljs.registerLanguage('python', require('highlight.js/lib/languages/python'))
 hljs.registerLanguage('js', require('highlight.js/lib/languages/javascript'))
 hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'))
 hljs.registerLanguage('json', require('highlight.js/lib/languages/json'))
 
-export const links = () => [
-  { rel: "stylesheet", href: hljsStyled },
-  { rel: "stylesheet", href: styles },
-]
 
-
-export const loader: LoaderFunction = async ({
-  params
-}) => {
-  invariant(params.slug, "expected params.slug");
-  return getPost(params.slug);
+export const getStaticProps = async ({ params }) => {
+  return { props: { post: getPost(params.slug) } };
 };
 
-export const meta: MetaFunction = () => {
-  return { title: "Blog | jweatherby.dev" };
-};
 
-export default function PostSlug() {
-  const post = useLoaderData();
-  const postRef = useRef<RefObject>(null);
+
+export async function getStaticPaths() {
+  const posts = getPosts()
+
+  return {
+    paths: posts.map((post) => {
+      return {
+        params: {
+          slug: post.slug,
+        },
+      }
+    }),
+    fallback: false,
+  }
+}
+
+export default function Post({ post }) {
+  const postRef = useRef(null);
 
   useEffect(() => {
     if (postRef.current) {
-      Array.from(postRef.current.querySelectorAll('pre code') as HTMLDivElement[])
+      Array.from(postRef.current.querySelectorAll('pre code'))
         .forEach(block => hljs.highlightBlock(block))
     }
   }, [postRef])

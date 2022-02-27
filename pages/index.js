@@ -1,12 +1,3 @@
-import type { MetaFunction } from "remix";
-
-
-import styles from './home.css'
-
-export const links = () => [{
-  rel: 'stylesheet', href: styles
-}]
-
 export default function Routes() {
   return (
     <>
