@@ -18,9 +18,9 @@ export default function Posts({ posts }) {
       <header>
         <h1>Posts</h1>
       </header>
-      <List>
+      <ul className='posts-list'>
         {posts.map((post, key) => (
-          <List.Item className="post-item" key={key}>
+          <li className="post-item" key={key}>
             <div className="post-info">
               <h3>
                 <a href={`/posts/${post.slug}`}>{post.title}</a>
@@ -36,9 +36,9 @@ export default function Posts({ posts }) {
                 <img src={post.imageSrc} />
               </a>
             </div>
-          </List.Item>
+          </li>
         ))}
-      </List>
+      </ul>
     </>
   );
 }

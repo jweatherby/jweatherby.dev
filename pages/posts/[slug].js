@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import Head from 'next/head'
 import hljs from "highlight.js";
 
 import { getPost, getPosts } from "../../lib/postsApi";
@@ -40,27 +41,41 @@ export default function Post({ post }) {
     }
   }, [postRef])
 
+  const getImageSrc = () => {
+    return typeof document === 'undefined'
+      ? ''
+      : `${document.location.protocol}//${document.location.host}${post.imageSrc}`
+  }
+
   return (
-    <div className='blog-post'>
-      <header className='post-header'>
-        <img src={post.imageSrc} className='post-image' />
-        <h2 className='post-title'>{post.title}</h2>
-        <div className='post-author'>Jamie Weatherby</div>
-        <div className='post-date'>{post.dateCreated}</div>
-      </header>
-      <article
-        ref={postRef}
-        className='post-content'
-        dangerouslySetInnerHTML={{ __html: post.html }}
-      />
-      <div className='post-tags'>
-        <strong>Tags: </strong>
-        <em>{post.tags}</em>
+    <>
+      <Head>
+        <title>{post.title} | jweatherby.dev</title>
+        <meta name='image' content={getImageSrc()} />
+        <meta name='description' content={post.blurb} />
+        <meta name='published' content={post.dateCreated} />
+      </Head>
+      <div className='blog-post'>
+        <header className='post-header'>
+          <img src={post.imageSrc} className='post-image' />
+          <h2 className='post-title'>{post.title}</h2>
+          <div className='post-author'>Jamie Weatherby</div>
+          <div className='post-date'>{post.dateCreated}</div>
+        </header>
+        <article
+          ref={postRef}
+          className='post-content'
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+        <div className='post-tags'>
+          <strong>Tags: </strong>
+          <em>{post.tags}</em>
+        </div>
+        <aside className='post-followup'>
+          Like what you're reading? Retweet, follow, or send me a message on{' '}
+          <a href="https://twitter.com/_jweatherby" target="_blank">Twitter</a>.
+        </aside>
       </div>
-      <aside className='post-followup'>
-        Like what you're reading? Retweet, follow, or send me a message on{' '}
-        <a href="https://twitter.com/_jweatherby" target="_blank">Twitter</a>.
-      </aside>
-    </div>
+    </>
   );
 }
