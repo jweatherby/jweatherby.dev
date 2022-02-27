@@ -2,6 +2,12 @@
   "build": {
     "env": {
       "ENABLE_FILE_SYSTEM_API": "1"
-    }
+    },
+    "includes": [
+      "./app/*",
+      "./posts/*",
+      "./api/*",
+      "./public/*"
+    ]
   }
 }
