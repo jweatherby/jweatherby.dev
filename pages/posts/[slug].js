@@ -14,8 +14,6 @@ export const getStaticProps = async ({ params }) => {
   return { props: { post: getPost(params.slug) } };
 };
 
-
-
 export async function getStaticPaths() {
   const posts = getPosts()
 
@@ -41,14 +39,7 @@ export default function Post({ post }) {
     }
   }, [postRef])
 
-  const getImageSrc = () => {
-    return
-  }
-
-  const domain = typeof document === 'undefined'
-    ? ''
-    : `${document.location.protocol}//${document.location.host}`
-
+  const host = process.env.NODE_ENV === 'production' ? 'http://localhost:3000' : 'https://jweatherby.dev'
 
   return (
     <>
@@ -57,16 +48,16 @@ export default function Post({ post }) {
 
         <meta property='description' content={post.blurb} />
 
-        <meta property='og:url' content={domain + `/posts/${post.slug}`} />
+        <meta property='og:url' content={host + `/posts/${post.slug}`} />
         <meta property='og:title' content={post.title} />
-        <meta property='og:image' content={domain + post.imageSrc} />
+        <meta property='og:image' content={host + post.imageSrc} />
         <meta property='og:description' content={post.blurb} />
         <meta property='og:type' content='website' />
 
 
-        <meta property='twitter:url' content={domain + `/posts/${post.slug}`} />
+        <meta property='twitter:url' content={host + `/posts/${post.slug}`} />
         <meta property='twitter:title' content={post.title} />
-        <meta property='twitter:image' content={domain + post.imageSrc} />
+        <meta property='twitter:image' content={host + post.imageSrc} />
         <meta property='twitter:description' content={post.blurb} />
         <meta property='twitter:card' content='summary' />
       </Head>
