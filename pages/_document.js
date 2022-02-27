@@ -1,14 +1,22 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 
-
-const activeStyle = {
-  borderBottom: '3px solid #1890ff'
+const getActiveStyle = (path, pattern) => {
+  const isActive = path.search(pattern) !== -1
+  return isActive ? {
+    borderBottom: '3px solid #1890ff'
+  } : {}
 }
 
 export default class App extends Document {
-  render() {
 
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps, path: ctx.asPath };
+  }
+
+  render() {
+    const { path } = this.props
     return (
       <Html lang="en">
         <Head />
@@ -19,10 +27,10 @@ export default class App extends Document {
 
               <ul className='site-nav__menu'>
                 <li className='site-nav__menu-item'>
-                  <a href='/history'>Work</a>
+                  <a href='/history' style={getActiveStyle(path, '/history')}>Work</a>
                 </li>
                 <li className='site-nav__menu-item'>
-                  <a href='/posts'>Posts</a>
+                  <a href='/posts' style={getActiveStyle(path, /^\/posts.*/)}>Posts</a>
                 </li>
               </ul>
             </nav></header>
