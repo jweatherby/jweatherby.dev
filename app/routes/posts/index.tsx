@@ -1,4 +1,6 @@
 import { Link, useLoaderData } from "remix";
+import type { MetaFunction } from "remix";
+
 import { List } from 'antd'
 import { getPosts } from '~/posts'
 import type { Post } from '~/posts'
@@ -13,6 +15,11 @@ export const links = () => {
     rel: 'stylesheet', href: styles
   }]
 }
+
+
+export const meta: MetaFunction = () => {
+  return { title: "Blog | jweatherby.dev" };
+};
 
 export default function Posts() {
   const posts = useLoaderData<Post[]>();

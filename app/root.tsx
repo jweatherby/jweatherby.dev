@@ -9,12 +9,11 @@ import {
   ScrollRestoration
 } from "remix";
 import type { MetaFunction } from "remix";
-import { Menu } from 'antd'
 import antd from 'antd/dist/antd.css';
 import styles from './root.css'
 
 export const meta: MetaFunction = () => {
-  return { title: "New Remix App" };
+  return { title: "jweatherby.dev" };
 };
 
 export function links() {

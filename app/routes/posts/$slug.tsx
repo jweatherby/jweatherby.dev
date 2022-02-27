@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useRef } from 'react'
 import { useLoaderData } from "remix";
-import type { LoaderFunction } from "remix";
+import type { LoaderFunction, MetaFunction } from "remix";
 import invariant from "tiny-invariant";
 import hljs from "highlight.js";
 
@@ -27,6 +27,9 @@ export const loader: LoaderFunction = async ({
   return getPost(params.slug);
 };
 
+export const meta: MetaFunction = () => {
+  return { title: "Blog | jweatherby.dev" };
+};
 
 export default function PostSlug() {
   const post = useLoaderData();

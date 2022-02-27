@@ -1,5 +1,5 @@
-import { Link } from "remix";
-import { List } from "antd";
+import type { MetaFunction } from "remix";
+
 
 import styles from './home.css'
 

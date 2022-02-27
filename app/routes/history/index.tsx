@@ -1,4 +1,5 @@
-import { Card } from 'antd'
+import type { MetaFunction } from "remix";
+
 import workItems from './history.json'
 import styles from './history.css'
 
@@ -7,6 +8,11 @@ export const links = () => {
     rel: 'stylesheet', href: styles
   }]
 }
+
+export const meta: MetaFunction = () => {
+  return { title: "Blog | jweatherby.dev" };
+};
+
 
 export default function History() {
 
