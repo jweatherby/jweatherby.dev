@@ -56,6 +56,8 @@ export default function Post({ post }) {
 
         <meta property='description' content={post.blurb} />
         <meta property='og:description' content={post.blurb} />
+
+        <meta property='twitter:title' content={post.title} />
         <meta property='twitter:description' content={post.blurb} />
         <meta property='twitter:card' content='summary' />
       </Head>
