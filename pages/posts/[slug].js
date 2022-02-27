@@ -51,13 +51,13 @@ export default function Post({ post }) {
     <>
       <Head>
         <title>{post.title} | jweatherby.dev</title>
-        <meta name='og:image' content={getImageSrc()} />
-        <meta name='twitter:image' content={getImageSrc()} />
+        <meta property='og:image' content={getImageSrc()} />
+        <meta property='twitter:image' content={getImageSrc()} />
 
-        <meta name='description' content={post.blurb} />
-        <meta name='og:description' content={post.blurb} />
-        <meta name='twitter:description' content={post.blurb} />
-        <meta name='twitter:card' content='summary' />
+        <meta property='description' content={post.blurb} />
+        <meta property='og:description' content={post.blurb} />
+        <meta property='twitter:description' content={post.blurb} />
+        <meta property='twitter:card' content='summary' />
       </Head>
       <div className='blog-post'>
         <header className='post-header'>
