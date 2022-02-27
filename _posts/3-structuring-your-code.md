@@ -100,7 +100,7 @@ When it comes down to it, the latter, "Domain Driven" folder structure helps to 
 
 #### Import Strategy & Stuttering
 
-<aside>In the following examples, I'll be using functionional programming to provide examples at the module and package levels.</aside>
+_In the following examples, I'll be using functionional programming to provide examples at the module and package levels._
 
 Import strategy goes hand in hand with folder structure. An important consideration here is readability and to prevent _stuttering_. Stuttering is when you repeat the same term multiple times when calling an action from another module or file. For example, if written with the _Function Driven_ folder structure from above:
 
@@ -149,7 +149,7 @@ from users import models
 
 user = models.get_user()  # no stuttering
 
-OR
+# OR
 
 from users.models import get_user
 

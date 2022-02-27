@@ -13,7 +13,7 @@ export default function Routes() {
           sports and am an avid casual boardgamer.
         </p>
         <p>
-          I'm currently working for{' '}
+          I'm currently working for
           <a href="https://points.com" target="_blank">
             Points
           </a>
@@ -21,10 +21,10 @@ export default function Routes() {
           culture, engineering and work life balance.
         </p>
         <p>
-          If you'd like to get in touch, you can find me on{' '}
+          If you'd like to get in touch, you can find me on
           <a href="https://twitter.com/_jweatherby" target="_blank">
             Twitter
-          </a>{' '}
+          </a>
           or <a href="https://www.linkedin.com/in/jamieweatherby/">LinkedIn</a>.
         </p>
       </article>
