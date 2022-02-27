@@ -42,22 +42,31 @@ export default function Post({ post }) {
   }, [postRef])
 
   const getImageSrc = () => {
-    return typeof document === 'undefined'
-      ? ''
-      : `${document.location.protocol}//${document.location.host}${post.imageSrc}`
+    return
   }
+
+  const domain = typeof document === 'undefined'
+    ? ''
+    : `${document.location.protocol}//${document.location.host}`
+
 
   return (
     <>
       <Head>
         <title>{post.title} | jweatherby.dev</title>
-        <meta property='og:image' content={getImageSrc()} />
-        <meta property='twitter:image' content={getImageSrc()} />
 
         <meta property='description' content={post.blurb} />
-        <meta property='og:description' content={post.blurb} />
 
+        <meta property='og:url' content={domain + `/posts/${post.slug}`} />
+        <meta property='og:title' content={post.title} />
+        <meta property='og:image' content={domain + post.imageSrc} />
+        <meta property='og:description' content={post.blurb} />
+        <meta property='og:type' content='website' />
+
+
+        <meta property='twitter:url' content={domain + `/posts/${post.slug}`} />
         <meta property='twitter:title' content={post.title} />
+        <meta property='twitter:image' content={domain + post.imageSrc} />
         <meta property='twitter:description' content={post.blurb} />
         <meta property='twitter:card' content='summary' />
       </Head>
