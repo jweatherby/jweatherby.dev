@@ -6,7 +6,6 @@ import { getPosts } from '~/postsApi'
 import type { Post } from '~/postsApi'
 
 import styles from './post-list.css'
-import 'highlight.js/styles/default.css'
 
 export const loader = async () => getPosts()
 

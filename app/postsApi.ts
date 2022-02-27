@@ -26,6 +26,7 @@ function isValidPostAttributes(
 
 const POSTS_PATH = path.join(__dirname, '..', 'posts')
 
+
 export async function getPosts() {
   const dir = await fs.readdir(POSTS_PATH);
   return Promise.all(
@@ -62,3 +63,5 @@ export async function getPost(slug: string) {
   const html = marked(body);
   return { slug, html, ...attributes };
 }
+
+getPosts()
