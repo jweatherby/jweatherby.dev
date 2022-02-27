@@ -7,7 +7,7 @@ import hljs from "highlight.js";
 import styles from './post.css'
 import hljsStyled from 'highlight.js/styles/default.css'
 
-import { getPost } from "~/posts";
+import { getPost } from "~/postsApi";
 
 hljs.registerLanguage('python', require('highlight.js/lib/languages/python'))
 hljs.registerLanguage('js', require('highlight.js/lib/languages/javascript'))

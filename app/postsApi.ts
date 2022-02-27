@@ -4,7 +4,6 @@ import parseFrontMatter from 'front-matter'
 import invariant from "tiny-invariant";
 import { marked } from "marked";
 
-
 export type Post = {
   slug: string;
   title: string;

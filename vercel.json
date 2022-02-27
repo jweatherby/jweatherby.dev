@@ -2,6 +2,7 @@
   "build": {
     "env": {
       "ENABLE_FILE_SYSTEM_API": "1"
-    }
+    },
+    "files": [{ "input": "./posts/*", "output": "posts" }]
   }
 }

@@ -2,8 +2,8 @@ import { Link, useLoaderData } from "remix";
 import type { MetaFunction } from "remix";
 
 import { List } from 'antd'
-import { getPosts } from '~/posts'
-import type { Post } from '~/posts'
+import { getPosts } from '~/postsApi'
+import type { Post } from '~/postsApi'
 
 import styles from './post-list.css'
 import 'highlight.js/styles/default.css'
