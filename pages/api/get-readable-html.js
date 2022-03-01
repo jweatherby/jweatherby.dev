@@ -15,7 +15,7 @@ export default function handler(request, response) {
   const { title, content } = (new Readability(doc)).parse()
 
   response.status(200).json({
-    isReadable: false,
+    isReadable: true,
     title,
     content
   });
