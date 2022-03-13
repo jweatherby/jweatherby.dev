@@ -39,7 +39,7 @@ export default function Post({ post }) {
     }
   }, [postRef])
 
-  const host = process.env.NODE_ENV === 'production' ? 'http://localhost:3000' : 'https://jweatherby.dev'
+  const host = process.env.HOSTNAME || 'https://jweatherby.dev'
 
   return (
     <>
