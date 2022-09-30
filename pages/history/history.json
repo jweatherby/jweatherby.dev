@@ -4,14 +4,25 @@
     "url": "https://points.com",
     "slug": "points",
     "name": "Points International",
+    "description": "Leading software teams to deliver loyalty solutions to travel partners around the world.",
     "dates": "Aug 2019 - Present",
     "role": "Director of Software"
+  },
+  {
+    "logo": "/images/work/tendee-logo.png",
+    "url": "https://tendee.co",
+    "slug": "tendee",
+    "name": "Tendee",
+    "description": "A simplified way to manage attendance, for work or play.",
+    "dates": "Side Project",
+    "role": "Creator"
   },
   {
     "logo": "/images/work/showboard.png",
     "url": "https://www.showboard.ca",
     "slug": "showboard",
     "name": "Showboard",
+    "description": "A robust bookmarking and personal organization tool.",
     "dates": "Covid Project",
     "role": "Creator"
   },
@@ -20,6 +31,7 @@
     "url": "https://www.gadventures.com",
     "slug": "gadventures",
     "name": "G Adventures",
+    "description": "Built backend and frontend solutions on a team for this incredible small group adventure travel company.",
     "dates": "May 2015 - Apr 2019",
     "role": "Software Engineer"
   },
@@ -28,6 +40,7 @@
     "url": "https://koffeecup.net",
     "slug": "koffeecup",
     "name": "KoffeeCup",
+    "description": "Built innovative and creative digital marketing solutions.",
     "dates": "Oct 2011 - Sep 2014",
     "role": "Software Developer"
   },
@@ -36,6 +49,7 @@
     "url": "https://ibm.com/ca-en",
     "slug": "ibm",
     "name": "IBM",
+    "description": "Intern on the DB2 Build team.",
     "dates": "May 2009 - Aug 2010",
     "role": "DB2 Build Team (Intern)"
   }
