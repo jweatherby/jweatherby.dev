@@ -28,3 +28,9 @@
 .post-content pre code {
   font-size: .9rem;
 }
+.post-content pre code.language-mermaid {
+  display: none;
+}
+.post-content pre code.language-mermaid[data-processed="true"] {
+  display: block;
+}

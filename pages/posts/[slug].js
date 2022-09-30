@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import Head from 'next/head'
 import hljs from "highlight.js";
-
+import mermaid from 'mermaid';
 import { getPost, getPosts } from "../../lib/postsApi";
 
 hljs.registerLanguage('python', require('highlight.js/lib/languages/python'))
@@ -34,8 +34,12 @@ export default function Post({ post }) {
 
   useEffect(() => {
     if (postRef.current) {
-      Array.from(postRef.current.querySelectorAll('pre code'))
+      // Array.from(postRef.current.querySelectorAll('pre code'))
+      //   .forEach(block => hljs.highlightBlock(block))
+      Array.from(postRef.current.querySelectorAll('pre code:not(.language-mermaid)'))
         .forEach(block => hljs.highlightBlock(block))
+      Array.from(postRef.current.querySelectorAll('pre code.language-mermaid'))
+        .forEach(block => mermaid.init(null, block))
     }
   }, [postRef])
 
