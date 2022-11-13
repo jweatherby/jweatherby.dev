@@ -11,6 +11,10 @@
   padding: 0 15px;
 }
 
+.work-description {
+  height: 70px;
+}
+
 @media (max-width: 710px) {
 
   .work-item {

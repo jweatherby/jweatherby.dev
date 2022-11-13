@@ -4,7 +4,7 @@
     "url": "https://points.com",
     "slug": "points",
     "name": "Points International",
-    "description": "Leading software teams to deliver loyalty solutions to travel partners around the world.",
+    "description": "Leading and growing software teams in the travel loyalty space.",
     "dates": "Aug 2019 - Present",
     "role": "Director of Software"
   },
@@ -13,7 +13,7 @@
     "url": "https://tendee.co",
     "slug": "tendee",
     "name": "Tendee",
-    "description": "A simplified way to manage attendance, for work or play.",
+    "description": "A simplified way to manage attendance for individual or recurring events.",
     "dates": "Side Project",
     "role": "Creator"
   },
@@ -22,7 +22,7 @@
     "url": "https://www.showboard.ca",
     "slug": "showboard",
     "name": "Showboard",
-    "description": "A robust bookmarking and personal organization tool.",
+    "description": "A hybrid bookmarking, note-taking, organization and collaboration tool.",
     "dates": "Covid Project",
     "role": "Creator"
   },
@@ -31,7 +31,7 @@
     "url": "https://www.gadventures.com",
     "slug": "gadventures",
     "name": "G Adventures",
-    "description": "Built backend and frontend solutions on a team for this incredible small group adventure travel company.",
+    "description": "Built backend and frontend solutions oriented around small group adventure travel.",
     "dates": "May 2015 - Apr 2019",
     "role": "Software Engineer"
   },
@@ -40,7 +40,7 @@
     "url": "https://koffeecup.net",
     "slug": "koffeecup",
     "name": "KoffeeCup",
-    "description": "Built innovative and creative digital marketing solutions.",
+    "description": "Built innovative and creative digital marketing solutions using PHP and JQuery.",
     "dates": "Oct 2011 - Sep 2014",
     "role": "Software Developer"
   },
@@ -49,7 +49,7 @@
     "url": "https://ibm.com/ca-en",
     "slug": "ibm",
     "name": "IBM",
-    "description": "Intern on the DB2 Build team.",
+    "description": "Intern on the DB2 Build team. Lots of scripting with Bash, Perl and SQL",
     "dates": "May 2009 - Aug 2010",
     "role": "DB2 Build Team (Intern)"
   }
