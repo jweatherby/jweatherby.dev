@@ -1,5 +1,6 @@
 .work-item-list {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  padding: 0 16px;
 }
 
 .work-description {
@@ -24,18 +25,12 @@
     width: 100%;
     text-align: center;
     border-bottom: 1px solid #ddd;
+
   }
 
   .work-info {
     display: grid;
     grid-template-rows: auto 1fr auto;
-  }
-
-  .work-item:last-child {
-    border-bottom-width: 0px;
-  }
-
-  .work-description {
   }
 }
 
@@ -47,7 +42,4 @@
       object-fit: contain;
     }
   }
-}
-
-.work-company-name {
 }

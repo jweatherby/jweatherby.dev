@@ -6,7 +6,7 @@ dateCreated: Feb 27, 2022
 tags: reactjs, quilljs
 ---
 
-I've built a pretty robust editor over on [Showboard](https://www.showboard.ca), and the technologies I've used to accomplish this have been React and QuillJS.
+I've built a pretty robust editor over on [Showboard](https://showboard.ca), and the technologies I've used to accomplish this have been React and QuillJS.
 
 These are some of the tips I picked up in working with Quill. I've been using the library [react-quill](https://github.com/zenoamaro/react-quill), which has been able to do the job really well for a basic implementation in React.
 
