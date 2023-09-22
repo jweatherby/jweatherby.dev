@@ -26,13 +26,21 @@ export default class App extends Document {
             data-domain="jweatherby.dev"
             src="https://plausible.io/js/plausible.js"
           />
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css"
+          />
         </Head>
         <body>
           <header className="site-header">
             <nav className="site-container site-nav">
-              <h1>
-                <a href="/">jweatherby.dev</a>
-              </h1>
+              <ul>
+                <li>
+                  <strong>
+                    <a href="/">jweatherby.dev</a>
+                  </strong>
+                </li>
+              </ul>
 
               <ul className="site-nav__menu">
                 <li className="site-nav__menu-item">

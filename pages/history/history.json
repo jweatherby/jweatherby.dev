@@ -3,7 +3,7 @@
     "logo": "/images/work/points-logo.png",
     "url": "https://points.com",
     "slug": "points",
-    "name": "Points International",
+    "name": "Points",
     "description": "Leading and growing software teams in the travel loyalty space.",
     "dates": "Aug 2019 - Present",
     "role": "Director of Software"
@@ -19,7 +19,7 @@
   },
   {
     "logo": "/images/work/showboard.png",
-    "url": "https://www.showboard.ca",
+    "url": "https://showboard.ca",
     "slug": "showboard",
     "name": "Showboard",
     "description": "A hybrid bookmarking, note-taking, organization and collaboration tool.",
@@ -51,6 +51,6 @@
     "name": "IBM",
     "description": "Intern on the DB2 Build team. Lots of scripting with Bash, Perl and SQL",
     "dates": "May 2009 - Aug 2010",
-    "role": "DB2 Build Team (Intern)"
+    "role": "DB2 Build Team"
   }
 ]

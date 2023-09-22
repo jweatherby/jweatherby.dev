@@ -1,9 +1,7 @@
-.post-author, .post-date {
-  font-size: 0.8rem;
+.post-author,
+.post-date {
 }
 .post-content {
-  font-size: 1rem;
-  margin: 25px 0;
 }
 
 .post-author {
@@ -26,8 +24,11 @@
 }
 
 .post-content pre code {
-  font-size: .9rem;
+  background-color: var(--pico-background-color);
+  color: var(--pico-code-color);
 }
+
+
 .post-content pre code.language-mermaid {
   display: none;
 }

@@ -7,7 +7,7 @@ export default function Routes() {
       <article className='about-article'>
         <p className='greeting'>Hi, I'm Jamie.</p>
         <p>
-          I've been a Software Engineer for 10 years, and most recently, Director of Software.
+          I've been a Software Engineer for almost 15 years, and most recently, Director of Software.
           I started as an intern at IBM, then worked at an agency in London,
           UK, and finally settled in Toronto Canada. I love travelling, playing
           sports and am an avid casual boardgamer.

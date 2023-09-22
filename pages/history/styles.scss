@@ -1,0 +1,53 @@
+.work-item-list {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.work-description {
+  height: 70px;
+}
+
+@media (min-width: 400px) {
+  .work-item {
+    // margin: 8px;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    grid-row-gap: 24px;
+    .work-info {
+      display: grid;
+      grid-template-rows: 1fr 2fr 1fr;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .work-item {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .work-info {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .work-item:last-child {
+    border-bottom-width: 0px;
+  }
+
+  .work-description {
+  }
+}
+
+.work-item {
+  .work-logo {
+    img {
+      height: 75px;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.work-company-name {
+}
