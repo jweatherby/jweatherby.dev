@@ -23,9 +23,14 @@
   margin-bottom: 25px;
 }
 
-.post-content pre code {
-  background-color: var(--pico-background-color);
+
+.post-content pre code.hljs {
+  padding: 0.7rem;
   color: var(--pico-code-color);
+}
+.post-content p code {
+  // background-color: var(--pico-background-color);
+  padding: 0.175rem;
 }
 
 
