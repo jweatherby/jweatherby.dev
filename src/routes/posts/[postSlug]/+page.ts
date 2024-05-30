@@ -32,7 +32,7 @@ const markdown = markdownIt({
 })
 
 export async function load({ params: { postSlug: slug } }) {
-	const { default: post } = await import(`/src/fixtures/posts-md/${slug}.md?raw`)
+	const { default: post } = await import(`$fixtures/posts-md/${slug}.md?raw`)
 	const { attributes, body } = parseFrontMatter(post)
 	return { post: { slug, html: markdown.render(body), meta: attributes } }
 }
