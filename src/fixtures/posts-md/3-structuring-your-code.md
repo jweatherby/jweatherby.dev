@@ -4,6 +4,7 @@ blurb: Some principles to consider when outlining the structure of your code.
 imageSrc: /images/post-images/sitemap.jpg
 dateCreated: Jan 6, 2021
 tags: being-full-stack
+isPublished: true
 ---
 
 This is the latest article in my series, [Being Full Stack](/posts/1-being-full-stack).

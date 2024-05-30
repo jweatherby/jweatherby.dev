@@ -4,6 +4,7 @@ blurb: My essential selection of libraries for frontend development.
 imageSrc: /images/post-images/js-logo.jpeg
 dateCreated: Nov 23, 2020
 tags: being-full-stack, frontend
+isPublished: true
 ---
 
 As the second part in my series, "Being Full Stack", I'll be going through a simple list of all the essential libraries I use to get the frontend of a project up and running.
