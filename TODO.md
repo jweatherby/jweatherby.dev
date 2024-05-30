@@ -1,3 +1,0 @@
-- investigate / implement highlight.js
-- add UI library
-- convert content
