@@ -1,0 +1,56 @@
+[
+  {
+    "logo": "/images/work/points-logo.png",
+    "url": "https://points.com",
+    "slug": "points",
+    "name": "Points",
+    "description": "Leading and growing software teams in the travel loyalty space.",
+    "dates": "Aug 2019 - Present",
+    "role": "Director of Software"
+  },
+  {
+    "logo": "/images/work/tendee-logo.png",
+    "url": "https://tendee.co",
+    "slug": "tendee",
+    "name": "Tendee",
+    "description": "A simplified way to manage attendance for individual or recurring events.",
+    "dates": "Side Project",
+    "role": "Creator"
+  },
+  {
+    "logo": "/images/work/showboard.png",
+    "url": "https://showboard.ca",
+    "slug": "showboard",
+    "name": "Showboard",
+    "description": "A hybrid bookmarking, note-taking, organization and collaboration tool.",
+    "dates": "Covid Project",
+    "role": "Creator"
+  },
+  {
+    "logo": "/images/work/g-logo.png",
+    "url": "https://www.gadventures.com",
+    "slug": "gadventures",
+    "name": "G Adventures",
+    "description": "Built backend and frontend solutions oriented around small group adventure travel.",
+    "dates": "May 2015 - Apr 2019",
+    "role": "Software Engineer"
+  },
+  {
+    "logo": "/images/work/koffeecup-logo.png",
+    "url": "https://koffeecup.net",
+    "slug": "koffeecup",
+    "name": "KoffeeCup",
+    "description": "Built innovative and creative digital marketing solutions using PHP and JQuery.",
+    "dates": "Oct 2011 - Sep 2014",
+    "role": "Software Developer"
+  },
+  {
+    "logo": "/images/work/ibm-logo.png",
+    "url": "https://ibm.com/ca-en",
+    "slug": "ibm",
+    "name": "IBM",
+    "description": "Intern on the DB2 Build team. Lots of scripting with Bash, Perl and SQL",
+    "dates": "May 2009 - Aug 2010",
+    "role": "DB2 Build Team"
+  }
+]
