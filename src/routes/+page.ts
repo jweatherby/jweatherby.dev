@@ -1,8 +1,8 @@
 import type { IPost, IPostMeta } from "$lib/types";
-import type { ServerLoad } from "@sveltejs/kit";
 
 import parseFrontMatter from 'front-matter'
-const mdPosts = import.meta.glob("/src/fixtures/posts-md/*.md", { eager: true, query: 'raw', import: 'default' })
+import type { PageLoad } from "./$types";
+const mdPosts = import.meta.glob("$fixtures/posts-md/*.md", { eager: true, query: 'raw', import: 'default' })
 
 const getPosts = () => {
   return Object.entries(mdPosts).map(([path, _post]) => {
@@ -15,7 +15,7 @@ const getPosts = () => {
 }
 
 export const prerender = true
-export const load: ServerLoad = () => {
+export const load: PageLoad = () => {
   const posts: Omit<IPost, 'html'>[] = getPosts()
   return { posts }
 }
