@@ -7,7 +7,7 @@
 >
 <nav class='container'>
 	<ul><li>
-    <h1><a href='/'>&lt;jweatherby.dev /&gt;</a></h1>
+    <h1><a href='/'>&lt;jw.dev /&gt;</a></h1>
   </li></ul>
 </nav>
 <div class="container">

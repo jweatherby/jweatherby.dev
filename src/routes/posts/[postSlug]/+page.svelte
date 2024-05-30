@@ -36,7 +36,7 @@
 	<footer>
 		<div class="post-tags">
 			<strong>Tags: </strong>
-			<em>{post.tags}</em>
+			<em>{post.meta.tags}</em>
 		</div>
 		<aside class="post-followup">
 			Like what you're reading? Retweet, follow, or send me a message on{' '}
@@ -47,12 +47,6 @@
 </article>
 
 <style lang="scss">
-	.post-author,
-	.post-date {
-	}
-	.post-content {
-	}
-
 	.post-author {
 		font-style: italic;
 		font-weight: 700;
@@ -87,4 +81,9 @@
 	.post-content pre code.language-mermaid[data-processed='true'] {
 		display: block;
 	}
+  .post-tags {
+    em:before {
+      content: '#';
+    }
+  }
 </style>

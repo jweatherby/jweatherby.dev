@@ -39,6 +39,7 @@
     "@types/markdown-it": "^14.1.1",
     "bun": "^1.1.10",
     "front-matter": "^4.0.2",
+    "highlight.js": "^11.9.0",
     "path": "^0.12.7",
     "svelte-adapter-bun": "^0.5.2"
   }
