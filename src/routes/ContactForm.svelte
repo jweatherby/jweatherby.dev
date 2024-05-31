@@ -1,6 +1,7 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { page } from "$app/stores";
+  import { ui } from "$lib/store";
 
   let reqState = {
     success: false,
@@ -45,12 +46,19 @@
 <dialog open>
   <article>
     <header>
-      <a href="/" class="close" on:click|preventDefault={() => goto("/")} />
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <span
+        role="button"
+        tabindex="0"
+        class="close"
+        on:click|preventDefault={() => {
+          $ui.popup.id = null;
+        }}
+      />
     </header>
     <form method="POST" on:submit|preventDefault={sendContactUsEmail}>
       <h2>Get in contact</h2>
       <fieldset>
-        <label for="topic">What is the nature of your enquiry?</label>
         <select name="topic">
           <option value="feedback">Thoughts or comments</option>
           <option value="support">Need help with something</option>
