@@ -66,7 +66,7 @@
         </select>
       </fieldset>
       <fieldset>
-        <input type="email" name="from" placeholder="Email address" />
+        <input type="email" name="from" placeholder="Your email address" />
       </fieldset>
       <fieldset>
         <input name="subject" placeholder="Subject" />

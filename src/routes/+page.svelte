@@ -59,4 +59,7 @@
 		height: 150px;
 		border-radius: 50%;
 	}
+	article {
+		max-width: 700px;
+	}
 </style>
