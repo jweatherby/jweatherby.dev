@@ -46,7 +46,7 @@
     <li>
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <span
-        role="link"
+        role="button"
         tabindex="0"
         on:click|preventDefault={() => {
           $ui.popup.id = "contact-form";
