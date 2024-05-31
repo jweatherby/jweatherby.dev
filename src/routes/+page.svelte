@@ -11,22 +11,28 @@
 
 <article class="my-info">
   <figure class="profile-img">
-    <img src="/images/profile-in-grass-sq-600px.png" />
+    <img src="/images/family-pic.png" />
   </figure>
   <section class="about-article">
-    <h2>Hi, I'm Jamie.</h2>
+    <h3>Hi, I'm Jamie.</h3>
     <p>
       I've been a Software Engineer for almost 15 years, and most recently,
       Director of Software. I started as an intern at IBM, then worked at an
-      agency in London, UK, and finally settled in Toronto Canada. I love
-      travelling, playing sports and am an avid casual boardgamer.
+      agency in London, UK, and finally settled in Toronto Canada.
     </p>
     <p>
       I'm currently working for{" "}
-      <a href="https://points.com" target="_blank"> Points </a>
-      , a great company based in Toronto, Canada with a strong focus on culture,
+      <a href="https://points.com" target="_blank">
+        Points (a Plusgrade company)</a
+      >, a great company based in Canada with a strong focus on culture,
       engineering and work life balance.
     </p>
+    <p>
+      When I'm not working you can find me playing boardgames, volleyball,
+      pickleball or golf. Otherwise, I'll be coding away at my side projects.
+    </p>
+    <p>If all else fails, you can find me with my family.</p>
+
     <p>
       If you'd like to get in touch, you can find me on{" "}
       <a href="https://www.linkedin.com/in/jamieweatherby/">LinkedIn</a> or
@@ -43,7 +49,7 @@
 </article>
 
 <article>
-  <h2 class="blog-title">Blog posts</h2>
+  <h3 class="blog-title">Blog posts</h3>
   <ul>
     {#each posts as post}
       <li>
