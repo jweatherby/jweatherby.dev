@@ -7,7 +7,6 @@ export interface IPostMeta {
   isPublished: boolean
 }
 
-
 export interface IPost {
   meta: IPostMeta
   html: string
