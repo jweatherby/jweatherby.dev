@@ -34,7 +34,7 @@
     <p>If all else fails, you can find me with my family.</p>
 
     <p>
-      If you'd like to get in touch, you can find me on{" "}
+      If you'd like to get in touch, you can reach me on{" "}
       <a href="https://www.linkedin.com/in/jamieweatherby/">LinkedIn</a> or
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <span
