@@ -6,7 +6,7 @@
   const posts = $page.data.posts.filter(
     (p: IPost) => p.meta.isPublished
   ) as IPost[];
-  posts.sort((p1, p2) => p2.meta.title.localeCompare(p1.meta.title));
+  posts.sort((p1, p2) => (p2.meta.dateCreated < p1.meta.dateCreated ? -1 : 1));
 </script>
 
 <article class="my-info">
