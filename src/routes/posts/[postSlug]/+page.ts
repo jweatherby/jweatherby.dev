@@ -8,6 +8,7 @@ import python from "highlight.js/lib/languages/python"
 import js from "highlight.js/lib/languages/javascript"
 import bash from "highlight.js/lib/languages/bash"
 import json from "highlight.js/lib/languages/json"
+import { error } from '@sveltejs/kit'
 
 export const prerender = true
 
@@ -24,7 +25,7 @@ const markdown = markdownIt({
 				return hljs.highlight(str, { language: lang }).value;
 			} catch (e) {
 				console.log('could not register lang', e)
-			 }
+			}
 		}
 
 		return ''; // use external default escaping
@@ -32,7 +33,11 @@ const markdown = markdownIt({
 })
 
 export async function load({ params: { postSlug: slug } }) {
-	const { default: post } = await import(`$fixtures/posts-md/${slug}.md?raw`)
-	const { attributes, body } = parseFrontMatter(post)
-	return { post: { slug, html: markdown.render(body), meta: attributes } }
+	try {
+		const { default: post } = await import(`$fixtures/posts-md/${slug}.md?raw`)
+		const { attributes, body } = parseFrontMatter(post)
+		return { post: { slug, html: markdown.render(body), meta: attributes } }
+	} catch (err) {
+		return error(404, 'Post not found :(')
+	}
 }
