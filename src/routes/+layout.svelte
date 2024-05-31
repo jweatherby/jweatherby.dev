@@ -61,9 +61,12 @@
 <style lang="scss">
   :root {
     font-size: 14px;
-    --pico-spacing: 0.5rem;
+    --pico-spacing: 1rem;
   }
   a:hover {
     text-decoration: none;
+  }
+  .container {
+    max-width: 700px;
   }
 </style>

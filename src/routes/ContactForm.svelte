@@ -105,6 +105,8 @@
     }
   }
   form {
+    --pico-spacing: 0.5rem;
+
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -126,5 +128,13 @@
   }
   .notice-error {
     color: tomato;
+  }
+  input,
+  textarea,
+  select,
+  option {
+    height: auto;
+    padding: calc(0.5 * var(--pico-form-element-spacing-vertical))
+      calc(0.5 * var(--pico-form-element-spacing-horizontal));
   }
 </style>
