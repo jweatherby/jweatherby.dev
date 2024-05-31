@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer'
 import settings from '$settings'
 import { json } from 'stream/consumers'
 
-export const prerender = false
+export const prerender = true
 export const POST = async ({ request }) => {
   const payload = await request.json()
 
