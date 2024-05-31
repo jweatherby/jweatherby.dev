@@ -57,12 +57,12 @@
       />
     </header>
     <form method="POST" on:submit|preventDefault={sendContactUsEmail}>
-      <h2>Get in contact</h2>
+      <h2>Get in touch</h2>
       <fieldset>
         <select name="topic">
+          <option value="sales">Let's connect</option>
           <option value="feedback">Thoughts or comments</option>
           <option value="support">Need help with something</option>
-          <option value="sales">Let's connect</option>
         </select>
       </fieldset>
       <fieldset>
