@@ -61,11 +61,13 @@
         href="https://www.linkedin.com/in/jamieweatherby/">LinkedIn</a
       >
       or
-      <a
-        href="#contact"
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <span
+        role="link"
+        tabindex="0"
         on:click|preventDefault={() => {
           $ui.popup.id = "contact-form";
-        }}>by email</a
+        }}>by email</span
       >.
     </aside>
   </footer>

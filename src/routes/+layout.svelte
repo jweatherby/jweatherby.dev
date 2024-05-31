@@ -1,5 +1,6 @@
 <script lang="ts">
   import { ui } from "$lib/store";
+  import "$lib/globals.scss";
   import ContactForm from "./ContactForm.svelte";
 </script>
 
@@ -45,7 +46,7 @@
     <li>
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <span
-        role="button"
+        role="link"
         tabindex="0"
         on:click|preventDefault={() => {
           $ui.popup.id = "contact-form";
@@ -59,10 +60,6 @@
 </div>
 
 <style lang="scss">
-  :root {
-    font-size: 14px;
-    --pico-spacing: 1rem;
-  }
   a:hover {
     text-decoration: none;
   }
