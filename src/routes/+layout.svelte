@@ -19,13 +19,15 @@
   <dialog open>
     <article>
       <header>
-        <a
-          href="#close"
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <span
+          role="button"
+          tabindex="0"
           class="close"
           on:click|preventDefault={() => {
             $ui.popup.id = null;
-          }}>&nbsp;</a
-        >
+          }}
+        />
         Get in touch
       </header>
       <ContactForm />
@@ -41,11 +43,13 @@
   </ul>
   <ul>
     <li>
-      <a
-        href="#contact"
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <span
+        role="button"
+        tabindex="0"
         on:click|preventDefault={() => {
           $ui.popup.id = "contact-form";
-        }}>Contact</a
+        }}>Contact</span
       >
     </li>
   </ul>
@@ -57,6 +61,7 @@
 <style lang="scss">
   :root {
     font-size: 14px;
+    --pico-spacing: 0.5rem;
   }
   a:hover {
     text-decoration: none;

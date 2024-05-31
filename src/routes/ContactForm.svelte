@@ -47,48 +47,43 @@
     <header>
       <a href="/" class="close" on:click|preventDefault={() => goto("/")} />
     </header>
-    <section>
-      <form method="POST" on:submit|preventDefault={sendContactUsEmail}>
-        <h2>Get in contact</h2>
-        <fieldset>
-          <label for="topic">What is the nature of your enquiry?</label>
-          <select name="topic">
-            <option value="feedback">Thoughts or comments</option>
-            <option value="support">Need help with something</option>
-            <option value="sales">Let's connect</option>
-          </select>
-        </fieldset>
-        <fieldset>
-          <label for="from">Your email</label>
-          <input type="email" name="from" placeholder="Your email address" />account
-        </fieldset>
-        <fieldset>
-          <label for="subject">Subject</label>
-          <input name="subject" placeholder="What are you enquiring about?" />
-        </fieldset>
-        <fieldset>
-          <label for="message">Message</label>
-          <textarea name="message" placeholder="Add any details here" />
-        </fieldset>
-        <div>
-          {#if reqState.success}
-            <div class="notice-success">
-              <i class="feather-check-circle" /> Sent! You'll receive a response
-              in the next couple days.
-            </div>
-          {:else if reqState.errorMessage}
-            <div class="notice-error">
-              <i class="feather-alert-triangle" />
-              {reqState.errorMessage}
-            </div>
-          {:else}
-            <button class="primary" type="submit">
-              <i class="feather-send" /> Send</button
-            >
-          {/if}
-        </div>
-      </form>
-    </section>
+    <form method="POST" on:submit|preventDefault={sendContactUsEmail}>
+      <h2>Get in contact</h2>
+      <fieldset>
+        <label for="topic">What is the nature of your enquiry?</label>
+        <select name="topic">
+          <option value="feedback">Thoughts or comments</option>
+          <option value="support">Need help with something</option>
+          <option value="sales">Let's connect</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <input type="email" name="from" placeholder="Email address" />
+      </fieldset>
+      <fieldset>
+        <input name="subject" placeholder="Subject" />
+      </fieldset>
+      <fieldset>
+        <textarea name="message" placeholder="Your message here" />
+      </fieldset>
+      <div>
+        {#if reqState.success}
+          <div class="notice-success">
+            <i class="feather-check-circle" /> Sent! You'll receive a response in
+            the next couple days.
+          </div>
+        {:else if reqState.errorMessage}
+          <div class="notice-error">
+            <i class="feather-alert-triangle" />
+            {reqState.errorMessage}
+          </div>
+        {:else}
+          <button class="primary" type="submit">
+            <i class="feather-send" /> Send</button
+          >
+        {/if}
+      </div>
+    </form>
   </article>
 </dialog>
 
@@ -116,6 +111,7 @@
   }
   textarea {
     resize: vertical;
+    min-height: 200px;
   }
   .notice-success {
     color: var(--primary);
