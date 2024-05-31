@@ -1,8 +1,8 @@
 <script lang="ts">
   import { page } from "$app/stores";
+  import { ui } from "$lib/store";
   import type { IPost } from "$lib/types";
 
-  console.log("page posts", $page.data.posts);
   const posts = $page.data.posts.filter(
     (p: IPost) => p.meta.isPublished
   ) as IPost[];
@@ -29,10 +29,14 @@
     </p>
     <p>
       If you'd like to get in touch, you can find me on{" "}
-      <a href="https://twitter.com/_jweatherby" target="_blank">
-        Twitter
-      </a>{" "}
-      or <a href="https://www.linkedin.com/in/jamieweatherby/">LinkedIn</a>.
+      <a href="https://www.linkedin.com/in/jamieweatherby/">LinkedIn</a> or
+      <a
+
+        href="#contact"
+        on:click|preventDefault={() => {
+          $ui.popup.id = "contact-form";
+        }}>by email</a
+      >.
     </p>
   </section>
 </article>

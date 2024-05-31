@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
+  import { ui } from "$lib/store";
   import settings from "$settings";
 
   let post = $page.data.post;
@@ -56,9 +57,16 @@
       {/each}
     </div>
     <aside class="post-followup">
-      Like what you're reading? Retweet, follow, or send me a message on{" "}
-      <a href="https://twitter.com/_jweatherby" target="_blank"> Twitter </a>
-      .
+      Like what you're reading? Get in touch on <a
+        href="https://www.linkedin.com/in/jamieweatherby/">LinkedIn</a
+      >
+      or
+      <a
+        href="#contact"
+        on:click|preventDefault={() => {
+          $ui.popup.id = "contact-form";
+        }}>by email</a
+      >.
     </aside>
   </footer>
 </article>
