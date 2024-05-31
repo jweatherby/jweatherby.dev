@@ -42,8 +42,10 @@
   <ul>
     {#each posts as post}
       <li>
-        <a href={`/posts/${post.slug}`}>{post.meta.title}</a> - {post.meta
-          .dateCreated}
+        <a href={`/posts/${post.slug}`}>{post.meta.title}</a> - {post.meta.dateCreated.toLocaleDateString(
+          "en-ca",
+          { day: "numeric", month: "short", year: "numeric" }
+        )}
       </li>
     {/each}
   </ul>

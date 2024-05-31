@@ -37,7 +37,13 @@
     <img src={post.meta.imageSrc} class="post-image" />
     <h2 class="post-title">{post.meta.title}</h2>
     <div class="post-author">Jamie Weatherby</div>
-    <div class="post-date">{post.meta.dateCreated}</div>
+    <div class="post-date">
+      {post.meta.dateCreated.toLocaleDateString("en-ca", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      })}
+    </div>
   </header>
 
   {@html post.html}
@@ -95,7 +101,7 @@
   .post-tags {
     em {
       margin-right: 0.5rem;
-			color: var(--pico-secondary);
+      color: var(--pico-secondary);
     }
 
     em:not(:last-child):after {

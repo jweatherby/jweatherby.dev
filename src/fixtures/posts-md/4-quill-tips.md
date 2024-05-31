@@ -2,7 +2,7 @@
 title: Learnings from React & QuillJS
 blurb: Tips when using QuillJS with React.
 imageSrc: /images/post-images/quill-logo.png
-dateCreated: Feb 27, 2022
+dateCreated: 2022-02-27T12:00:00Z
 tags: reactjs, quilljs
 isPublished: true
 ---

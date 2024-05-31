@@ -2,9 +2,9 @@
 title: Being Full Stack
 blurb: A series focusing on all the things I've learned in my years doing full-stack web development.
 imageSrc: /images/post-images/frontend-principles.png
-dateCreated: Nov 23, 2020
+dateCreated: 2020-11-23T12:00:00Z
 tags: being-full-stack
-isPublished: true
+isPublished: false
 ---
 
 When it comes to Software Engineering, it's hard to get started. You study it in school. You practice it at home. When you find that first job, there's so much more to learn. There are decades of information to catch up on. In the scramble to make your code behave, make it efficient, and make that deadline, sometimes fundamentals and principles are forgotten.
