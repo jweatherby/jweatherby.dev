@@ -15,7 +15,7 @@
       message: formData.get("message") as string,
       topic: formData.get("topic") as string,
     };
-    fetch("/contact", {
+    fetch("/api/contact", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {

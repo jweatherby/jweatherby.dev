@@ -1,6 +1,6 @@
 <script lang="ts">
   import { ui } from "$lib/store";
-  // import ContactForm from "./ContactForm.svelte";
+  import ContactForm from "./ContactForm.svelte";
 </script>
 
 <svelte:head>
@@ -15,7 +15,7 @@
   /></svelte:head
 >
 
-<!-- {#if $ui.popup.id === "contact-form"}
+{#if $ui.popup.id === "contact-form"}
   <dialog open>
     <article>
       <header>
@@ -24,14 +24,14 @@
           class="close"
           on:click|preventDefault={() => {
             $ui.popup.id = null;
-          }}
-        />
+          }}>&nbsp;</a
+        >
         Get in touch
       </header>
       <ContactForm />
     </article>
   </dialog>
-{/if} -->
+{/if}
 
 <nav class="container">
   <ul>
@@ -39,7 +39,7 @@
       <h1><a href="/">&lt;jw.dev /&gt;</a></h1>
     </li>
   </ul>
-  <!-- <ul>
+  <ul>
     <li>
       <a
         href="#contact"
@@ -48,7 +48,7 @@
         }}>Contact</a
       >
     </li>
-  </ul> -->
+  </ul>
 </nav>
 <div class="container">
   <slot />

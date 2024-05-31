@@ -1,0 +1,23 @@
+###
+
+POST http://localhost:3000/api/contact
+Content-type: application/json
+
+{
+  "from": "jamie@test.com",
+  "topic": "WORK_STUFF",
+  "subject": "hello world",
+  "message": "be my friend"
+}
+
+###
+
+POST https://jweatherby.dev/api/contact
+Content-type: application/json
+
+{
+  "from": "jamie@test.com",
+  "topic": "WORK_STUFF",
+  "subject": "hello world",
+  "message": "be my friend"
+}
