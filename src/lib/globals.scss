@@ -4,4 +4,8 @@
   [role="link"] {
     cursor: pointer;
   }
+  article > header {
+    background-color: var(--pico-background-color);
+    border-bottom: none;
+  }
 }
