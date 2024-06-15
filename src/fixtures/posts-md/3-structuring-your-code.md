@@ -7,9 +7,7 @@ tags: being-full-stack
 isPublished: true
 ---
 
-This is the latest article in my series, [Being Full Stack](/posts/1-being-full-stack).
-
-Here, I want to talk about folder structure. In quite a few instances, you'll spend the majority of your time reading code, not necessarily writing it. While it's important to write good, coherent, well documented code, an often overlooked aspect is a well thought out folder structure. And the thing about folder structure: once it has been established, it's difficult to change.
+I want to have a quick talk (rant) about folder structure. In quite a few instances, you'll spend the majority of your time reading code, not necessarily writing it. While it's important to write good, coherent, well documented code, something that may bite you in the long run is a well thought out folder structure. And here's the thing about folder structure: once it has been established, it's difficult to change.
 
 I'll be comparing two common approaches to code structure: "Function Driven" and "Domain Driven", and then showing an interesting effect they each have on how much your code will "stutter".
 
