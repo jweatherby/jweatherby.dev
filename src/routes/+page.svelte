@@ -3,15 +3,38 @@
   import { ui } from "$lib/store";
   import type { IPost } from "$lib/types";
 
+  import settings from "$settings";
+  const metaInfo = {
+    title: "jweatherby.dev",
+    description: "The personal site of Jamie Weatherby",
+    url: settings.ROOT_DOMAIN,
+    image: settings.ROOT_DOMAIN + "/images/family-pic.png",
+  };
+
   const posts = $page.data.posts.filter(
     (p: IPost) => p.meta.isPublished
   ) as IPost[];
   posts.sort((p1, p2) => (p2.meta.dateCreated < p1.meta.dateCreated ? -1 : 1));
 </script>
 
+<svelte:head>
+  <title>{metaInfo.title}</title>
+  <meta property="description" content={metaInfo.description} />
+  <meta property="og:url" content={metaInfo.url} />
+  <meta property="og:title" content={metaInfo.title} />
+  <meta property="og:image" content={metaInfo.image} />
+  <meta property="og:description" content={metaInfo.description} />
+  <meta property="og:type" content="website" />
+
+  <meta property="twitter:url" content={metaInfo.url} />
+  <meta property="twitter:title" content={metaInfo.title} />
+  <meta property="twitter:image" content={metaInfo.image} />
+  <meta property="twitter:description" content={metaInfo.description} />
+  <meta property="twitter:card" content="summary" />
+</svelte:head>
 <article class="my-info">
   <figure class="profile-img">
-    <img src="/images/family-pic.png" />
+    <img src="/images/family-pic.png" alt='the fam' />
   </figure>
   <section class="about-article">
     <h3>Hi, I'm Jamie.</h3>

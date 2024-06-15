@@ -2,13 +2,6 @@
   import { ui } from "$lib/store";
   import "$lib/globals.scss";
   import ContactForm from "./ContactForm.svelte";
-  import settings from "$settings";
-  const metaInfo = {
-    title: "jweatherby.dev",
-    description: "The personal site of Jamie Weatherby",
-    url: settings.ROOT_DOMAIN,
-    image: settings.ROOT_DOMAIN + "/images/family-pic.png",
-  };
 </script>
 
 <svelte:head>
@@ -21,19 +14,6 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css"
   />
-  <title>{metaInfo.title}</title>
-  <meta property="description" content={metaInfo.description} />
-  <meta property="og:url" content={metaInfo.url} />
-  <meta property="og:title" content={metaInfo.title} />
-  <meta property="og:image" content={metaInfo.image} />
-  <meta property="og:description" content={metaInfo.description} />
-  <meta property="og:type" content="website" />
-
-  <meta property="twitter:url" content={metaInfo.url} />
-  <meta property="twitter:title" content={metaInfo.title} />
-  <meta property="twitter:image" content={metaInfo.image} />
-  <meta property="twitter:description" content={metaInfo.description} />
-  <meta property="twitter:card" content="summary" />
 </svelte:head>
 
 {#if $ui.popup.id === "contact-form"}
