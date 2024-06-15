@@ -16,7 +16,7 @@
     content={settings.ROOT_DOMAIN + `/posts/${post.slug}`}
   />
   <meta property="og:title" content={post.meta.title} />
-  <meta property="og:image" content={settings.ROOT_DOMAIN + post.imageSrc} />
+  <meta property="og:image" content={settings.ROOT_DOMAIN + post.meta.imageSrc} />
   <meta property="og:description" content={post.meta.blurb} />
   <meta property="og:type" content="website" />
 
@@ -27,7 +27,7 @@
   <meta property="twitter:title" content={post.meta.title} />
   <meta
     property="twitter:image"
-    content={settings.ROOT_DOMAIN + post.imageSrc}
+    content={settings.ROOT_DOMAIN + post.meta.imageSrc}
   />
   <meta property="twitter:description" content={post.meta.blurb} />
   <meta property="twitter:card" content="summary" />
