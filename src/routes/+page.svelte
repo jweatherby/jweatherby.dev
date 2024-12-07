@@ -39,7 +39,7 @@
   <section class="about-article">
     <h3>Hi, I'm Jamie.</h3>
     <p>
-      I've been in Software for almost 15 years, and most recently, Director of
+      I've been in Software for 15 years, and most recently, Director of
       Software at Points (a Plusgrade company), based out of Toronto Canada.
     </p>
     <p>
@@ -52,7 +52,11 @@
       <li>
         <a href="https://www.notion.com/@jweatherby" target="_blank"
           >Notion templates</a
-        > - Just the Lean Coffee template for now, more to follow
+        >
+        - Just the
+        <a href="https://www.notion.com/templates/lean-coffee" target="_blank"
+          >Lean Coffee template</a
+        > for now, more to follow
       </li>
       <li>
         <a href="https://tendee.co" target="_blank">Tendee</a> - A versatile scheduling
@@ -65,26 +69,22 @@
       </li>
     </ul>
     <p>
-      If you'd like to follow along with what I'm currently working on, follow
-      along on through via <a
-        href="https://bsky.app/profile/jweatherby.bsky.social"
-        target="_blank">Bluesky</a
-      >. If you'd like to get in touch, you can reach me on{" "}
+      If you'd like to follow along with what I'm currently working on or get in
+      touch, you can find me on{" "}
       <a href="https://bsky.app/profile/jweatherby.bsky.social" target="_blank"
         >Bluesky</a
-      >,{" "}
+      >
+      or{" "}
       <a href="https://www.linkedin.com/in/jamieweatherby/" target="_blank"
         >LinkedIn</a
-      >
-      or
+      >. You can also get in touch
       <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <span
-        role="link"
-        tabindex="0"
-        on:click|preventDefault={() => {
-          $ui.popup.id = "contact-form";
-        }}>by email</span
-      >.
+      <a href="/contact">by email</a>.
+    </p>
+    <p>
+      If you'd like a rundown of how I can help you or your company, please see <a
+        href="/posts/5-services-offered">this post</a
+      > for more information.
     </p>
   </section>
 </article>

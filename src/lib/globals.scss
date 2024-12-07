@@ -1,11 +1,44 @@
 :root {
   font-size: 14px;
   --pico-spacing: 1rem;
+
   [role="link"] {
     cursor: pointer;
   }
-  article > header {
+
+  article>header {
     background-color: var(--pico-background-color);
     border-bottom: none;
+  }
+}
+
+.post-content {
+
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    // color: var(--pico-secondary);
+  }
+
+
+  pre code.hljs {
+    padding: 0.7rem;
+    color: var(--pico-code-color);
+  }
+
+  p code {
+    // background-color: var(--pico-background-color);
+    padding: 0.175rem;
+  }
+
+  pre code.language-mermaid {
+    display: none;
+  }
+
+  pre code.language-mermaid[data-processed="true"] {
+    display: block;
   }
 }

@@ -16,26 +16,6 @@
   />
 </svelte:head>
 
-{#if $ui.popup.id === "contact-form"}
-  <dialog open>
-    <article>
-      <header>
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <span
-          role="button"
-          tabindex="0"
-          class="close"
-          on:click|preventDefault={() => {
-            $ui.popup.id = null;
-          }}
-        />
-        Get in touch
-      </header>
-      <ContactForm />
-    </article>
-  </dialog>
-{/if}
-
 <nav class="container">
   <ul>
     <li>
@@ -45,13 +25,7 @@
   <ul>
     <li>
       <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <span
-        role="button"
-        tabindex="0"
-        on:click|preventDefault={() => {
-          $ui.popup.id = "contact-form";
-        }}>Contact</span
-      >
+      <a role="button" href="/contact">Contact</a>
     </li>
   </ul>
 </nav>

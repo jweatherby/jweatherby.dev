@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { ui } from "$lib/store";
-
   let reqState = {
     success: false,
     errorMessage: "",
@@ -39,6 +37,9 @@
         }, 3000);
       });
   };
+  const closePopup = () => {
+    history.back();
+  };
 </script>
 
 <dialog open>
@@ -49,9 +50,7 @@
         role="button"
         tabindex="0"
         class="close"
-        on:click|preventDefault={() => {
-          $ui.popup.id = null;
-        }}
+        on:click|preventDefault={closePopup}
       />
     </header>
     <form method="POST" on:submit|preventDefault={sendContactUsEmail}>
@@ -59,7 +58,7 @@
       <fieldset>
         <select name="topic">
           <option value="sales">Work with me</option>
-          <option value="support">Support something I've built</option>
+          <option value="support">Support for something I've built</option>
           <option value="connect">Just want to connect</option>
         </select>
       </fieldset>

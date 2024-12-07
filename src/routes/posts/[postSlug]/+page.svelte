@@ -16,7 +16,10 @@
     content={settings.ROOT_DOMAIN + `/posts/${post.slug}`}
   />
   <meta property="og:title" content={post.meta.title} />
-  <meta property="og:image" content={settings.ROOT_DOMAIN + post.meta.imageSrc} />
+  <meta
+    property="og:image"
+    content={settings.ROOT_DOMAIN + post.meta.imageSrc}
+  />
   <meta property="og:description" content={post.meta.blurb} />
   <meta property="og:type" content="website" />
 
@@ -37,17 +40,20 @@
   <header class="post-header">
     <img src={post.meta.imageSrc} class="post-image" />
     <h2 class="post-title">{post.meta.title}</h2>
-    <div class="post-author">Jamie Weatherby</div>
-    <div class="post-date">
-      {post.meta.dateCreated.toLocaleDateString("en-ca", {
-        day: "numeric",
-        month: "short",
-        year: "numeric",
-      })}
+    <div class="post-author">
+      <strong>Jamie Weatherby</strong><br />
+      <em
+        >{post.meta.dateCreated.toLocaleDateString("en-ca", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        })}</em
+      >
     </div>
   </header>
-
-  {@html post.html}
+  <div class="post-content">
+    {@html post.html}
+  </div>
 
   <footer>
     <div class="post-tags">
@@ -58,33 +64,32 @@
     </div>
     <aside class="post-followup">
       Like what you're reading? Get in touch on <a
-        href="https://www.linkedin.com/in/jamieweatherby/">LinkedIn</a
-      >
+        href="https://bsky.app/profile/jweatherby.bsky.social"
+        target="_blank">Bluesky</a
+      >, <a href="https://www.linkedin.com/in/jamieweatherby/">LinkedIn</a>
       or
       <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <span
-        role="link"
-        tabindex="0"
-        on:click|preventDefault={() => {
-          $ui.popup.id = "contact-form";
-        }}>by email</span
-      >.
+      <a href="/contact">by email</a>.
     </aside>
   </footer>
 </article>
 
 <style lang="scss">
   .post-author {
-    font-style: italic;
-    font-weight: 700;
+    // margin: 32px 0;
+    // display: flex;
+    // justify-content: space-between;
+    margin-bottom: 16px;
   }
-
+  footer {
+    margin-top: 32px;
+  }
   .post-date {
     font-style: italic;
   }
 
   .post-followup {
-    margin-top: 25px;
+    margin-top: 8px;
     font-style: italic;
   }
 
@@ -93,21 +98,13 @@
     margin-bottom: 25px;
   }
 
-  .post-content pre code.hljs {
-    padding: 0.7rem;
-    color: var(--pico-code-color);
-  }
-  .post-content p code {
-    // background-color: var(--pico-background-color);
-    padding: 0.175rem;
+  .post-title {
+    font-size: 40px;
+    color: var(--pico-contrast);
+    font-weight: 700;
+    // text-transform: uppercase;
   }
 
-  .post-content pre code.language-mermaid {
-    display: none;
-  }
-  .post-content pre code.language-mermaid[data-processed="true"] {
-    display: block;
-  }
   .post-tags {
     em {
       margin-right: 0.5rem;
