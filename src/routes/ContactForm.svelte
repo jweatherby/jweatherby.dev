@@ -34,11 +34,12 @@
             success: false,
             errorMessage: "",
           };
+          window.history.back();
         }, 3000);
       });
   };
   const closePopup = () => {
-    history.back();
+    window.history.back();
   };
 </script>
 
@@ -121,7 +122,7 @@
     min-height: 200px;
   }
   .notice-success {
-    color: var(--primary);
+    color: var(--pico-secondary);
   }
   .notice-error {
     color: tomato;
