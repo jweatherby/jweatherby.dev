@@ -12,7 +12,7 @@
   };
 
   const posts = $page.data.posts.filter(
-    (p: IPost) => p.meta.isPublished
+    (p: IPost) => p.meta.isPublished,
   ) as IPost[];
   posts.sort((p1, p2) => (p2.meta.dateCreated < p1.meta.dateCreated ? -1 : 1));
 </script>
@@ -34,31 +34,49 @@
 </svelte:head>
 <article class="my-info">
   <figure class="profile-img">
-    <img src="/images/family-pic.png" alt='the fam' />
+    <img src="/images/profile-sq.png" alt="Jamie on a mountain" />
   </figure>
   <section class="about-article">
     <h3>Hi, I'm Jamie.</h3>
     <p>
-      I've been a Software Engineer for almost 15 years, and most recently,
-      Director of Software. I started as an intern at IBM, then worked at an
-      agency in London, UK, and finally settled in Toronto Canada.
+      I've been in Software for almost 15 years, and most recently, Director of
+      Software at Points (a Plusgrade company), based out of Toronto Canada.
     </p>
     <p>
-      I'm currently working for{" "}
-      <a href="https://points.com" target="_blank">
-        Points (a Plusgrade company)</a
-      >, a great company based in Canada with a strong focus on culture,
-      engineering and work life balance.
+      Outside of work, you can find me hacking at side projects, building
+      elaborate Notion things, playing sports or boardgames, or hanging out with
+      my family.
     </p>
+    <p>These are the things I've built that are still hanging around:</p>
+    <ul>
+      <li>
+        <a href="https://www.notion.com/@jweatherby" target="_blank"
+          >Notion templates</a
+        > - Just the Lean Coffee template for now, more to follow
+      </li>
+      <li>
+        <a href="https://tendee.co" target="_blank">Tendee</a> - A versatile scheduling
+        app with an emphasis on recurring events and polls
+      </li>
+      <li>
+        <a href="https://showboard.ca/" target="_blank">Showboard</a> - A collaborative
+        full-text bookmarking / note taking tool and with a visually captivating
+        presentation
+      </li>
+    </ul>
     <p>
-      When I'm not working you can find me playing boardgames, volleyball,
-      pickleball or golf. Otherwise, I'll be coding away at my side projects.
-    </p>
-    <p>If all else fails, you can find me with my family.</p>
-
-    <p>
-      If you'd like to get in touch, you can reach me on{" "}
-      <a href="https://www.linkedin.com/in/jamieweatherby/">LinkedIn</a> or
+      If you'd like to follow along with what I'm currently working on, follow
+      along on through via <a
+        href="https://bsky.app/profile/jweatherby.bsky.social"
+        target="_blank">Bluesky</a
+      >. If you'd like to get in touch, you can reach me on{" "}
+      <a href="https://bsky.app/profile/jweatherby.bsky.social" target="_blank"
+        >Bluesky</a
+      >,{" "}
+      <a href="https://www.linkedin.com/in/jamieweatherby/" target="_blank"
+        >LinkedIn</a
+      >
+      or
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <span
         role="link"
@@ -78,7 +96,7 @@
       <li>
         <a href={`/posts/${post.slug}`}>{post.meta.title}</a> - {post.meta.dateCreated.toLocaleDateString(
           "en-ca",
-          { day: "numeric", month: "short", year: "numeric" }
+          { day: "numeric", month: "short", year: "numeric" },
         )}
       </li>
     {/each}

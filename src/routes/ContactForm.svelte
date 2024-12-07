@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { goto } from "$app/navigation";
-  import { page } from "$app/stores";
   import { ui } from "$lib/store";
 
   let reqState = {
@@ -60,9 +58,9 @@
       <h2>Get in touch</h2>
       <fieldset>
         <select name="topic">
-          <option value="sales">Let's connect</option>
-          <option value="feedback">Thoughts or comments</option>
-          <option value="support">Need help with something</option>
+          <option value="sales">Work with me</option>
+          <option value="support">Support something I've built</option>
+          <option value="connect">Just want to connect</option>
         </select>
       </fieldset>
       <fieldset>
