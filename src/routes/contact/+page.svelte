@@ -1,5 +1,6 @@
 <script lang="ts">
   import ContactForm from "../ContactForm.svelte";
+
   function closePopup() {
     window.history.back();
   }
