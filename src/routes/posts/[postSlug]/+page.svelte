@@ -1,6 +1,5 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { ui } from "$lib/store";
   import settings from "$settings";
 
   let post = $page.data.post;
@@ -38,7 +37,14 @@
 
 <article class="blog-post">
   <header class="post-header">
-    <img src={post.meta.imageSrc} class="post-image" />
+    <figure class="post-image">
+      <img
+        src={post.meta.imageSrc}
+        alt={post.meta.imageAlt}
+        title={post.meta.imageAlt}
+      />
+      <figcaption>{post.meta.imageCredit}</figcaption>
+    </figure>
     <h2 class="post-title">{post.meta.title}</h2>
     <div class="post-author">
       <strong>Jamie Weatherby</strong><br />
@@ -94,8 +100,14 @@
   }
 
   .post-image {
-    max-height: 200px;
-    margin-bottom: 25px;
+    position: relative;
+    img {
+      max-height: 200px;
+    }
+    figcaption {
+      // padding: 8px 0px;
+      font-size: 0.6rem;
+    }
   }
 
   .post-title {

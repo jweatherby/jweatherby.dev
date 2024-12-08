@@ -2,6 +2,8 @@
 title: "Showboard: The rewrite nobody asked for"
 blurb: The journey of Showboard, my attempt to build a collaborative bookmarking tool
 imageSrc: https://showboard.ams3.cdn.digitaloceanspaces.com/assets/logo-full-vertical-padded.png
+imageAlt: Showboard logo
+imageCredit: Jamie Weatherby, Showboard
 dateCreated: 2023-08-26T2:34:00Z
 tags: side-projects
 isPublished: true

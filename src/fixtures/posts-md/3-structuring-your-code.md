@@ -2,6 +2,8 @@
 title: Structuring your code
 blurb: Some principles to consider when outlining the structure of your code.
 imageSrc: /images/post-images/sitemap.jpg
+imageAlt: Graph emoji
+imageCredit: www.quill.org/
 dateCreated: 2021-01-06T12:00:00Z
 tags: being-full-stack
 isPublished: true

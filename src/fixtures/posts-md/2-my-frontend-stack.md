@@ -2,6 +2,8 @@
 title: My Frontend Stack
 blurb: My essential selection of libraries for frontend development.
 imageSrc: /images/post-images/js-logo.jpeg
+imageAlt: frontend principles
+imageCredit: 
 dateCreated: 2020-11-23T12:00:00Z
 tags: being-full-stack, frontend
 isPublished: false

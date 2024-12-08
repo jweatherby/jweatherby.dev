@@ -1,6 +1,5 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { ui } from "$lib/store";
   import type { IPost } from "$lib/types";
 
   import settings from "$settings";
@@ -106,13 +105,6 @@
 <style lang="scss">
   .my-info {
     margin-top: 2rem;
-  }
-  h2 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    &.blog-title {
-      text-transform: uppercase;
-    }
   }
 
   .profile-img {

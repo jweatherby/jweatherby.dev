@@ -2,6 +2,8 @@ export interface IPostMeta {
   title: string
   blurb: string
   imageSrc: string
+  imageCredit: string
+  imageAlt: string
   dateCreated: Date
   tags: string[]
   isPublished: boolean

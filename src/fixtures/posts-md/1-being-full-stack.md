@@ -2,6 +2,8 @@
 title: Being Full Stack
 blurb: A series focusing on all the things I've learned in my years doing full-stack web development.
 imageSrc: /images/post-images/frontend-principles.png
+imageAlt: frontend principles
+imageCredit: 
 dateCreated: 2020-11-23T12:00:00Z
 tags: being-full-stack
 isPublished: false
