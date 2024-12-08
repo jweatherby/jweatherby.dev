@@ -23,6 +23,15 @@
     // color: var(--pico-secondary);
   }
 
+  img {
+    max-width: 80%;
+    height: auto;
+    border-style: none;
+    margin: 25px auto;
+  }
+  p:has(img){
+    text-align: center;
+  }
 
   pre code.hljs {
     padding: 0.7rem;

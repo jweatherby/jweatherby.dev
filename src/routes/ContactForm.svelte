@@ -24,9 +24,9 @@
         console.log("contact-us api response", res);
 
         reqState.success = true;
-        setTimeout(() => {
-          reqState.success = false;
-        }, 3000);
+        // setTimeout(() => {
+        //   reqState.success = false;
+        // }, 3000);
       })
       .finally(() => {
         setTimeout(() => {
