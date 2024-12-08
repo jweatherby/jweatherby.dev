@@ -65,7 +65,7 @@ These are the 4 foundations that make up this documentation system that Notion e
 
 **Feedback Loops**: Tie in organizational processes back into your documentation, creating perpetual feedback loops that work for you
 
-**Timeliness**: Distinguish timeliness by identifying the nature of documents: depending whether they’re transitionary or permanent, they’ll be better served in a specific place.
+**Timeliness**: Distinguish timeliness by identifying the nature of documents: depending whether they’re transitionary or permanent, they’ll be better served in a specific place (Projects vs Wiki respectively).
 
 ## Takeaways
 
