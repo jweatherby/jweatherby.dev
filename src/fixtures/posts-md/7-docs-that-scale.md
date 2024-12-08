@@ -34,25 +34,25 @@ Getting started is where general guidelines (including what lives where), best p
 
 ### Wiki
 
-This is where the meat of the information will live, and requires the most governance. It is where the current policies, reference materials and diagrams live - a state of the world as it relates to the domain. It’s important to have something centralized like this, because otherwise these docs get buried in team-specific pages, or worst case, in private pages. In this template, the wiki is turned into a `Notion Wiki` and a `Teams` . This way we can tag different articles and sections with the relevant teams so they can provide backlinks to their team page for a centralized place to view their relevant docs.
+This is where the meat of the information will live, and requires the most governance. It is where the current policies, reference materials and diagrams live - a state of the world as it relates to the domain. It’s important to have something centralized like this, because otherwise these docs get buried in team-specific pages, or worst case, in private pages. In this template, the wiki is turned into a **Notion Wiki** and a **Teams** relation was added. This way we can tag different articles and sections with the relevant teams to provide backlinks to their team page, with filters liberally applied as needed. This is how teams can create their custom dashboards into all things relevant in the workspace. Any other tags, categorization, etc can be added - whatever makes that holistic governance and visibility as straightforward as possible. [Dixtaxis](https://diataxis.fr/) is a recommended approach to logical tagging and categorization in this context.
 
 One of the most important principles when deciding what lives in the wiki: is it a permanent document or not? If it is a permanent doc (is true today, tomorrow, and next year), and is relevant beyond a specific team, it should probably live here.
 
 ### Projects
 
-Projects are the opposite of Wiki docs. They are speculative, for planning, and only relevant for a short period of time. Before our documentation platform, we’d see proposals where 4 solutions were proposed, things are scratched out, critical information live in comments - and this was what people were expected to reference when figuring out how something works. This should not be the case. All information relating to the actual implementation should be available in the Wiki.
+Projects are the opposite of Wiki docs. They are speculative, for planning, and only relevant for a short period of time. Before our documentation platform, we’d see proposals where 4 solutions are proposed, things are scratched out, critical information live in comments - and this was what people were expected to reference when figuring out how something works. This should not be the case. All information relating to the actual implementation should be available in the Wiki.
 
-Anything in Projects should be relatively short lived, and when something is done, there should be effort to properly document what was actually captured somewhere more permanently.
+Anything in **Projects** should be relatively short lived, and when something is done, there should be effort to properly document what was actually captured somewhere more permanently.
 
 ### Snapshot
 
-This is a place where we can see the state of the different projects from a mile-high view. It contains graphs and metrics, designed for a leadership point-of-view. In some cases this would be private, but transparency is important, and having this publicly visible adheres to the “write in public” guiding principle of documentation.
+This is a place where we can see the state of the different projects from a mile-high view. It contains graphs and metrics, designed for a leadership point-of-view. In some cases this would be private; but transparency is important. Having this publicly visible adheres to the “write in public” guiding principle of documentation.
 
 ### People & Teams
 
 The above pieces aren’t entirely ground breaking and are captured by methodologies like the PARA documentation methodology. People and Teams is where this structure sets itself apart. By creating these 2 databases, we can break out projects and wiki items and associate them with their respective teams. The **People** association provides granular information about who is on a given team and **Teams** provides the ability to tie any piece of documentation to its respective owner. In **Projects** we have an **Involved Teams** field, which illustrates who is working on what. From here, you can filter and associate projects to only the relevant teams, shielding them from the noise of the centralized structures.
 
-The `Teams` database also creates a space where teams can add their team-specific docs. Working agreements, code standards, support processes, team policies and onboarding guides can all be documented here. This is where documentation related to a specific team lives. There have been some really impressive efforts in these spaces.
+The **Teams** database also creates a space where teams can add their team-specific docs. Working agreements, code standards, support processes, team policies and onboarding guides can all be documented here. This is where documentation related to a specific team lives. There have been some really impressive efforts in these spaces.
 
 The one gotcha here is that there’s a tendency to use the team pages for everything, including permanent docs relevant beyond the specific team. This is a detriment to the entire system. This is where the workspace architects have spent their time encouraging teams to put their docs into more widely observed spaces. The trick to tie this information back to the team page is to create views on the team page referencing those centralized documents (Projects and Wiki items), creating centralized dashboards for the teams.
 
