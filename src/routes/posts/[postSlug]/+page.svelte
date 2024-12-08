@@ -73,9 +73,7 @@
         href="https://bsky.app/profile/jweatherby.bsky.social"
         target="_blank">Bluesky</a
       >, <a href="https://www.linkedin.com/in/jamieweatherby/">LinkedIn</a>
-      or
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <a href="/contact">by email</a>.
+      or <a href="/contact">by email</a>.
     </aside>
   </footer>
 </article>
@@ -89,9 +87,6 @@
   }
   footer {
     margin-top: 32px;
-  }
-  .post-date {
-    font-style: italic;
   }
 
   .post-followup {
