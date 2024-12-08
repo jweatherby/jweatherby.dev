@@ -65,10 +65,10 @@ These are the 4 foundations that make up this documentation system that Notion e
 
 **Feedback Loops**: Tie in organizational processes back into your documentation, creating perpetual feedback loops that work for you
 
-**Timeliness**: Distinguish by timeliness by identifying the nature of documents: depending whether they’re transitionary or permanent, they’ll be better served in a specific place.
+**Timeliness**: Distinguish timeliness by identifying the nature of documents: depending whether they’re transitionary or permanent, they’ll be better served in a specific place.
 
 ## Takeaways
 
-As you can see, it’s a simple structure, but accounts for everything we need it for. Only a few should have permissions to update the overall structure, but when within a specific domain (product line, software, tooling, wiki sub-sections, team pages, etc) full permissions are granted so they have the flexibility to create what works for them.
+As you can see, it’s a simple structure, but accounts for everything we need it for. Overall governance should be restricted to a select few, but within a specific domain (product line, software, tooling, wiki sub-sections, team pages, etc) full permissions can be granted liberally so they're not impeded and have the flexibility to create what works for them.
 
 Hope this helps with your documentation adventures! You can find the [DAFT template here](https://jweatherby.notion.site/DAFT-Documentation-14f3b75bf3f880408a7bf8b0e7d7a4df).
