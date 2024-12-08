@@ -1,7 +1,7 @@
 ---
 title: "DAFT: Docs that scale"
 blurb: A documentation system designed to work within your Notion workspace.
-imageSrc: https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=4800
+imageSrc: https://images.unsplash.com/photo-1502700807168-484a3e7889d0?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 dateCreated: 2024-12-07T13:22:00Z
 tags: documentation, notion
 isPublished: true
