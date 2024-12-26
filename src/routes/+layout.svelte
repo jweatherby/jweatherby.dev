@@ -1,7 +1,5 @@
 <script lang="ts">
-  import { ui } from "$lib/store";
   import "$lib/globals.scss";
-  import ContactForm from "./ContactForm.svelte";
 </script>
 
 <svelte:head>

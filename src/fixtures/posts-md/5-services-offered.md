@@ -23,9 +23,7 @@ The most impactful accomplishment I had was transforming our culture into a docu
 
 ## Custom Notion Templates
 
-Need a specialized Notion template built from scratch? I create commissioned templates tailored to your specific requirements
-
-Fixed rate of $20 - $100 (depending on the complexity)
+Need a specialized Notion template built from scratch? I create commissioned templates tailored to your specific requirements.
 
 ## Contact
 

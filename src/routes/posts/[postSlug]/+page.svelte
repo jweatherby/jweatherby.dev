@@ -66,7 +66,7 @@
       >
     </div>
   </header>
-  <div class="post-content">
+  <div class="post-content" id="blog-post">
     {@html post.html}
   </div>
 
