@@ -12,6 +12,22 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css"
   />
+
+  <!-- for PROD -->
+  <script
+    src="https://cdn.paperwall.io/paperwall.js"
+    integrity="sha256-qR37nJ1HHp6FUTYY79gyJQlbsL49WVjClH25sWfCcRY="
+    crossorigin="true"
+  ></script>
+
+  <script type="application/javascript">
+    window.onload = () =>
+      buildWall({
+        siteToken: "Qhf7zPQWSi4",
+        selector: "blog-post",
+        postUrls: [/\/posts\/.*/],
+      });
+  </script>
 </svelte:head>
 
 <nav class="container">
