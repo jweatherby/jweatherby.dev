@@ -14,7 +14,7 @@
   />
 
   <!-- for PROD -->
-  <script
+  <!-- <script
     src="https://cdn.paperwall.io/paperwall.js"
     integrity="sha256-qR37nJ1HHp6FUTYY79gyJQlbsL49WVjClH25sWfCcRY="
     crossorigin="true"
@@ -27,7 +27,7 @@
         selector: "blog-post",
         postUrls: [/\/posts\/.*/],
       });
-  </script>
+  </script> -->
 </svelte:head>
 
 <nav class="container">
