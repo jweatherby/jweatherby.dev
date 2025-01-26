@@ -10,7 +10,7 @@ isPublished: true
 ---
 # REF: Roles & Expectations Framework
 
-In my experience as a Leader in Software, I’ve always had a Venn diagram in my head of what I expect from the individuals on my teams. As it turns out, that Venn diagram gets very messy, very fast. Luckily, I have a penchant for Notion and it has the tools to illustrate exactly how I’d like this content conveyed. This is a rundown of the framework and the finer points and caveats when using it.
+In my experience as a Leader in Software, I’ve always had a Venn diagram in my head of what I expect from the individuals on my teams. As it turns out, that Venn diagram gets very messy, very fast. Luckily, I have a penchant for Notion and it has the tools to illustrate exactly how I’d like this content conveyed. This is a rundown of [the framework](https://www.notion.so/jweatherby/Roles-Expectations-Reference-16f3b75bf3f8802c953bc535f3b58be4?pvs=4) and the finer points and caveats when using it.
 
 ## The Framework
 
