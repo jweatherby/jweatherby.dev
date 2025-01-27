@@ -11,9 +11,12 @@
   };
 
   const posts = $page.data.posts.filter(
-    (p: IPost) => p.meta.isPublished,
+    (p: IPost) => p.meta.isPublished
   ) as IPost[];
   posts.sort((p1, p2) => (p2.meta.dateCreated < p1.meta.dateCreated ? -1 : 1));
+  const unpubPosts = $page.data.posts.filter(
+    (p: IPost) => !p.meta.isPublished
+  ) as IPost[];
 </script>
 
 <svelte:head>
@@ -95,7 +98,17 @@
       <li>
         <a href={`/posts/${post.slug}`}>{post.meta.title}</a> - {post.meta.dateCreated.toLocaleDateString(
           "en-ca",
-          { day: "numeric", month: "short", year: "numeric" },
+          { day: "numeric", month: "short", year: "numeric" }
+        )}
+      </li>
+    {/each}
+  </ul>
+  <ul class="hidden-posts">
+    {#each unpubPosts as post}
+      <li>
+        <a href={`/posts/${post.slug}`}>{post.meta.title}</a> - {post.meta.dateCreated.toLocaleDateString(
+          "en-ca",
+          { day: "numeric", month: "short", year: "numeric" }
         )}
       </li>
     {/each}
@@ -103,6 +116,9 @@
 </article>
 
 <style lang="scss">
+  .hidden-posts {
+    display: none;
+  }
   .my-info {
     margin-top: 2rem;
   }
