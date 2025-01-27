@@ -1,14 +1,14 @@
 ---
-title: "REF: Roles & Expectations Framework"
+title: "Roles & Expectations Framework"
 blurb: My guide to roles and expecatations on an individual software team or at an organizational level.
 imageSrc: /images/post-images/8-roles-and-responsibilities-steps-dalle.webp
 imageAlt: People walking on colourful steps
 imageCredit: dall-e, People walking on colourful escher steps
 dateCreated: 2025-01-26T13:22:00Z
 tags: software-orgs, notion, management, career-development
-isPublished: true
+isPublished: false
 ---
-# REF: Roles & Expectations Framework
+# Roles & Expectations Framework
 
 In my experience as a Leader in Software, I’ve always had a Venn diagram in my head of what I expect from the individuals on my teams. As it turns out, that Venn diagram gets very messy, very fast. Luckily, I have a penchant for Notion and it has the tools to illustrate exactly how I’d like this content conveyed. This is a rundown of [the framework](https://www.notion.so/jweatherby/Roles-Expectations-Reference-16f3b75bf3f8802c953bc535f3b58be4?pvs=4) and the finer points and caveats when using it.
 
