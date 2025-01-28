@@ -44,7 +44,7 @@
   <meta property="twitter:card" content="summary" />
 </svelte:head>
 
-<article class="blog-post">
+<section class="blog-post">
   <header class="post-header">
     <figure class="post-image">
       <img
@@ -89,7 +89,7 @@
       or <a href="/contact">by email</a>.
     </aside>
   </footer>
-</article>
+</section>
 
 <style lang="scss">
   .post-author {
@@ -130,7 +130,7 @@
     // text-transform: uppercase;
   }
   #blog-post {
-    padding: 0 16px;
+    // padding: 0 16px;
     line-height: 1.8;
   }
   .post-tags {
