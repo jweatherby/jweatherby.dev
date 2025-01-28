@@ -65,6 +65,10 @@
         })}</em
       >
     </div>
+    <aside class="disclaimer">
+      Everything writtern here is my own opinion and not representative of my
+      employer or any other persons.
+    </aside>
   </header>
   <div class="post-content" id="blog-post">
     {@html post.html}
@@ -97,7 +101,12 @@
   footer {
     margin-top: 32px;
   }
-
+  .disclaimer {
+    margin: 16px 0;
+    // font-size: 0.8rem;
+    font-style: italic;
+    color: var(--pico-secondary);
+  }
   .post-followup {
     margin-top: 8px;
     font-style: italic;
@@ -120,7 +129,10 @@
     font-weight: 700;
     // text-transform: uppercase;
   }
-
+  #blog-post {
+    padding: 0 16px;
+    line-height: 1.8;
+  }
   .post-tags {
     em {
       margin-right: 0.5rem;
