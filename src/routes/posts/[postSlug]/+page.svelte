@@ -66,7 +66,7 @@
       >
     </div>
     <aside class="disclaimer">
-      Everything writtern here is my own opinion and not representative of my
+      Everything written here is my own opinion and not representative of my
       employer or any other persons.
     </aside>
   </header>
