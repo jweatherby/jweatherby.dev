@@ -23,9 +23,9 @@ The entirety of the framework consists of **Definitions & Mappings** and **Apply
 
 ### Expectations
 
-Below is a list of expectations I have from my teams along with tasks and responsibilities and signals. Often, and for contractual reasons, whatever is outlined in the Job Description is the source of truth for your responsibilities. However, this lacks specificity and nuance. The following is a more comprehensive list of the different components to focus on in a given role and common signals indicating how an individual is performing. They boil down to these 5: 
+Below is a list of expectations I have from my teams along with tasks, responsibilities and signals. Often, and for contractual reasons, whatever is outlined in the Job Description is the source of truth for your responsibilities. However, this lacks specificity and nuance. The following is a more comprehensive list of the different components to focus on in a given role and common signals indicating how an individual is performing. They boil down to these 5: 
 
-[![Expectation definitions](/images/post-images/8-expectation-definitions.png)](https://www.notion.so/jweatherby/16f3b75bf3f880a4a4b7c8402743317c?v=16f3b75bf3f88001af33000cd014b3fd&pvs=4)
+![Expectation definitions](/images/post-images/8-expectation-definitions.png)
 
 - **Execution** - The ability to *get it done*. This should always be the highest priority. When all is said and done, if you don’t deliver, the rest doesn’t really matter - it's just speculation. The definition encompasses individual impact and includes components like communication, project management, initiative, etc.
 - **Craft** - In software, these are the day-to-day fundamentals. Where Execution is an emphasis on “How it’s done”, Craft emphasizes “What is done”. Craft highlights the the impact of technical contributions, or "hard skills".
@@ -41,33 +41,33 @@ Here, the nuances of the expectations are outlined according to Level of Expecte
 
 ### Proficiencies
 
-[![Team Lead priority and proficiency expectations](/images/post-images/8-team-lead-expectations.png)](https://www.notion.so/jweatherby/16f3b75bf3f880f8a5d4f38983ea40f6?v=1723b75bf3f88046b2be000ca8f9dcce&pvs=4)
+![Team Lead priority and proficiency expectations](/images/post-images/8-team-lead-expectations.png)
 
 The different proficiencies outlined include: 
 
 - **Contributes** - Participates in the activities and expectations listed to varying degrees. This can include performing the activities, contributing feedback and adhering to outlined processes
 - **Proficient** - An advanced level of contributions and more understanding of the nuances involved in activities performed.
 - **Mastery** - Complete knowledge of a domain, with a full understanding of the landscape and compromises that come with different approaches. Plans, acts, and communicates as an authority on subject matter. Provides support, guidance and direction as needed.
-- **Ownership** - Demonstrates mastery, and indicates responsibility for the applicable domain at the listed functional level. Has the final say on matters, and is ultimately responsible for any outcome.
+- **Ownership** - Demonstrates mastery, provides support and guidance, and indicates responsibility for the applicable domain at the listed functional level. Has the final say on matters, and is ultimately responsible for any outcome.
 - **Oversight** - Holds the individuals with ownership accountable and provides support, guidance and direction as needed. Should also demonstrate mastery over a given domain or area of responsibility.
 
 ### Priorities
 
-[![Dev priority and proficiency expectations](/images/post-images/8-dev-expectations.png)](https://www.notion.so/jweatherby/16f3b75bf3f880f8a5d4f38983ea40f6?v=1723b75bf3f88030a757000c7e397ea9&pvs=4)
+![Dev priority and proficiency expectations](/images/post-images/8-dev-expectations.png)
 
 The priorities are as follows: 
 
 - **1..n** - If there’s ever a question of what should be prioritized, the lower value should come first. For example, with newly minted devs, I would expect Craft to be prioritized over Design. It's expected to have all the fundamentals down before going into larger design considerations.
-- **“+”** - This is a constant expectation. It’s not prioritized because it must be done and continually considered. It is typically associated with Execution, and often Enablement. Execution is constant because if you don’t deliver, what did you actually accomplish? And Enablement because we’re all part of the bigger picture and need to consider our impact on the groups and communities we’re part of.
+- **“+”** - This is a constant expectation. It’s not prioritized because it must be done and continually considered. It is typically associated with Execution, and Enablement. Execution is constant because if you don’t deliver, what did you actually accomplish? And Enablement because we’re all part of the bigger picture and need to consider our impact on the groups and communities we’re part of.
 
 ### Scope
 
-The one other area to draw attention to is the type of proficiency: **In-Team** and **Cross-Team** (**X-Team**). Different roles will have different scopes of responsibility and levels of ownership. In-team has proven to be pretty straightforward, but cross-team and org level can vary wildly according to the organizational setup. But, because of the framework's flexibility, it's easy to create a pseudo-RACI and layout the expectations across the different software levels, even at a departmental or organizational level.
+The one other area to draw attention to is the type of proficiency: **In-Team**, **Cross-Team** (**X-Team**) and **Org**. Different roles will have different scopes of responsibility and levels of ownership. In-team has proven to be pretty straightforward, but cross-team and org level can vary wildly according to the organizational setup. But, because of the framework's flexibility, it's easy to create a pseudo-RACI and layout the expectations across the different software levels, even at a departmental or organizational level.
 When dealing with cross-team ownership, it helps to have ownership over a specific value-stream. See the book, "Team Topologies," for a deeper dive into optimizing team structures.
 
-## Beyond the framework
+## Beyond the framework: Projects
 
-At the moment, this framework only encompasses activities, processes and outcomes at various team levels (single / cross-team). It does not account for project related expectations because those are related to business outcomes and are a whole other topic. Within the business strategy and decided projects, each team must perform and that's where this framework applies. Rely on your friendly neighbourhood product team for project level objectives and outcomes.
+At the moment, this framework only encompasses activities, processes and outcomes at various team levels (single / cross-team). It does not account for project related expectations because those are related to business outcomes and are a whole other topic. Within the business strategy and decided projects, each team must perform ... and that's where this framework applies. Rely on your friendly neighbourhood product team for project level objectives and outcomes.
 
 ## Applying the framework
 
