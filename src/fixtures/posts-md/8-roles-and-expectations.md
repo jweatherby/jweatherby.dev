@@ -6,7 +6,7 @@ imageAlt: People walking on colourful steps
 imageCredit: dall-e, People walking on colourful escher steps
 dateCreated: 2025-01-26T13:22:00Z
 tags: software-orgs, notion, management, career-development
-isPublished: false
+isPublished: true
 ---
 
 During my time as a Leader in Software, I’ve always had a Venn diagram in my head of what I expect from the individuals on my teams. As it turns out, that Venn diagram gets very messy, very fast. Luckily, I have a penchant for Notion and it has the tools to illustrate how I’d like this content conveyed. This is a rundown of what I'm calling the [Roles & Expectations Framework](https://www.notion.so/jweatherby/Roles-Expectations-Reference-16f3b75bf3f8802c953bc535f3b58be4?pvs=4) and the finer points and caveats when using it.
@@ -28,7 +28,7 @@ Below is a list of expectations I have from my teams along with tasks, responsib
 ![Expectation definitions](/images/post-images/8-expectation-definitions.png)
 
 - **Execution** - The ability to *get it done*. This should always be the highest priority. When all is said and done, if you don’t deliver, the rest doesn’t really matter - it's just speculation. The definition encompasses individual impact and includes components like communication, project management, initiative, etc.
-- **Craft** - In software, these are the day-to-day fundamentals. Where Execution is an emphasis on “How it’s done”, Craft emphasizes “What is done”. Craft highlights the the impact of technical contributions, or "hard skills".
+- **Craft** - In software, these are the day-to-day fundamentals. Where Execution is an emphasis on “How it’s done”, Craft emphasizes “What is done”. Craft highlights the impact of technical contributions, or "hard skills".
 - **Design** - Complementary to Craft, this is the macro component - establishing technical strategy and vision, designing solutions using that direction, and deftly guiding solutions to realization. It is synonymous with Technical Leadership, but is not exclusive to leaders and should have contributions and ownership from varying levels.
 - **Enablement** - This is the impact you have on your groups and general community. It’s about contributing to a group’s wellbeing, culture and emotional health. There are some components that are inherent in day-to-day operations, and some that require proactive actions, like mentoring and coaching.
 - **Management** - For lack of a better word, these are responsibilities that are typically owned by people leaders involved in building and optimizing high performing teams. Even if owned by people leaders, others can, and should, contribute to a selection of these activities to some degree.
