@@ -20,6 +20,13 @@
   }
 }
 
+@media print {
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+}
+
 .post-content {
   img {
     max-width: 80%;

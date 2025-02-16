@@ -51,26 +51,29 @@
       <div class="work-description">
         <p>
           Oversaw the growth, development and wellbeing of 20+ developers and
-          engineering leads, providing engineering direction in collaboration
-          with the product team and other stakeholders.
+          engineering leads, providing direction alongside the product team and
+          other stakeholders. I also made significant contributions to the
+          software department by rolling out innovative processes and tools.
         </p>
         <ul>
           <li>
-            Led innovative workshops and process design across the software org
+            <strong>Strategic Leadership & Process Implementation</strong>:
+            Successfully led organization-wide initiatives including Notion
+            documentation platform serving 500 employees, implemented innovative
+            10% development days, and established comprehensive performance
+            assessment systems.
           </li>
           <li>
-            Championed and led the implementation of new observability vendor
+            <strong>Team Building & People Management</strong>: Demonstrated
+            strong recruitment and development capabilities by building diverse
+            technical teams, running successful mentoring programs, and
+            organizing large-scale team workshops and socials.
           </li>
           <li>
-            Coordinated with local groups to host meetups in our office space
-          </li>
-          <li>
-            Stakeholder management, ensuring expectations were being clearly
-            communicated and reasonable objectives were laid out to the team
-          </li>
-          <li>
-            Successfully established centralized documentation platform using
-            Notion
+            <strong>Technical Excellence & Innovation</strong>: Drove technical
+            advancement through implementing DORA metrics, establishing
+            architectural vision, and rolling out critical improvements in
+            observability, testing, and engineering frameworks.
           </li>
         </ul>
       </div>
@@ -90,16 +93,16 @@
         <p>Accomplishements included:</p>
         <ul>
           <li>
-            Established and expaned strong, psychologically safe engineering
+            Established and grew a performant, psychologically safe engineering
             team
           </li>
           <li>
-            Contributed to sprints, whether through Code Reviews, QA, piloting
-            new patterns, coaching and mentoring
+            Contributed to sprints through Code Reviews, QA, piloting new
+            patterns
           </li>
           <li>
-            Introduced innovative processes and contributed to extensive
-            documentation to provide more autonomy to the team
+            Introduced innovative processes and contributed extensive
+            documentation to enable the team more autonomy
           </li>
         </ul>
       </div>
@@ -251,8 +254,8 @@
         </p>
       </div>
     </section>
-    <h2 class="section-header">Volunteer Work</h2>
-    <section class="project-item">
+    <h2 class="section-header no-print">Volunteer Work</h2>
+    <section class="project-item no-print">
       <div class="project-meta">
         <div class="project-title">Katimavik</div>
         <div class="project-link">2005</div>
@@ -272,8 +275,8 @@
         </ul>
       </div>
     </section>
-    <h2 class="section-header">Activities & Accomplishments</h2>
-    <section class="activity-items">
+    <h2 class="section-header no-print">Activities & Accomplishments</h2>
+    <section class="activity-items no-print">
       <div class="activity-title">Volleyball Captain</div>
       <div class="activity-timeframe">2021 - 2025</div>
       <div class="activity-title">
@@ -329,10 +332,11 @@
     padding: 0;
   }
   .section-header {
+    font-size: 1.4rem;
     font-weight: 600;
     border-bottom: 2px solid var(--pico-contrast);
     color: var(--pico-primary);
-    padding-bottom: 8px;
+    padding-bottom: 4px;
     // margin-top: 24px;
     margin: 16px 0 16px 0;
   }
