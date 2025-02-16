@@ -17,7 +17,7 @@ const config = {
 		alias: {
 			$settings: path.resolve('./src/settings'),
 			$fixtures: path.resolve('./src/fixtures')
-		}
+		},
 	}
 };
 
