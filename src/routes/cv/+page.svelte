@@ -6,7 +6,6 @@
   });
   const downloadAsPDF = () => {
     const el = document.getElementById("cv-wrapper") as HTMLElement;
-
     pdfLib
       .default()
       .set({
@@ -21,12 +20,12 @@
 
 <div class="cv-container">
   <div class="download-as-pdf">
-    <button on:click={downloadAsPDF}>↧</button>
+    <button class="secondary" on:click={downloadAsPDF}>↧</button>
   </div>
   <article id="cv-wrapper">
     <header class="cv-header">
       <h1 class="my-name">Jamie Weatherby</h1>
-      <div class="my-title">Director of Software</div>
+      <div class="my-title">Director, Software Engineering</div>
       <a class="my-email" href="mailto:jamie@jweatherby.dev"
         >jamie@jweatherby.dev</a
       >
@@ -37,10 +36,9 @@
     </header>
     <h2 class="section-header">Executive Summary</h2>
     <p class="exec-summary">
-      Accomplished leader in software development, specializing in SAAS,
-      navigating complex organizational change, and a proven track record of
-      building strong, healthy teams while introducing innovative measures
-      across software organizations.
+      Accomplished leader in software development, navigating complex
+      organizational change, introducing innovative tools and processes, and a
+      proven track record of building strong, healthy teams.
     </p>
     <h2 class="section-header">Work Experience</h2>
     <section class="work-item">
@@ -304,7 +302,10 @@
     position: absolute;
     top: -8px;
     right: -8px;
+    z-index: 1000;
+
     button {
+      // background-color: var(--pico-primary-inverse);
       padding: 0 8px;
       font-size: 1.2rem;
     }
@@ -316,32 +317,40 @@
   }
   section {
     page-break-inside: avoid;
+    margin: 0;
+    padding: 0;
     ul,
     li {
       list-style: disc;
     }
-    li {
-      padding-left: 8px;
-    }
+  }
+  header {
+    margin: 0;
+    padding: 0;
   }
   .section-header {
     font-weight: 600;
     border-bottom: 2px solid var(--pico-contrast);
     color: var(--pico-primary);
     padding-bottom: 8px;
-    margin-top: 24px;
+    // margin-top: 24px;
+    margin: 16px 0 16px 0;
   }
   .cv-header {
     display: grid;
     grid-template-areas: "myName myEmail" "myName myWebsite" "myTitle myPhone";
-    margin-bottom: 16px;
+    // margin-bottom: 8px;
     .my-name {
       grid-area: myName;
+      margin: 0;
+      padding: 0;
     }
     .my-title {
       grid-area: myTitle;
-      font-weight: 700;
-      font-size: 1.3rem;
+      // font-weight: 700;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--pico-secondary);
     }
     .my-email {
       grid-area: myEmail;
@@ -383,8 +392,8 @@
       .work-employer {
         grid-area: workEmployer;
         font-weight: 700;
-        font-style:italic; 
-        color: var(--pico-secondary); 
+        font-style: italic;
+        color: var(--pico-secondary);
       }
       .work-location {
         grid-area: workLocation;
