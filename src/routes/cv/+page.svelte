@@ -36,9 +36,10 @@
     </header>
     <h2 class="section-header">Executive Summary</h2>
     <p class="exec-summary">
-      Accomplished leader in software development, navigating complex
-      organizational change, introducing innovative tools and processes, and a
-      proven track record of building strong, healthy teams.
+      Accomplished leader in software engineering, passionate about building
+      strong healthy teams and implementing innovative processes and frameworks
+      to best optimize software organizations according to industry best
+      practices and standards.
     </p>
     <h2 class="section-header">Work Experience</h2>
     <section class="work-item">
@@ -52,38 +53,40 @@
         <p>
           Oversaw the growth, development and wellbeing of 20+ developers and
           engineering leads, providing direction alongside the product team and
-          other stakeholders. I also made significant contributions to the
-          software department by rolling out innovative processes and tools.
+          other stakeholders.
         </p>
         <ul>
           <li>
             Drove technical advancement through goal setting based on industry
-            best practice (DORA metrics), frameworks to quantify the health of
-            our services, establishing architectural vision for the teams, and
+            best practices (DORA metrics), internal assessments improve the
+            health of our services, establishing architectural direction, and
             rolling out critical improvements in observability and testing.
           </li>
           <li>
-            Successfully led organization-wide initiatives including Notion
-            documentation platform serving 500 employees, 10% development days
-            to focus on innovation and personal development, and established
-            comprehensive performance assessment systems.
+            Successfully led organization-wide initiatives including a
+            centralized Notion documentation platform serving 500 employees; 10%
+            development days to focus on innovation and personal development;
+            and developed a comprehensive growth assessment rubric.
           </li>
           <li>
-            Demonstrated strong recruitment and development capabilities by
-            establishing healthy, happy, performant technical teams and making
-            decisive strategic changes when necessary.
+            Developed strong, healthy engineering teams by taking decisive
+            action and providing innovative tools and processes to optimize
+            recruitment and onboarding.
           </li>
           <li>
             Made significant contributions in establishing and optimizing the
-            budget for the engineering team, ensuring a healthy balance of
+            budget for engineering teams, ensuring a healthy balance of
             engagement, rewarding compensation and balanced internal equity.
           </li>
           <li>
-            Actively involved in community building, 100+ person socials,
-            hosting meetups for local groups and running and advocating for
-            mentorship initiatives.
+            Actively involved in community building, organizing 100+ person
+            socials, hosting meetups for local groups, and providing mentorship
+            and coaching opportunities.
           </li>
         </ul>
+        <p class="work-stack">
+          Tools: Notion, G-Suite, TypeScript, Python, Golang
+        </p>
       </div>
     </section>
     <section class="work-item">
@@ -98,21 +101,23 @@
           Established and developed a strong software development team in
           collaboration with other scrum leads.
         </p>
-        <p>Accomplishements included:</p>
         <ul>
           <li>
             Established and grew a performant, psychologically safe engineering
-            team
+            team.
           </li>
           <li>
             Contributed to sprints through Code Reviews, QA, piloting new
-            patterns
+            patterns.
           </li>
           <li>
             Introduced innovative processes and contributed extensive
-            documentation to enable the team more autonomy
+            documentation to provide the team more autonomy.
           </li>
         </ul>
+        <p class="work-stack">
+          Tools: TypeScript, React, Python, CouchDB, Jira, G-Suite
+        </p>
       </div>
     </section>
     <section class="work-item">
@@ -124,32 +129,34 @@
       </div>
       <div class="work-description">
         <p>
-          On a team of 40+ software developers, maintaining several
+          On a team of 40+ software developers, maintained several
           business-critical products, including the website, the agent portal
           and the email dispatch system.
         </p>
-        <p>Notable tasks included:</p>
         <ul>
           <li>
-            Managing and building out the email dispatch system used to
-            communicate automated booking information to travellers
+            Using Django and Postgres, maintained the email dispatch system used
+            to communicate automated booking information to travellers
           </li>
           <li>
-            Building UX enhancements into all areas of the site, including the
-            online booking system, which handles hundreds of transactions daily
+            Built UX enhancements across the global website, including the
+            online booking system, which handles hundreds of transactions daily.
           </li>
           <li>
-            Building out extensive frontend tooling, including React, Redux,
-            mult-env Webpack, resulting in improved local development, optimized
-            web calls and quicker delivery time
+            Created extensive frontend tooling for React, Redux, mult-env
+            Webpack, resulting in improved local development, optimized web
+            calls and quicker delivery time.
           </li>
           <li>
-            Took on role as Tech Ambassador - responsible for the budget,
-            coordinated several meetups of 60-150 people, arranged sponsorship
-            for several conferences and facilitated multiple site visits for the
-            local code academy, Bitmaker.
+            Through the role of Tech Ambassador, coordinated several meetups of
+            60-150 people, arranged sponsorship for several conferences and
+            facilitated multiple site visits for the local code academy,
+            Bitmaker.
           </li>
         </ul>
+        <p class="work-stack">
+          Tools: Python, Django, Flask, Postgres, React, Trello
+        </p>
       </div>
     </section>
     <section class="work-item">
@@ -164,10 +171,8 @@
           Primary backend (PHP) developer for a small digital agency with a
           development team of 3-6 people. Built a number of digital marketing
           platforms, a few standalone websites and maintained the AWS system
-          infrastructure. Primary technologies used included PHP, JavaScript
-          (JQuery), bash.
+          infrastructure.
         </p>
-        <p>Notable tasks included:</p>
         <ul>
           <li>A crowd funding site for local businesses</li>
           <li>
@@ -178,9 +183,12 @@
             scraped Facebook images
           </li>
         </ul>
+        <p class="work-stack">
+          Tools: PHP, JavaScript (JQuery), bash, deployed on a LAMP server.
+        </p>
       </div>
     </section>
-    <section class="work-item">
+    <!-- <section class="work-item">
       <div class="work-meta">
         <div class="work-title">Software Developer (Internship)</div>
         <div class="work-employer">IBM</div>
@@ -205,12 +213,15 @@
           </li>
         </ul>
       </div>
-    </section>
+    </section> -->
 
     <h2 class="section-header">Education</h2>
     <section class="edu-wrapper">
       <div class="edu-major">BSC. Comp Sci & Business Admin, 2011</div>
-      <div class="edu-university">St. Mary's University, Halifax NS</div>
+      <div class="edu-university">
+        <span class="no-break">St. Mary's University,</span>
+        <span class="no-break">Halifax NS</span>
+      </div>
     </section>
     <h2 class="section-header">Projects</h2>
     <section class="project-item">
@@ -224,7 +235,7 @@
           demand.
         </p>
         <p class="project-stack">
-          Built using SvelteKit, TRPC, Postgres (PrismaDB). Deployed on fly.io.
+          Built using SvelteKit, TRPC, PicoCSS, Postgres (PrismaDB).
         </p>
       </div>
     </section>
@@ -241,14 +252,13 @@
           or recurring meetups.
         </p>
         <p class="project-stack">
-          Built using React (NextJS), GraphQL, Postgres, Express, PicoCSS.
-          Deployed on fly.io.
+          Built using React (NextJS), GraphQL, Postgres, Express.
         </p>
       </div>
     </section>
     <section class="project-item">
       <div class="project-meta">
-        <div class="project-title">ShowBoard</div>
+        <div class="project-title">Showboard</div>
         <div class="project-link">
           <a href="https://showboard.ca" target="_blank">showboard.ca</a>
         </div>
@@ -258,7 +268,7 @@
           Collaborative bookmarking, content archival, and notetaking tool.
         </p>
         <p class="project-stack">
-          Built using SvelteKit, TRPC, Postgres (PrismaDB). Deployed on fly.io.
+          Built using SvelteKit, TRPC, PicoCSS, Postgres (PrismaDB).
         </p>
       </div>
     </section>
@@ -381,10 +391,17 @@
     }
   }
   .edu-wrapper {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+    .no-break {
+      text-wrap: nowrap;
+    }
     .edu-major {
       font-weight: 700;
+    }
+    .edu-university {
+      text-align: right;
     }
   }
   .work-item {
@@ -420,6 +437,11 @@
       ul {
         margin-top: 8px;
       }
+    }
+    .work-stack {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--pico-secondary);
     }
   }
   .project-item {
