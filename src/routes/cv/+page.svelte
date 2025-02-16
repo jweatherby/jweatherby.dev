@@ -57,23 +57,31 @@
         </p>
         <ul>
           <li>
-            <strong>Strategic Leadership & Process Implementation</strong>:
+            Drove technical advancement through goal setting based on industry
+            best practice (DORA metrics), frameworks to quantify the health of
+            our services, establishing architectural vision for the teams, and
+            rolling out critical improvements in observability and testing.
+          </li>
+          <li>
             Successfully led organization-wide initiatives including Notion
-            documentation platform serving 500 employees, implemented innovative
-            10% development days, and established comprehensive performance
-            assessment systems.
+            documentation platform serving 500 employees, 10% development days
+            to focus on innovation and personal development, and established
+            comprehensive performance assessment systems.
           </li>
           <li>
-            <strong>Team Building & People Management</strong>: Demonstrated
-            strong recruitment and development capabilities by building diverse
-            technical teams, running successful mentoring programs, and
-            organizing large-scale team workshops and socials.
+            Demonstrated strong recruitment and development capabilities by
+            establishing healthy, happy, performant technical teams and making
+            decisive strategic changes when necessary.
           </li>
           <li>
-            <strong>Technical Excellence & Innovation</strong>: Drove technical
-            advancement through implementing DORA metrics, establishing
-            architectural vision, and rolling out critical improvements in
-            observability, testing, and engineering frameworks.
+            Made significant contributions in establishing and optimizing the
+            budget for the engineering team, ensuring a healthy balance of
+            engagement, rewarding compensation and balanced internal equity.
+          </li>
+          <li>
+            Actively involved in community building, 100+ person socials,
+            hosting meetups for local groups and running and advocating for
+            mentorship initiatives.
           </li>
         </ul>
       </div>
