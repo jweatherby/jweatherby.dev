@@ -83,11 +83,6 @@
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <a href="/contact">by email</a>.
     </p>
-    <p>
-      If you'd like a rundown of how I can help you or your company, please see <a
-        href="/posts/5-services-offered">this post</a
-      > for more information.
-    </p>
   </section>
 </article>
 

@@ -11,19 +11,15 @@ isPublished: false
 
 ## Software Excellence
 
-As Software Director of a diverse group of teams overseeing products valued in the hundreds of millions, I have an excellent track record of building high performing teams in a psychologically safe environment, for remote and hybrid work places. I also specialize in accelerating product-development processes using industry best practices and standards.
+As Software Director of a diverse group of teams overseeing products valued in the hundreds of millions, I have an excellent track record of building high performing teams in a psychologically safe environment, for remote and hybrid work places. I also specialize in accelerating product-development processes using industry best practices and standards. Find out how I can optimize your processes and help navigate organizational challenges.
 
 ## Notion Workspace Consultation
 
-The most impactful accomplishment I had was transforming our culture into a documentation driven environment. I created an architecture that supports 500 daily-active-users and is poised to scale even further. Let me help you transform your organization into a well-oiled machine using Notion.
-
-- **Initial Consultation:** Free assessment of your needs using [my templated framework](https://www.notion.so/jweatherby/Organizational-Docs-14f3b75bf3f880408a7bf8b0e7d7a4df?pvs=4)
-- **1-3 Days of Setup and coaching:** Tailored implementation according to your custom needs and 1:1 or group coaching available as needed
-- **Ongoing Support:** Optionally provided monthly retainer to provide ongoing support
+Using Notion, I created an information architecture enabling >500 daily-active-users to use a centralized documentation architecture. Let me help you transform your organization into a well-oiled machine using Notion.
 
 ## Custom Notion Templates
 
-Need a specialized Notion template built from scratch? I create commissioned templates tailored to your specific requirements.
+Need a specialized Notion template built from scratch? Notion is great for little pilots and ad-hoc projects. I can create something custom specific to your needs.
 
 ## Contact
 

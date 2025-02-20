@@ -51,9 +51,9 @@
       </div>
       <div class="work-description">
         <p>
-          Oversaw the growth, development and wellbeing of 20+ developers and
-          engineering leads, providing direction alongside the product team and
-          other stakeholders.
+          Oversaw the growth, development and wellbeing of 30+ software
+          engineers and engineering leads, providing direction alongside the
+          product team and other stakeholders.
         </p>
         <ul>
           <li>
