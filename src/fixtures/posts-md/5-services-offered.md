@@ -19,7 +19,7 @@ Using Notion, I created an information architecture enabling >500 daily-active-u
 
 ## Custom Notion Templates
 
-Need a specialized Notion template built from scratch? Notion is great for little pilots and ad-hoc projects. I can create something custom specific to your needs.
+Need a specialized Notion template built from scratch? Notion is great for little pilots and ad-hoc projects. I can create something custom, specific to your needs.
 
 ## Contact
 
