@@ -66,8 +66,8 @@
       </li>
       <li>
         <a href="https://showboard.ca/" target="_blank">Showboard</a> - A collaborative
-        full-text bookmarking / note taking tool and with a visually captivating
-        presentation
+        full-text bookmarking / archival / note taking tool with a pinterest like
+        interface
       </li>
     </ul>
     <p>
