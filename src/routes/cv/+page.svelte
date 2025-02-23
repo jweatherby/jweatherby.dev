@@ -1,26 +1,31 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  let pdfLib = null;
-  onMount(async () => {
-    pdfLib = await import("html2pdf.js");
-  });
-  const downloadAsPDF = () => {
-    const el = document.getElementById("cv-wrapper") as HTMLElement;
-    pdfLib
-      .default()
-      .set({
-        margin: 5,
-        pageBreak: { mode: "css" },
-      })
-      .from(el)
-      .save("JamieWeatherby-CV.pdf");
-    // printDiv("cv-wrapper", "JamieWeatherby-CV");
-  };
+  // import { onMount } from "svelte";
+  // let pdfLib = null;
+  // onMount(async () => {
+  //   pdfLib = await import("html2pdf.js");
+  // });
+  // const downloadAsPDF = () => {
+  //   const el = document.getElementById("cv-wrapper") as HTMLElement;
+  //   pdfLib
+  //     .default()
+  //     .set({
+  //       margin: 5,
+  //       pageBreak: { mode: "css" },
+  //     })
+  //     .from(el)
+  //     .save("JamieWeatherby-CV.pdf");
+  //   // printDiv("cv-wrapper", "JamieWeatherby-CV");
+  // };
 </script>
 
 <div class="cv-container">
   <div class="download-as-pdf">
-    <button class="secondary" on:click={downloadAsPDF}>↧</button>
+    <!-- <button class="secondary" on:click={downloadAsPDF}>↧</button> -->
+    <a
+      role="button"
+      class="secondary"
+      href="/files/JamieWeatherby-CV-2025-02.pdf">↧</a
+    >
   </div>
   <article id="cv-wrapper">
     <header class="cv-header">
@@ -215,12 +220,14 @@
       </div>
     </section> -->
 
-    <h2 class="section-header">Education</h2>
-    <section class="edu-wrapper">
-      <div class="edu-major">BSC. Comp Sci & Business Admin, 2011</div>
-      <div class="edu-university">
-        <span class="no-break">St. Mary's University,</span>
-        <span class="no-break">Halifax NS</span>
+    <section>
+      <h2 class="section-header">Education</h2>
+      <div class="edu-wrapper">
+        <div class="edu-major">BSC. Comp Sci & Business Admin, 2011</div>
+        <div class="edu-university">
+          <span class="no-break">St. Mary's University,</span>
+          <span class="no-break">Halifax NS</span>
+        </div>
       </div>
     </section>
     <h2 class="section-header">Projects</h2>
@@ -248,11 +255,13 @@
       </div>
       <div class="project-description">
         <p class="project-summary">
-          Scheduling app specializing in recurring events, like for sports teams
-          or recurring meetups.
+          Scheduling app specializing in recurring events, for sports teams or
+          recurring meetups. Provides intelligent email reminders using Postmark
+          and recurring billing using Stripe.
         </p>
         <p class="project-stack">
-          Built using React (NextJS), GraphQL, Postgres, Express.
+          Built using React (NextJS), GraphQL, Postgres, Express, Github
+          Actions.
         </p>
       </div>
     </section>
@@ -266,14 +275,16 @@
       <div class="project-description">
         <p class="project-summary">
           Collaborative bookmarking, content archival, and notetaking tool.
+          Similar to Pocket, but the content is editable. Includes image
+          resizing and management, Quill editor, drag and drop, one-time-auth.
         </p>
         <p class="project-stack">
           Built using SvelteKit, TRPC, PicoCSS, Postgres (PrismaDB).
         </p>
       </div>
     </section>
-    <h2 class="section-header no-print">Volunteer Work</h2>
     <section class="project-item no-print">
+      <h2 class="section-header no-print">Volunteer Work</h2>
       <div class="project-meta">
         <div class="project-title">Katimavik</div>
         <div class="project-link">2005</div>
@@ -325,7 +336,7 @@
     right: -8px;
     z-index: 1000;
 
-    button {
+    button,a {
       // background-color: var(--pico-primary-inverse);
       padding: 0 8px;
       font-size: 1.2rem;
@@ -356,7 +367,7 @@
     color: var(--pico-primary);
     padding-bottom: 4px;
     // margin-top: 24px;
-    margin: 16px 0 16px 0;
+    margin: 24px 0 16px 0;
   }
   .cv-header {
     display: grid;
@@ -406,7 +417,6 @@
   }
   .work-item {
     margin: 16px 0;
-    page-break-after: auto;
     .work-meta {
       display: grid;
       width: 100%;
@@ -431,6 +441,9 @@
       .work-timeframe {
         grid-area: workTimeframe;
         text-align: right;
+        font-style: italic;
+        // color: var(--pico-secondary);
+        font-size: 0.85rem;
       }
     }
     .work-description {
