@@ -36,10 +36,10 @@
     </header>
     <h2 class="section-header">Executive Summary</h2>
     <p class="exec-summary">
-      Accomplished leader in software engineering, passionate about building
-      strong healthy teams and implementing innovative processes and frameworks
-      to best optimize software organizations according to industry best
-      practices and standards.
+      Accomplished leader in software engineering, passionate about optimizing
+      software organizations according to industry best practices and standards.
+      Extensive experience building strong, healthy teams and implementing
+      innovative processes within individual teams and organization wide.
     </p>
     <h2 class="section-header">Work Experience</h2>
     <section class="work-item">
