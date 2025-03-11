@@ -44,7 +44,7 @@
       Accomplished leader in software engineering, passionate about optimizing
       software organizations according to industry best practices and standards.
       Extensive experience building strong, healthy teams and implementing
-      innovative processes within individual teams and organization wide.
+      innovative processes within individual teams and organizationally.
     </p>
     <h2 class="section-header">Work Experience</h2>
     <section class="work-item">
@@ -56,32 +56,32 @@
       </div>
       <div class="work-description">
         <p>
-          Oversaw the growth, development and wellbeing of 30+ software
+          Overseeing the growth, development and wellbeing of 30+ software
           engineers and engineering leads, providing direction alongside the
           product team and other stakeholders.
         </p>
         <ul>
           <li>
-            Drove technical advancement through goal setting based on industry
-            best practices (DORA metrics), internal assessments improve the
+            Drive technical advancement through goal setting based on industry
+            best practices (DORA metrics), internal assessments improving the
             health of our services, establishing architectural direction, and
             rolling out critical improvements in observability and testing.
           </li>
           <li>
-            Successfully led organization-wide initiatives including a
+            Successfully led organization-wide initiatives, including: a
             centralized Notion documentation platform serving 500 employees; 10%
             development days to focus on innovation and personal development;
             and developed a comprehensive growth assessment rubric.
           </li>
           <li>
-            Developed strong, healthy engineering teams by taking decisive
-            action and providing innovative tools and processes to optimize
-            recruitment and onboarding.
+            Develop strong, healthy engineering teams by taking decisive action
+            and providing innovative tools and processes to optimize recruitment
+            and onboarding.
           </li>
           <li>
-            Made significant contributions in establishing and optimizing the
-            budget for engineering teams, ensuring a healthy balance of
-            engagement, rewarding compensation and balanced internal equity.
+            Jointly established and optimized budget direction for engineering
+            teams, ensuring a healthy balance of engagement, rewarding
+            compensation and balanced internal equity.
           </li>
           <li>
             Actively involved in community building, organizing 100+ person
@@ -141,11 +141,12 @@
         <ul>
           <li>
             Using Django and Postgres, maintained the email dispatch system used
-            to communicate automated booking information to travellers
+            to communicate automated booking information to travellers.
           </li>
           <li>
             Built UX enhancements across the global website, including the
-            online booking system, which handles hundreds of transactions daily.
+            online booking system, which handles hundreds of booking
+            transactions daily.
           </li>
           <li>
             Created extensive frontend tooling for React, Redux, mult-env
@@ -179,17 +180,17 @@
           infrastructure.
         </p>
         <ul>
-          <li>A crowd funding site for local businesses</li>
+          <li>A crowd funding site for local businesses.</li>
           <li>
-            A social networking site for local charities to assist those in need
+            A social networking site for local charities to assist those in need.
           </li>
           <li>
             2 Facebook pages that create compiled images / videos based on
-            scraped Facebook images
+            scraped Facebook images.
           </li>
         </ul>
         <p class="work-stack">
-          Tools: PHP, JavaScript (JQuery), bash, deployed on a LAMP server.
+          Tools: PHP, JavaScript (JQuery), bash, deployed on a LAMP server
         </p>
       </div>
     </section>
@@ -292,20 +293,17 @@
       <div class="project-description">
         <ul>
           <li>
-            40 hours per week of volunteer work over 3 terms in Saskatchewan,
-            Newfoundland, and Ontario for a period of 7 months.
-          </li>
-          <li>
-            Additionally, the following workshops were involved: committee work,
-            conflict management, financial planning, entrepreneurial skills,
-            environmental awareness, French classes and healthy lifestyle
-            classes
+            Full time volunteer work over 3 terms in Saskatchewan, Newfoundland,
+            and Ontario for a period of 7 months. Terms included volunteering at
+            a TV station, a day-care and at an elementary school.
           </li>
         </ul>
       </div>
     </section>
     <h2 class="section-header no-print">Activities & Accomplishments</h2>
     <section class="activity-items no-print">
+      <div class="activity-title">Euchre Champion</div>
+      <div class="activity-timeframe">2025</div>
       <div class="activity-title">Volleyball Captain</div>
       <div class="activity-timeframe">2021 - 2025</div>
       <div class="activity-title">
@@ -336,7 +334,8 @@
     right: -8px;
     z-index: 1000;
 
-    button,a {
+    button,
+    a {
       // background-color: var(--pico-primary-inverse);
       padding: 0 8px;
       font-size: 1.2rem;
