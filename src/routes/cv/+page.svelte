@@ -56,7 +56,7 @@
       </div>
       <div class="work-description">
         <p>
-          Overseeing the growth, development and wellbeing of 30+ software
+          Oversee the growth, development and wellbeing of 30+ software
           engineers and engineering leads, providing direction alongside the
           product team and other stakeholders.
         </p>
@@ -68,10 +68,10 @@
             rolling out critical improvements in observability and testing.
           </li>
           <li>
-            Successfully led organization-wide initiatives, including: a
-            centralized Notion documentation platform serving 500 employees; 10%
-            development days to focus on innovation and personal development;
-            and developed a comprehensive growth assessment rubric.
+            Lead organization-wide initiatives, such as: a centralized Notion
+            documentation platform serving 500 employees; 10% development days
+            to focus on innovation and personal development; and developed a
+            comprehensive growth assessment rubric.
           </li>
           <li>
             Develop strong, healthy engineering teams by taking decisive action
@@ -86,7 +86,7 @@
           <li>
             Actively involved in community building, organizing 100+ person
             socials, hosting meetups for local groups, and providing mentorship
-            and coaching opportunities.
+            and group coaching opportunities.
           </li>
         </ul>
         <p class="work-stack">
@@ -103,8 +103,9 @@
       </div>
       <div class="work-description">
         <p>
-          Established and developed a strong software development team in
-          collaboration with other scrum leads.
+          Developed and expanded a strong software development team in
+          collaboration with other scrum leads, which persisted under new
+          leadership.
         </p>
         <ul>
           <li>
@@ -182,7 +183,8 @@
         <ul>
           <li>A crowd funding site for local businesses.</li>
           <li>
-            A social networking site for local charities to assist those in need.
+            A social networking site for local charities to assist those in
+            need.
           </li>
           <li>
             2 Facebook pages that create compiled images / videos based on
@@ -302,7 +304,7 @@
     </section>
     <h2 class="section-header no-print">Activities & Accomplishments</h2>
     <section class="activity-items no-print">
-      <div class="activity-title">Euchre Champion</div>
+      <div class="activity-title">Euchre Tournament Champion</div>
       <div class="activity-timeframe">2025</div>
       <div class="activity-title">Volleyball Captain</div>
       <div class="activity-timeframe">2021 - 2025</div>
