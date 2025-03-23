@@ -1,5 +1,5 @@
 ---
-title: "The Pendulum of Engineering Goals"
+title: "The Trifecta of Engineering Goals"
 blurb: "Goals in software: Where to focus efforts and how to navigate them into the roadmap"
 imageSrc: /images/post-images/9-eng-goals-3-point-pendulum.webp
 imageAlt: Triangle with three circles illustrating the priorities
@@ -86,10 +86,11 @@ Now that the goals are in place, they need to be advocated for and capacity need
 These are some strategies I’ve seen to get engineering efforts prioritized:
 
 1. Add to the roadmap (obviously). With these established goals, don’t create them as long-running initiatives. Instead make them hypothesis driven with measurable outcomes. i.e. “If we do X, we can increase our lead time by Y,” or “If we patch this series of bugs, we’ll improve the health of the service by X%, thereby spending less time on support in this area.”
-2. Dedicated quarterly Developer Experience focused (DX) Sprints - take the time to gather metrics and create a plan. As a group, consolidate items into a couple streams of work with achievable goals.
-3. Buffer at the end of an epic to clean up any “architectural compromises” that were made. Software is famous for getting out of hand, quickly. As you go through, a better pattern might have emerged that was neglected for the necessity of “getting it done”. If there’s a buffer at the end of an epic, maybe these changes won’t be lost to the recesses of time.
-4. From those established goals, work on them alongside the value-add stories as needed. (i.e. deliberately structure changes to conform to a new pattern and adhere to the campsite rule - leave it better than you found it). This isn’t the most efficient and may lead to fractured priorities, but it can work when the roadmap is particularly relentless. It may also violate tightly scoped work and can compromise Lead / Cycle time as a result.
-5. Use other dedicated engineering time - Google had its 20% days, where these items could potentially be accommodated. But I’ve seen that these are too disjointed to accomplish much. I had a version of this called 10% days (1 day every 2 weeks). There was some hope that the team would prioritize the speed and quality based tasks, but they mostly prioritized their own learning and development, and work-related side-projects - this time actually detracted from other engineering efforts.
+2. Dedicate a portion of the team for support and engineering related activities. The size of this group is dependent on the extent of the effort required to bring about the necessary outcomes. This group can be rotated as needed.
+3. Dedicated quarterly Developer Experience focused (DX) Sprints - take the time to gather metrics and create a plan. As a group, consolidate items into a couple streams of work with achievable goals.
+4. Buffer at the end of an epic to clean up any “architectural compromises” that were made. Software is famous for getting out of hand, quickly. As you go through, a better pattern might have emerged that was neglected for the necessity of “getting it done”. If there’s a buffer at the end of an epic, maybe these changes won’t be lost to the recesses of time.
+5. From those established goals, work on them alongside the value-add stories as needed. (i.e. deliberately structure changes to conform to a new pattern and adhere to the campsite rule - leave it better than you found it). This isn’t the most efficient and may lead to fractured priorities, but it can work when the roadmap is particularly relentless. It may also violate tightly scoped work and can compromise Lead / Cycle time as a result.
+6. Use other dedicated engineering time - Google had its 20% days, where these items could potentially be accommodated. But I’ve seen that these are too disjointed to accomplish much. I had a version of this called 10% days (1 day every 2 weeks). There was some hope that the team would prioritize the speed and quality based tasks, but they mostly prioritized their own learning and development, and work-related side-projects - this time actually detracted from other engineering efforts.
 
 Also, a word of advice on addressing quality and speed: avoid system rewrites at all costs - see Joel Spolsky’s [Things You Should Never Do](https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/). They rarely go well and put everybody in an awkward spot, for a long time. If something needs a massive overhaul, I’d recommend the Incremental Migration approach, [as illustrated here](https://youtu.be/9Q7GANXn02k?si=7-lkwjsTZRteAmm7&t=1756).
 
