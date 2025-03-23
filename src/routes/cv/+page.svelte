@@ -1,30 +1,44 @@
 <script lang="ts">
-  // import { onMount } from "svelte";
-  // let pdfLib = null;
-  // onMount(async () => {
-  //   pdfLib = await import("html2pdf.js");
-  // });
-  // const downloadAsPDF = () => {
-  //   const el = document.getElementById("cv-wrapper") as HTMLElement;
-  //   pdfLib
-  //     .default()
-  //     .set({
-  //       margin: 5,
-  //       pageBreak: { mode: "css" },
-  //     })
-  //     .from(el)
-  //     .save("JamieWeatherby-CV.pdf");
-  //   // printDiv("cv-wrapper", "JamieWeatherby-CV");
-  // };
+  import settings from "$settings";
+  import { onMount } from "svelte";
+  let pdfLib: any;
+  onMount(async () => {
+    if (settings.env !== "prod") {
+      pdfLib = await import("html2pdf.js");
+    }
+  });
+  const downloadAsPDF = () => {
+    if (!pdfLib) {
+      return;
+    }
+    const el = document.getElementById("cv-wrapper") as HTMLElement;
+    pdfLib
+      .default()
+      .set({
+        margin: 5,
+        pageBreak: { mode: "css" },
+      })
+      .from(el)
+      .save("JamieWeatherby-CV.pdf");
+    // printDiv("cv-wrapper", "JamieWeatherby-CV");
+  };
 </script>
 
 <div class="cv-container">
   <div class="download-as-pdf">
-    <!-- <button class="secondary" on:click={downloadAsPDF}>↧</button> -->
+    {#if settings.env !== "prod"}
+      <button
+        class="secondary outline"
+        title="export as pdf"
+        on:click={downloadAsPDF}>❏</button
+      >
+    {/if}
     <a
       role="button"
       class="secondary"
-      href="/files/JamieWeatherby-CV-2025-02.pdf">↧</a
+      title="download"
+      target="_blank"
+      href="/files/JamieWeatherby-CV-2025-03.pdf">↧</a
     >
   </div>
   <article id="cv-wrapper">
@@ -304,7 +318,7 @@
     </section>
     <h2 class="section-header no-print">Activities & Accomplishments</h2>
     <section class="activity-items no-print">
-      <div class="activity-title">Euchre Tournament Champion</div>
+      <div class="activity-title">Euchre Tournament Champion (2x)</div>
       <div class="activity-timeframe">2025</div>
       <div class="activity-title">Volleyball Captain</div>
       <div class="activity-timeframe">2021 - 2025</div>
