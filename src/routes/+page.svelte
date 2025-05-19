@@ -65,14 +65,15 @@
         app with an emphasis on recurring events and polls
       </li>
       <li>
-        <a href="https://showboard.ca/" target="_blank">Showboard</a> - A collaborative
-        full-text bookmarking / archival / note taking tool with a pinterest like
-        interface
+        <a href="https://showboard.ca/" target="_blank"><s>Showboard</s></a> - A
+        collaborative full-text bookmarking / archival / note taking tool with a
+        pinterest like interface -
+        <button disabled class="secondary deprecated">shutting down</button>
       </li>
     </ul>
     <p>
-      If you'd like to follow along with what I'm currently working on or get in
-      touch, you can find me on{" "}
+      If you'd like to follow along with what I'm currently working on, or get
+      in touch, you can find me on{" "}
       <a href="https://bsky.app/profile/jweatherby.bsky.social" target="_blank"
         >Bluesky</a
       >
@@ -125,5 +126,9 @@
   .profile-img img {
     height: 150px;
     border-radius: 50%;
+  }
+  button.deprecated {
+    padding: 0 4px;
+    line-height: 1;
   }
 </style>
