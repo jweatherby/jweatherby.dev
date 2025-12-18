@@ -24,8 +24,10 @@
     window.onload = () =>
       buildWall({
         siteToken: "Qhf7zPQWSi4",
-        selector: "blog-post",
-        postUrls: [/\/posts\/.*/],
+        articleDOM: {
+          selector: "blog-post",
+          postUrls: [/\/posts\/.*/],
+        },
       });
   </script>
 </svelte:head>
