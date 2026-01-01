@@ -32,7 +32,7 @@
   </script>
 </svelte:head>
 
-<nav class="container">
+<nav class="container no-print">
   <ul>
     <li>
       <h1><a href="/">&lt;jw.dev /&gt;</a></h1>
@@ -58,5 +58,14 @@
   }
   h1 {
     margin: 0 0;
+  }
+  @media print {
+    .no-print,
+    .no-print * {
+      display: none !important;
+    }
+    .container {
+      max-width: 100vw;
+    }
   }
 </style>
