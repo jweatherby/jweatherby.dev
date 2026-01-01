@@ -52,6 +52,10 @@
     <p>These are the things I've built that are still hanging around:</p>
     <ul>
       <li>
+        <a href="https://paperwall.io" target="_blank">Paperwall</a> - An aggregator
+        / paywall solution providing pay-per-read access to articles
+      </li>
+      <li>
         <a href="https://www.notion.com/@jweatherby" target="_blank"
           >Notion templates</a
         >
@@ -68,7 +72,7 @@
         <a href="https://showboard.ca/" target="_blank"><s>Showboard</s></a> - A
         collaborative full-text bookmarking / archival / note taking tool with a
         pinterest like interface -
-        <button disabled class="secondary deprecated">shutting down</button>
+        <button disabled class="secondary deprecated">shut down</button>
       </li>
     </ul>
     <p>
