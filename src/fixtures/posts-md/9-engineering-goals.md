@@ -1,5 +1,5 @@
 ---
-title: "The Trifecta of Engineering Goals"
+title: "The Big 3 of Engineering Goals"
 blurb: "Goals in software: Where to focus efforts and how to navigate them into the roadmap"
 imageSrc: /images/post-images/9-eng-goals-3-point-pendulum.webp
 imageAlt: Triangle with three circles illustrating the priorities
@@ -21,7 +21,7 @@ The mandate to grow is usually driven by the commercial or product teams. Howeve
 
 These are difficult to prioritize because at any company with a decent spread of functionality, the roadmap is relentless and unforgiving.
 
-## The Trifecta
+## The Big 3
 
 As a general rule, there are 3 things that software engineering should care about: Business Value, Speed, and Quality. Let me break them down:
 
