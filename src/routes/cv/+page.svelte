@@ -73,7 +73,7 @@
           rubric.
         </li>
         <li>
-          Develop strong, healthy engineering teams through servant leadership
+          Developed strong, healthy engineering teams through servant leadership
           while providing innovative tools and processes to optimize recruitment
           and onboarding.
         </li>
