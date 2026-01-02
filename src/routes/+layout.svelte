@@ -24,7 +24,7 @@
     window.onload = () =>
       buildWall({
         siteToken: "Qhf7zPQWSi4",
-        articleInit: {
+        articleFinder: {
           selector: "blog-post",
           postUrls: [/\/posts\/.*/],
         },
