@@ -3,6 +3,36 @@ import nodemailer from "nodemailer";
 export const POST = async (request) => {
   const payload = await request.json();
 
+  // Validate required fields
+  const requiredFields = ["from", "subject", "topic", "message"];
+  const missingFields = requiredFields.filter((field) => !payload[field]);
+
+  if (missingFields.length > 0) {
+    return Response.json({
+      ok: false,
+      errors: [
+        {
+          message: `Missing required fields: ${missingFields.join(", ")}`,
+          code: "VALIDATION_ERROR",
+        },
+      ],
+    });
+  }
+
+  // Validate message has at least 5 words
+  const wordCount = payload.message.trim().split(/\s+/).length;
+  if (wordCount < 5) {
+    return Response.json({
+      ok: false,
+      errors: [
+        {
+          message: "Message must contain at least 5 words",
+          code: "VALIDATION_ERROR",
+        },
+      ],
+    });
+  }
+
   const auth = {
     user: "jamie@jweatherby.dev",
     pass: process.env.FASTMAIL_PASSWORD,

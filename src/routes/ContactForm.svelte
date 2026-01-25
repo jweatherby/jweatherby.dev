@@ -23,18 +23,27 @@
       .then((res) => {
         console.log("contact-us api response", res);
 
-        reqState.success = true;
-        // setTimeout(() => {
-        //   reqState.success = false;
-        // }, 3000);
+        if (res.ok) {
+          reqState.success = true;
+          setTimeout(() => {
+            reqState = {
+              success: false,
+              errorMessage: "",
+            };
+            window.history.back();
+          }, 3000);
+        } else {
+          const errorMessage = res.errors?.[0]?.message || "Failed to send message";
+          reqState.errorMessage = errorMessage;
+          setTimeout(() => {
+            reqState.errorMessage = "";
+          }, 3000);
+        }
       })
-      .finally(() => {
+      .catch((error) => {
+        reqState.errorMessage = "Network error. Please try again.";
         setTimeout(() => {
-          reqState = {
-            success: false,
-            errorMessage: "",
-          };
-          window.history.back();
+          reqState.errorMessage = "";
         }, 3000);
       });
   };
