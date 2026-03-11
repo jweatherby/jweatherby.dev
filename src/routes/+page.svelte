@@ -11,11 +11,11 @@
   };
 
   const posts = $page.data.posts.filter(
-    (p: IPost) => p.meta.isPublished
+    (p: IPost) => p.meta.isPublished,
   ) as IPost[];
   posts.sort((p1, p2) => (p2.meta.dateCreated < p1.meta.dateCreated ? -1 : 1));
   const unpubPosts = $page.data.posts.filter(
-    (p: IPost) => !p.meta.isPublished
+    (p: IPost) => !p.meta.isPublished,
   ) as IPost[];
 </script>
 
@@ -78,10 +78,11 @@
     <p>
       If you'd like to follow along with what I'm currently working on, or get
       in touch, you can find me on{" "}
+      <a href="https://jweatherby.substack.com" target="_blank">Substack</a
+      >,{" "}
       <a href="https://bsky.app/profile/jweatherby.bsky.social" target="_blank"
         >Bluesky</a
-      >
-      or{" "}
+      >, or{" "}
       <a href="https://www.linkedin.com/in/jamieweatherby/" target="_blank"
         >LinkedIn</a
       >. You can also get in touch
@@ -98,7 +99,7 @@
       <li>
         <a href={`/posts/${post.slug}`}>{post.meta.title}</a> - {post.meta.dateCreated.toLocaleDateString(
           "en-ca",
-          { day: "numeric", month: "short", year: "numeric" }
+          { day: "numeric", month: "short", year: "numeric" },
         )}
       </li>
     {/each}
@@ -108,7 +109,7 @@
       <li>
         <a href={`/posts/${post.slug}`}>{post.meta.title}</a> - {post.meta.dateCreated.toLocaleDateString(
           "en-ca",
-          { day: "numeric", month: "short", year: "numeric" }
+          { day: "numeric", month: "short", year: "numeric" },
         )}
       </li>
     {/each}

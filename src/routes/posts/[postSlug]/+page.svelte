@@ -85,7 +85,10 @@
       Like what you're reading? Get in touch on <a
         href="https://bsky.app/profile/jweatherby.bsky.social"
         target="_blank">Bluesky</a
-      >, <a href="https://www.linkedin.com/in/jamieweatherby/">LinkedIn</a>
+      >, <a href="https://jweatherby.substack.com" target="_blank">Substack</a>,
+      <a href="https://www.linkedin.com/in/jamieweatherby/" target="_blank"
+        >LinkedIn</a
+      >
       or <a href="/contact">by email</a>.
     </aside>
   </footer>
