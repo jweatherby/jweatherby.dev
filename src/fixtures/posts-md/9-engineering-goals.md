@@ -13,7 +13,7 @@ Going into the new year, I’ve been giving goal setting some thought. As with m
 
 _“Make it align with Product priorities” - No, the goals will be a balance of product priorities and engineering priorities._
 
-The mandate to grow is usually driven by the commercial or product teams from directions on-high. However, in engineering it can be difficult to align priorities with that growth mandate. Engineering priorities don’t often directly relate to revenue generating activities, and are usually concerned with:
+The mandate to grow is usually driven by the commercial or product teams from directions on-high. However, in engineering it can be difficult to align that to what's important to engineering. Engineering priorities don’t often directly relate to revenue generating activities, and are usually concerned with:
 
 - Poor developer experience (DX)
 - Tech debt
@@ -21,7 +21,7 @@ The mandate to grow is usually driven by the commercial or product teams from di
 - Sunsetting legacy systems
 - Minimizing the number of bugs created
 
-These can be difficult to prioritize because at any company with a decent spread of functionality because the roadmap is relentless and unforgiving and engineering’s priorities don’t have visible impact on the end product.
+These can be difficult to prioritize because at any company with a decent spread of functionality because the roadmap is relentless and unforgiving ... and engineering’s priorities don’t have visible impact on the end product.
 
 ## The Big 3
 
@@ -29,9 +29,9 @@ As a general rule, there are 3 things that software engineering should care abou
 
 ### Business Value
 
-AKA value-add to the user. This should always be the forefront of software and product teams. Engineers are sometimes lose sight of this end-goal: delivering value to the end-users. There are many books on this topic and it is why other departments often exist (i.e. Product). Product typically acts as the bridge between software and the business, or the end-users. They collect feedback, identify what works and what doesn’t, and use that information to strategize The Next Big Thing. Because value-add is directly tied with revenue and growth, it’s often the easiest to justify. However, in unbalanced orgs, the pendulum can swing too far in the direction of growth at all costs, and engineering’s priorities can fall behind.
+AKA value-add to the user. This should always be the forefront of software and product teams. Engineers sometimes lose sight of the end-goal, delivering value to the end-users. There are many books on this topic and it is why other departments often exist (i.e. Product, Project Management, Scrum). Product typically acts as the bridge between software and the business, or the end-users. They collect feedback, identify what works and what doesn’t, and use that information to strategize The Next Big Thing. Because value-add is directly tied with revenue and growth, it’s often the easiest to justify. However, in unbalanced orgs, the pendulum can swing too far in growth direction, and engineering’s priorities can fall behind.
 
-When growth is covered by product or commercial teams, what is left for engineering to put on the table? That’s where you get to the meat of what engineering should be thinking of and prioritizing.
+When growth is covered by product or commercial teams, what is left for engineering to put on the table? That’s what engineering should be thinking of and prioritizing.
 
 ### Speed
 
