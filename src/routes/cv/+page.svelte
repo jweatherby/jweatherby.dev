@@ -54,20 +54,20 @@
     </div>
     <div class="work-description">
       <p>
-        Oversaw the growth and wellbeing of 40+ software engineers and
+        Oversee the growth and wellbeing of 40+ software engineers and
         engineering leads across 5 teams, providing technical and product
         direction alongside the product team and other stakeholders.
       </p>
       <ul>
         <li>
-          Drove technical advancement through goal setting based on industry
+          Drive technical advancement through goal setting based on industry
           best practices (DORA metrics), internal assessments improving the
           health of our services, establishing architectural direction, and
           rolling out critical improvements in observability and testing.
         </li>
         <li>
-          Led organization-wide initiatives, such as: Architecture Review
-          process; a centralized Notion documentation platform actively serving
+          Lead organization-wide initiatives, such as: Architecture Review
+          process; a centralized Notion documentation platform serving
           250+ employees; 10% development days to focus on innovation and
           personal development; and developed a comprehensive growth assessment
           rubric.
