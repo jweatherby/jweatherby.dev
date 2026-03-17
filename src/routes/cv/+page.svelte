@@ -54,9 +54,9 @@
     </div>
     <div class="work-description">
       <p>
-        Oversee the growth and wellbeing of 40+ software engineers and
-        engineering leads across 5 teams, providing technical and product
-        direction alongside the product team and other stakeholders.
+        Lead and develop 40+ software engineers and engineering leads across 5
+        teams, providing technical and product direction alongside the product
+        team and other stakeholders.
       </p>
       <ul>
         <li>
@@ -67,10 +67,9 @@
         </li>
         <li>
           Lead organization-wide initiatives, such as: an Architecture Review
-          process; a centralized Notion documentation platform serving
-          250+ employees; 10% development days for innovation and
-          personal development; and a comprehensive growth assessment
-          rubric.
+          process; a centralized Notion documentation platform serving 250+
+          employees; 10% development days for innovation and personal
+          development; and a comprehensive growth assessment rubric.
         </li>
         <li>
           Developed strong, healthy engineering teams through servant leadership
@@ -78,9 +77,9 @@
           and onboarding.
         </li>
         <li>
-          Jointly established and managed engineering team budgets,
-          ensuring a healthy balance of engagement, competitive
-          compensation, and internal equity.
+          Jointly established and managed engineering team budgets, ensuring a
+          healthy balance of engagement, competitive compensation, and internal
+          equity.
         </li>
         <li>
           Actively involved in community building, organizing 100+ person
@@ -170,9 +169,8 @@
     <div class="work-description">
       <p>
         Primary backend (PHP) developer for a small digital agency with a
-        development team of 3-6 people. Built digital marketing
-        platforms and standalone websites while maintaining the AWS
-        infrastructure.
+        development team of 3-6 people. Built digital marketing platforms and
+        standalone websites while maintaining the AWS infrastructure.
       </p>
       <!-- <ul>
           <li>A crowd funding site for local businesses.</li>
@@ -246,20 +244,20 @@
     </div>
   </section> -->
   <section class="project-item">
-      <div class="project-meta">
-        <div class="project-title">Hackathon Command Centre</div>
-        <div class="project-link"></div>
-      </div>
-      <div class="project-description">
-        <p class="project-summary">
-          High performance voting system for custom voting needs. Deployed on
-          demand.
-        </p>
-        <p class="project-stack">
-          Built using SvelteKit, TRPC, PicoCSS, Postgres (PrismaDB).
-        </p>
-      </div>
-    </section>
+    <div class="project-meta">
+      <div class="project-title">Hackathon Command Centre</div>
+      <div class="project-link"></div>
+    </div>
+    <div class="project-description">
+      <p class="project-summary">
+        High performance voting system for custom voting needs. Deployed on
+        demand.
+      </p>
+      <p class="project-stack">
+        Built using SvelteKit, TRPC, PicoCSS, Postgres (PrismaDB).
+      </p>
+    </div>
+  </section>
   <section class="project-item">
     <div class="project-meta">
       <div class="project-title">Tendee</div>
