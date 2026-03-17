@@ -51,10 +51,10 @@
     </p>
     <p>These are the things I've built that are still hanging around:</p>
     <ul>
-      <li>
+      <!-- <li>
         <a href="https://paperwall.io" target="_blank">Paperwall</a> - An aggregator
         / paywall solution providing pay-per-read access to articles
-      </li>
+      </li> -->
       <li>
         <a href="https://www.notion.com/@jweatherby" target="_blank"
           >Notion templates</a
