@@ -42,7 +42,7 @@
     Accomplished leader in software engineering, passionate about optimizing
     software organizations according to industry best practices and standards.
     Extensive experience building strong, healthy teams and implementing
-    innovative processes within individual teams and organizationally.
+    innovative processes at both the team and organizational level.
   </p>
   <h2 class="section-header">Work Experience</h2>
   <section class="work-item">
@@ -66,10 +66,10 @@
           rolling out critical improvements in observability and testing.
         </li>
         <li>
-          Lead organization-wide initiatives, such as: Architecture Review
+          Lead organization-wide initiatives, such as: an Architecture Review
           process; a centralized Notion documentation platform serving
-          250+ employees; 10% development days to focus on innovation and
-          personal development; and developed a comprehensive growth assessment
+          250+ employees; 10% development days for innovation and
+          personal development; and a comprehensive growth assessment
           rubric.
         </li>
         <li>
@@ -78,9 +78,9 @@
           and onboarding.
         </li>
         <li>
-          Jointly established and optimized budget direction for engineering
-          teams, ensuring a healthy balance of engagement, rewarding
-          compensation and balanced internal equity.
+          Jointly established and managed engineering team budgets,
+          ensuring a healthy balance of engagement, competitive
+          compensation, and internal equity.
         </li>
         <li>
           Actively involved in community building, organizing 100+ person
@@ -103,8 +103,8 @@
     <div class="work-description">
       <p>
         Developed and expanded a strong software development team in
-        collaboration with other scrum leads, which persisted under new
-        leadership.
+        collaboration with other scrum leads, building a foundation that
+        continued to thrive under new leadership.
       </p>
       <ul>
         <li>
@@ -112,7 +112,7 @@
           team.
         </li>
         <li>
-          Contributed to sprints through Code Reviews, QA, piloting new
+          Contributed to sprints through code reviews, QA, and piloting new
           patterns.
         </li>
       </ul>
@@ -130,9 +130,9 @@
     </div>
     <div class="work-description">
       <p>
-        On a team of 40+ software developers, maintained several
-        business-critical products, including the website, the agent portal and
-        the email dispatch system.
+        Part of a 40+ person development team, maintained several
+        business-critical products including the website, agent portal, and
+        email dispatch system.
       </p>
       <!-- <p>
           Through the role of Tech Ambassador, coordinated several meetups of
@@ -170,8 +170,8 @@
     <div class="work-description">
       <p>
         Primary backend (PHP) developer for a small digital agency with a
-        development team of 3-6 people. Built a number of digital marketing
-        platforms, a few standalone websites and maintained the AWS system
+        development team of 3-6 people. Built digital marketing
+        platforms and standalone websites while maintaining the AWS
         infrastructure.
       </p>
       <!-- <ul>
