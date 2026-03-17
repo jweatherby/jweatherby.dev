@@ -228,13 +228,13 @@
     </div>
   </section>
   <h2 class="section-header">Projects</h2>
-  <section class="project-item">
-    <!-- <div class="project-meta">
+  <!-- <section class="project-item">
+    <div class="project-meta">
       <div class="project-title">Paperwall</div>
       <div class="project-link">
         <a href="https://paperwall.io" target="_blank">paperwall.io</a>
       </div>
-    </div> -->
+    </div>
     <div class="project-description">
       <p class="project-summary">
         An aggregator / paywall solution providing pay-per-read access to
@@ -244,7 +244,7 @@
         Built using Svelte[Kit], PicoCSS, Hono, Postgres (PrismaDB), Bun.
       </p>
     </div>
-  </section>
+  </section> -->
   <section class="project-item">
       <div class="project-meta">
         <div class="project-title">Hackathon Command Centre</div>
