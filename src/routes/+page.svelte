@@ -56,6 +56,15 @@
         / paywall solution providing pay-per-read access to articles
       </li> -->
       <li>
+        <a href="https://isitbusy.today" target="_blank">Is It Busy?</a> An AI native
+        app that aggregates multiple sources of information to present a city&apos;s busyness
+        on any given day
+      </li>
+      <li>
+        <a href="https://tendee.co" target="_blank">Tendee</a> - A versatile scheduling
+        app with an emphasis on recurring events for sports teams
+      </li>
+      <li>
         <a href="https://www.notion.com/@jweatherby" target="_blank"
           >Notion templates</a
         >
@@ -63,10 +72,6 @@
         <a href="https://www.notion.com/templates/lean-coffee" target="_blank"
           >Lean Coffee template</a
         > for now, more to follow
-      </li>
-      <li>
-        <a href="https://tendee.co" target="_blank">Tendee</a> - A versatile scheduling
-        app with an emphasis on recurring events and polls
       </li>
       <li>
         <a href="https://showboard.ca/" target="_blank"><s>Showboard</s></a> - A
