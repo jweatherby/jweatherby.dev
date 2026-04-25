@@ -245,6 +245,24 @@
   </section> -->
   <section class="project-item">
     <div class="project-meta">
+      <div class="project-title">Is It Busy</div>
+      <div class="project-link">
+        <a href="https://isitbusy.today" target="_blank">isitbusy.today</a>
+      </div>
+    </div>
+    <div class="project-description">
+      <p class="project-summary">
+        An AI native app that aggregates multiple sources of information to
+        present a city&apos;s busyness on any given day. Uses Anthropic APIs to
+        manage optimized LLM calls based on pre-defined time horizons.
+      </p>
+      <p class="project-stack">
+        Built using Claude, SvelteKit, TRPC, Postgres (PrismaDB)
+      </p>
+    </div>
+  </section>
+  <section class="project-item">
+    <div class="project-meta">
       <div class="project-title">Hackathon Command Centre</div>
       <div class="project-link"></div>
     </div>
