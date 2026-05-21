@@ -27,9 +27,9 @@
         articleFinder: {
           selector: "blog-post",
           postUrls: [/\/posts\/.*/],
-          siteName: 'jweatherby.dev',
-          siteLogo: '/images/jw.dev-logo-sq.png'
         },
+        siteName: "jweatherby.dev",
+        siteLogo: "/images/jw.dev-logo-sq.png",
       });
   </script>
 </svelte:head>
