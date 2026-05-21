@@ -9,7 +9,7 @@ tags: software-orgs, leadership
 isPublished: false
 ---
 
-This is a follow up to my previous post, [The big 3 of Engineering Goals](/blog/9-engineering-goals). I promised a few weeks ago, but just found the time now /shrug
+This is a follow up to my previous post, [The big 3 of Engineering Goals](https://jweatherby.dev/blog/9-engineering-goals). I promised a few weeks ago, but just found the time now /shrug
 
 
 
