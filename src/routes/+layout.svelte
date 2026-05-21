@@ -27,6 +27,8 @@
         articleFinder: {
           selector: "blog-post",
           postUrls: [/\/posts\/.*/],
+          siteName: 'jweatherby.dev',
+          siteLogo: '/images/jw.dev-logo-sq.png'
         },
       });
   </script>
