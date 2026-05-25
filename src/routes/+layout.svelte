@@ -23,8 +23,8 @@
   <script type="application/javascript">
     window.onload = () =>
       buildWall({
-        // siteToken: "Qhf7zPQWSi4", // paperwall.io
-        siteToken: 'cFVyMdqPz3w', // sandbox.paperwall.io
+        siteToken: "Qhf7zPQWSi4", // paperwall.io
+        // siteToken: 'cFVyMdqPz3w', // sandbox.paperwall.io
         articleFinder: {
           selector: "blog-post",
           postUrls: [/\/posts\/.*/],
