@@ -24,18 +24,18 @@
     window.onload = () =>
       buildWall({
         // siteToken: "Qhf7zPQWSi4", // paperwall.io
-        
-        // sandbox.paperwall.io
-        siteToken: 'cFVyMdqPz3w', 
-        apiBaseUrl: 'https://sandbox-api.paperwall.io',
-        portalUrl: 'https://sandbox.paperwall.io',
 
+        // sandbox.paperwall.io
+        mode: "sandbox",
+        siteToken: "cFVyMdqPz3w",
         articleFinder: {
           selector: "blog-post",
           postUrls: [/\/posts\/.*/],
         },
-        siteName: "jweatherby.dev",
-        siteLogo: "/images/jw.dev-logo-sq.png",
+        theme: {
+          siteName: "jweatherby.dev",
+          siteLogo: "/images/jw.dev-logo-sq.png",
+        },
       });
   </script>
 </svelte:head>
