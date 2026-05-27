@@ -17,7 +17,7 @@
   <script
     src="https://assets.paperwall.io/paperwall-bootstrap.min.js"
     integrity="sha256-lPfnmVQ2ThQXNhnAvcqVsKpF1BPImQSi1vHHnUQGtlk="
-    crossorigin="true"
+    crossorigin="anonymous"
   ></script>
 
   <script type="application/javascript">
