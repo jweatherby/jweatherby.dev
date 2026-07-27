@@ -15,8 +15,8 @@
 
   <!-- for PROD -->
   <script
-    src="https://assets.paperwall.io/paperwall-bootstrap.min.js"
-    integrity="sha256-lPfnmVQ2ThQXNhnAvcqVsKpF1BPImQSi1vHHnUQGtlk="
+    src="https://assets.paperwall.io/paperwall-bootstrap-v1.min.js"
+    integrity="sha256-vTsIoxugrpZh4erU/NlGs1XgGq3ks5rorx6VJepE7+I="
     crossorigin="anonymous"
   ></script>
 
