@@ -1,5 +1,5 @@
 {
-	"extends": "./.svelte-kit/tsconfig.json",
+	"extends": "$app/tsconfig",
 	"compilerOptions": {
 		"allowJs": true,
 		"checkJs": true,
@@ -14,6 +14,7 @@
 	"include": [
 		"./src/**/*.ts",
 		"./src/**/*.svelte",
+		"./api/**/*.ts",
 		"@types/*.d.ts"
 	]
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias

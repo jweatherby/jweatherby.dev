@@ -1,8 +1,9 @@
 <script lang="ts">
-  import { page } from "$app/stores";
+  import { resolve } from "$app/paths";
+  import { page } from "$app/state";
   import settings from "$settings";
 
-  let post = $page.data.post;
+  let post = page.data.post;
 </script>
 
 <svelte:head>
@@ -71,13 +72,14 @@
     </aside>
   </header>
   <div class="post-content" id="blog-post">
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -- the markdown is this repo's own, rendered at build time -->
     {@html post.html}
   </div>
 
   <footer>
     <div class="post-tags">
       <strong>Tags: </strong>
-      {#each post.meta.tags.split(", ") as tag}
+      {#each post.meta.tags.split(", ") as tag (tag)}
         <em>{tag}</em>
       {/each}
     </div>
@@ -89,7 +91,7 @@
       <a href="https://www.linkedin.com/in/jamieweatherby/" target="_blank"
         >LinkedIn</a
       >
-      or <a href="/contact">by email</a>.
+      or <a href={resolve("/contact")}>by email</a>.
     </aside>
   </footer>
 </section>

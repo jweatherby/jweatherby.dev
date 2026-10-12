@@ -9,7 +9,7 @@ import json from "highlight.js/lib/languages/json"
 
 import parseFrontMatter from 'front-matter'
 import markdownIt from 'markdown-it'
-import type { IPost, IPostMeta } from "$lib/types";
+import type { IPostMeta } from "$lib/types";
 
 hljs.registerLanguage("python", python);
 hljs.registerLanguage("js", js);

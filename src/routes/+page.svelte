@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { page } from "$app/stores";
+  import { resolve } from "$app/paths";
+  import { page } from "$app/state";
   import type { IPost } from "$lib/types";
 
   import settings from "$settings";
@@ -10,11 +11,11 @@
     image: settings.ROOT_DOMAIN + "/images/family-pic.png",
   };
 
-  const posts = $page.data.posts.filter(
+  const posts = page.data.posts.filter(
     (p: IPost) => p.meta.isPublished,
   ) as IPost[];
   posts.sort((p1, p2) => (p2.meta.dateCreated < p1.meta.dateCreated ? -1 : 1));
-  const unpubPosts = $page.data.posts.filter(
+  const unpubPosts = page.data.posts.filter(
     (p: IPost) => !p.meta.isPublished,
   ) as IPost[];
 </script>
@@ -82,17 +83,16 @@
     </ul>
     <p>
       If you'd like to follow along with what I'm currently working on, or get
-      in touch, you can find me on{" "}
+      in touch, you can find me on 
       <a href="https://jweatherby.substack.com" target="_blank">Substack</a
-      >,{" "}
+      >, 
       <a href="https://bsky.app/profile/jweatherby.bsky.social" target="_blank"
         >Bluesky</a
-      >, or{" "}
+      >, or 
       <a href="https://www.linkedin.com/in/jamieweatherby/" target="_blank"
         >LinkedIn</a
       >. You can also get in touch
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <a href="/contact">by email</a>.
+      <a href={resolve("/contact")}>by email</a>.
     </p>
   </section>
 </article>
@@ -100,9 +100,9 @@
 <article>
   <h3 class="blog-title">Blog posts</h3>
   <ul>
-    {#each posts as post}
+    {#each posts as post (post.slug)}
       <li>
-        <a href={`/posts/${post.slug}`}>{post.meta.title}</a> - {post.meta.dateCreated.toLocaleDateString(
+        <a href={resolve("/posts/[postSlug]", { postSlug: post.slug })}>{post.meta.title}</a> - {post.meta.dateCreated.toLocaleDateString(
           "en-ca",
           { day: "numeric", month: "short", year: "numeric" },
         )}
@@ -110,9 +110,9 @@
     {/each}
   </ul>
   <ul class="hidden-posts">
-    {#each unpubPosts as post}
+    {#each unpubPosts as post (post.slug)}
       <li>
-        <a href={`/posts/${post.slug}`}>{post.meta.title}</a> - {post.meta.dateCreated.toLocaleDateString(
+        <a href={resolve("/posts/[postSlug]", { postSlug: post.slug })}>{post.meta.title}</a> - {post.meta.dateCreated.toLocaleDateString(
           "en-ca",
           { day: "numeric", month: "short", year: "numeric" },
         )}

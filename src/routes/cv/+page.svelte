@@ -1,12 +1,15 @@
 <script lang="ts">
   import settings from "$settings";
   import { onMount } from "svelte";
-  let pdfLib: any;
+  let pdfLib: typeof import('html2pdf.js') | undefined;
   onMount(async () => {
     if (settings.env !== "prod") {
       pdfLib = await import("html2pdf.js");
     }
   });
+  // Unreferenced: no button calls this yet. Kept rather than deleted so the
+  // html2pdf wiring isn't lost; wire it to a button or remove it.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const downloadAsPDF = () => {
     if (!pdfLib) {
       return;
@@ -54,16 +57,17 @@
     </div>
     <div class="work-description">
       <p>
-        Lead and develop 40+ software engineers and engineering leads across 5
-        teams, providing technical and product direction alongside the product
-        team and other stakeholders.
+        Lead and develop up to 40+ software engineers and engineering leads
+        across 5 teams, providing technical and product direction alongside the
+        product team and other stakeholders.
       </p>
       <ul>
         <li>
           Drive technical advancement through goal setting based on industry
           best practices (DORA metrics), internal assessments improving the
-          health of our services, establishing architectural direction, and
-          rolling out critical improvements in observability and testing.
+          health of our services, a survey establishing cross-team AI readiness,
+          establishing architectural direction, and rolling out critical
+          improvements in observability and testing.
         </li>
         <li>
           Lead organization-wide initiatives, such as: an Architecture Review
