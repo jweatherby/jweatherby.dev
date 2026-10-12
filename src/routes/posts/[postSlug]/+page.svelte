@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
   import settings from "$settings";
 
-  let post = $page.data.post;
+  let post = page.data.post;
 </script>
 
 <svelte:head>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
   import type { IPost } from "$lib/types";
 
   import settings from "$settings";
@@ -10,11 +10,11 @@
     image: settings.ROOT_DOMAIN + "/images/family-pic.png",
   };
 
-  const posts = $page.data.posts.filter(
+  const posts = page.data.posts.filter(
     (p: IPost) => p.meta.isPublished,
   ) as IPost[];
   posts.sort((p1, p2) => (p2.meta.dateCreated < p1.meta.dateCreated ? -1 : 1));
-  const unpubPosts = $page.data.posts.filter(
+  const unpubPosts = page.data.posts.filter(
     (p: IPost) => !p.meta.isPublished,
   ) as IPost[];
 </script>
