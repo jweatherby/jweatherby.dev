@@ -12,6 +12,8 @@ export default defineConfig({
 			preprocess: vitePreprocess(),
 			adapter: adapter(),
 			alias: {
+				// $lib was removed in SvelteKit 3; keep it mapped rather than rewriting every import.
+				$lib: path.resolve('./src/lib'),
 				$settings: path.resolve('./src/settings'),
 				$fixtures: path.resolve('./src/fixtures')
 			}
