@@ -54,16 +54,17 @@
     </div>
     <div class="work-description">
       <p>
-        Lead and develop 40+ software engineers and engineering leads across 5
-        teams, providing technical and product direction alongside the product
-        team and other stakeholders.
+        Lead and develop up to 40+ software engineers and engineering leads
+        across 5 teams, providing technical and product direction alongside the
+        product team and other stakeholders.
       </p>
       <ul>
         <li>
           Drive technical advancement through goal setting based on industry
           best practices (DORA metrics), internal assessments improving the
-          health of our services, establishing architectural direction, and
-          rolling out critical improvements in observability and testing.
+          health of our services, a survey establishing cross-team AI readiness,
+          establishing architectural direction, and rolling out critical
+          improvements in observability and testing.
         </li>
         <li>
           Lead organization-wide initiatives, such as: an Architecture Review

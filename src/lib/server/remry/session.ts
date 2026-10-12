@@ -5,6 +5,7 @@
 import type Stripe from "stripe";
 import { buyerOf, licensePayloadFor, maskEmail } from "./invoice.js";
 import { signLicenseKey } from "./license.js";
+import { REVOKED } from "./metadata.js";
 import type { RemryStripe } from "./stripe.js";
 
 export interface SessionDeps {
@@ -41,6 +42,8 @@ export const licenseForSession = async (
     return NOT_READY;
   }
   const subscription = expanded<Stripe.Subscription>(session.subscription);
+  // A revoked license gets no key here either (revoke.ts).
+  if (subscription?.metadata?.[REVOKED]) return NOT_READY;
   const invoice = expanded<Stripe.Invoice>(
     subscription?.latest_invoice ?? null,
   );

@@ -1,6 +1,6 @@
 // Remry Pro license keys, signed here for buyers and checked offline by the Remry app.
 //
-// signLicenseKey is a port of the app's: remry-ai/remry, src/shared/license/verify.server.ts.
+// signLicenseKey is a port of the app's: remry-ai/remry, scripts/license/sign.ts.
 // That file is the source of truth. Keep this byte-for-byte compatible with it, or the app
 // rejects every key sold here; ./tests/license.test.ts checks keys from here with the app's logic.
 //

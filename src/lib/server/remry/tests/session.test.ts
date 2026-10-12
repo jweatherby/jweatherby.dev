@@ -39,12 +39,13 @@ describe("licenseForSession", () => {
     const shown = await licenseForSession("cs_test_abc123", deps);
 
     const sent: LicenseEmail[] = [];
-    await handleStripeWebhook(signedRequest(invoicePaidEvent()), {
+    await handleStripeWebhook(await signedRequest(invoicePaidEvent()), {
       ...deps,
       webhookSecret: WEBHOOK_SECRET,
       sendLicenseEmail: async (email) => {
         sent.push(email);
       },
+      dispatchRevocation: async () => {},
       log: () => {},
     });
 
@@ -74,6 +75,22 @@ describe("licenseForSession", () => {
       await licenseForSession(
         "cs_test_abc123",
         depsWith(session({ subscription: "sub_123" })),
+      ),
+    ).toEqual({ ok: false });
+
+    expect(
+      await licenseForSession(
+        "cs_test_abc123",
+        depsWith(
+          session({
+            subscription: {
+              id: "sub_123",
+              object: "subscription",
+              metadata: { remry_revoked: "2026-11-02 refund" },
+              latest_invoice: invoice(),
+            } as unknown as Stripe.Subscription,
+          }),
+        ),
       ),
     ).toEqual({ ok: false });
 

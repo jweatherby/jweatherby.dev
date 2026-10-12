@@ -74,6 +74,36 @@ export const invoice = (options: InvoiceOptions = {}): Stripe.Invoice => {
   } as unknown as Stripe.Invoice;
 };
 
+export const subscription = (
+  metadata: Record<string, string> = {},
+): Stripe.Subscription =>
+  ({
+    id: "sub_123",
+    object: "subscription",
+    metadata,
+  }) as unknown as Stripe.Subscription;
+
+export const charge = (
+  options: { readonly refunded?: boolean } = {},
+): Stripe.Charge =>
+  ({
+    id: "ch_123",
+    object: "charge",
+    refunded: options.refunded ?? true,
+    payment_intent: "pi_123",
+  }) as unknown as Stripe.Charge;
+
+export const dispute = (
+  status: Stripe.Dispute.Status = "lost",
+): Stripe.Dispute =>
+  ({
+    id: "dp_123",
+    object: "dispute",
+    status,
+    charge: "ch_123",
+    payment_intent: "pi_123",
+  }) as unknown as Stripe.Dispute;
+
 /** A fake Stripe; signature checks use stripe-node's real verifier, which is offline. */
 export const fakeStripe = (
   overrides: Partial<RemryStripe> = {},
@@ -81,7 +111,7 @@ export const fakeStripe = (
   const real = new Stripe("sk_test_offline");
   return {
     constructEvent: (rawBody, signature, secret) =>
-      real.webhooks.constructEvent(rawBody, signature, secret),
+      real.webhooks.constructEventAsync(rawBody, signature, secret),
     retrieveInvoice: vi.fn(async () => invoice()),
     retrieveCustomer: vi.fn(
       async () =>
@@ -92,25 +122,32 @@ export const fakeStripe = (
           name: "Dana Park",
         }) as unknown as Stripe.Customer,
     ),
+    retrieveSubscription: vi.fn(async () => subscription()),
+    retrieveCharge: vi.fn(async () => charge()),
+    retrieveDispute: vi.fn(async () => dispute()),
+    invoiceIdForPaymentIntent: vi.fn(async () => "in_123"),
     retrieveCheckoutSession: vi.fn(async () => {
       throw new Error("not stubbed");
     }),
     ...overrides,
     setInvoiceMetadata: vi.fn(overrides.setInvoiceMetadata ?? (async () => {})),
+    setSubscriptionMetadata: vi.fn(
+      overrides.setSubscriptionMetadata ?? (async () => {}),
+    ),
   };
 };
 
 export const WEBHOOK_SECRET = "whsec_test_secret";
 
 /** A webhook request signed the way Stripe signs it. */
-export const signedRequest = (
+export const signedRequest = async (
   event: Readonly<Record<string, unknown>>,
   secret = WEBHOOK_SECRET,
-): Request => {
+): Promise<Request> => {
   const payload = JSON.stringify(event);
-  const header = new Stripe(
+  const header = await new Stripe(
     "sk_test_offline",
-  ).webhooks.generateTestHeaderString({
+  ).webhooks.generateTestHeaderStringAsync({
     payload,
     secret,
   });
@@ -126,4 +163,23 @@ export const invoicePaidEvent = (invoiceId = "in_123") => ({
   object: "event",
   type: "invoice.paid",
   data: { object: { id: invoiceId, object: "invoice" } },
+});
+
+/** 2026-11-02T09:00:00Z: when the refund events below happen. */
+export const REFUNDED_AT = Date.UTC(2026, 10, 2, 9) / 1000;
+
+export const chargeRefundedEvent = () => ({
+  id: "evt_refund",
+  object: "event",
+  type: "charge.refunded",
+  created: REFUNDED_AT,
+  data: { object: { id: "ch_123", object: "charge" } },
+});
+
+export const disputeClosedEvent = () => ({
+  id: "evt_dispute",
+  object: "event",
+  type: "charge.dispute.closed",
+  created: REFUNDED_AT,
+  data: { object: { id: "dp_123", object: "dispute" } },
 });

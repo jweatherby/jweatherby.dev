@@ -11,6 +11,7 @@ import {
   invoice,
   invoicePaidEvent,
   signedRequest,
+  subscription,
   WEBHOOK_SECRET,
 } from "./fixtures.js";
 
@@ -24,6 +25,7 @@ const setup = (stripe = fakeStripe()) => {
     sendLicenseEmail: async (email) => {
       sent.push(email);
     },
+    dispatchRevocation: async () => {},
     log: (message) => logs.push(message),
   };
   return { stripe, deps, sent, logs };
@@ -32,7 +34,10 @@ const setup = (stripe = fakeStripe()) => {
 describe("handleStripeWebhook", () => {
   it("rejects a request without a valid signature", async () => {
     const { deps, sent } = setup();
-    const wrongSecret = signedRequest(invoicePaidEvent(), "whsec_someone_else");
+    const wrongSecret = await signedRequest(
+      invoicePaidEvent(),
+      "whsec_someone_else",
+    );
     expect((await handleStripeWebhook(wrongSecret, deps)).status).toBe(400);
 
     const unsigned = new Request("https://jweatherby.dev/api/remry/stripe", {
@@ -41,7 +46,7 @@ describe("handleStripeWebhook", () => {
     });
     expect((await handleStripeWebhook(unsigned, deps)).status).toBe(400);
 
-    const tampered = signedRequest(invoicePaidEvent());
+    const tampered = await signedRequest(invoicePaidEvent());
     const forged = new Request(tampered.url, {
       method: "POST",
       body: JSON.stringify(invoicePaidEvent("in_other")),
@@ -54,7 +59,7 @@ describe("handleStripeWebhook", () => {
   it("ignores other events", async () => {
     const { deps, sent, stripe } = setup();
     const response = await handleStripeWebhook(
-      signedRequest({ ...invoicePaidEvent(), type: "customer.created" }),
+      await signedRequest({ ...invoicePaidEvent(), type: "customer.created" }),
       deps,
     );
     expect(response.status).toBe(200);
@@ -65,7 +70,7 @@ describe("handleStripeWebhook", () => {
   it("emails a key the app accepts and marks the invoice", async () => {
     const { deps, sent, stripe, logs } = setup();
     const response = await handleStripeWebhook(
-      signedRequest(invoicePaidEvent()),
+      await signedRequest(invoicePaidEvent()),
       deps,
     );
     expect(response.status).toBe(200);
@@ -80,6 +85,10 @@ describe("handleStripeWebhook", () => {
     });
 
     expect(stripe.setInvoiceMetadata).toHaveBeenCalledWith("in_123", {
+      remry_license_id: "stripe-sub_123",
+      remry_expires: "2027-10-08",
+    });
+    expect(stripe.setSubscriptionMetadata).toHaveBeenCalledWith("sub_123", {
       remry_license_id: "stripe-sub_123",
       remry_expires: "2027-10-08",
     });
@@ -101,10 +110,46 @@ describe("handleStripeWebhook", () => {
     });
     const { deps, sent } = setup(stripe);
     const response = await handleStripeWebhook(
-      signedRequest(invoicePaidEvent()),
+      await signedRequest(invoicePaidEvent()),
       deps,
     );
     expect(response.status).toBe(200);
+    expect(sent).toHaveLength(0);
+    expect(stripe.setInvoiceMetadata).not.toHaveBeenCalled();
+  });
+
+  it("keeps the subscription's later expiry when an older invoice arrives late", async () => {
+    const stripe = fakeStripe({
+      retrieveSubscription: vi.fn(async () =>
+        subscription({
+          remry_license_id: "stripe-sub_123",
+          remry_expires: "2028-10-08",
+        }),
+      ),
+    });
+    const { deps, sent } = setup(stripe);
+    expect(
+      (await handleStripeWebhook(await signedRequest(invoicePaidEvent()), deps))
+        .status,
+    ).toBe(200);
+    expect(sent).toHaveLength(1);
+    expect(stripe.setSubscriptionMetadata).not.toHaveBeenCalled();
+    expect(stripe.setInvoiceMetadata).toHaveBeenCalled();
+  });
+
+  it("issues no key for a revoked subscription's renewal", async () => {
+    const stripe = fakeStripe({
+      retrieveSubscription: vi.fn(async () =>
+        subscription({ remry_revoked: "2026-11-02 refund" }),
+      ),
+    });
+    const { deps, sent } = setup(stripe);
+    const response = await handleStripeWebhook(
+      await signedRequest(invoicePaidEvent()),
+      deps,
+    );
+    expect(response.status).toBe(200);
+    expect(await response.json()).toMatchObject({ ignored: "license revoked" });
     expect(sent).toHaveLength(0);
     expect(stripe.setInvoiceMetadata).not.toHaveBeenCalled();
   });
@@ -115,7 +160,7 @@ describe("handleStripeWebhook", () => {
     });
     const { deps, sent } = setup(stripe);
     expect(
-      (await handleStripeWebhook(signedRequest(invoicePaidEvent()), deps))
+      (await handleStripeWebhook(await signedRequest(invoicePaidEvent()), deps))
         .status,
     ).toBe(200);
     expect(sent).toHaveLength(0);
@@ -130,7 +175,7 @@ describe("handleStripeWebhook", () => {
       },
     };
     const response = await handleStripeWebhook(
-      signedRequest(invoicePaidEvent()),
+      await signedRequest(invoicePaidEvent()),
       failing,
     );
     expect(response.status).toBe(500);
@@ -145,7 +190,7 @@ describe("handleStripeWebhook", () => {
     });
     const { deps } = setup(stripe);
     expect(
-      (await handleStripeWebhook(signedRequest(invoicePaidEvent()), deps))
+      (await handleStripeWebhook(await signedRequest(invoicePaidEvent()), deps))
         .status,
     ).toBe(500);
   });
