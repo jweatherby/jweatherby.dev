@@ -1,12 +1,15 @@
 <script lang="ts">
   import settings from "$settings";
   import { onMount } from "svelte";
-  let pdfLib: any;
+  let pdfLib: typeof import('html2pdf.js') | undefined;
   onMount(async () => {
     if (settings.env !== "prod") {
       pdfLib = await import("html2pdf.js");
     }
   });
+  // Unreferenced: no button calls this yet. Kept rather than deleted so the
+  // html2pdf wiring isn't lost; wire it to a button or remove it.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const downloadAsPDF = () => {
     if (!pdfLib) {
       return;

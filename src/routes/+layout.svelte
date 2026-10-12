@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from "$app/paths";
   import "$lib/globals.scss";
 </script>
 
@@ -43,13 +44,12 @@
 <nav class="container no-print">
   <ul>
     <li>
-      <h1><a href="/">&lt;jw.dev /&gt;</a></h1>
+      <h1><a href={resolve("/")}>&lt;jw.dev /&gt;</a></h1>
     </li>
   </ul>
   <ul>
     <li>
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <a role="button" href="/contact">Contact</a>
+      <a role="button" href={resolve("/contact")}>Contact</a>
     </li>
   </ul>
 </nav>

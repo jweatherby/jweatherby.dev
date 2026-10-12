@@ -2,6 +2,7 @@
   // Where the Remry Pro Payment Link sends buyers: /remry/thanks?session_id=…
   // The page is prerendered like the rest of the site; the key comes from /api/remry/license,
   // which builds it from the paid invoice the same way the webhook does, so it matches the email.
+  import { resolve } from "$app/paths";
   import { onMount } from "svelte";
 
   type License =
@@ -83,7 +84,7 @@
       its way there, usually within a few minutes.
     </p>
     <p>
-      Nothing after half an hour? Get in touch through the <a href="/contact">contact form</a>
+      Nothing after half an hour? Get in touch through the <a href={resolve("/contact")}>contact form</a>
       or <a href="{REMRY_REPO}/issues">open an issue</a>.
     </p>
   {/if}

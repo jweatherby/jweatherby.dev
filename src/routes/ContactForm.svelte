@@ -40,7 +40,7 @@
           }, 3000);
         }
       })
-      .catch((error) => {
+      .catch(() => {
         reqState.errorMessage = "Network error. Please try again.";
         setTimeout(() => {
           reqState.errorMessage = "";

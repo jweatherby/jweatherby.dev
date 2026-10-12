@@ -1,6 +1,5 @@
-import type { IPost, IPostMeta } from "$lib/types";
+import type { IPost } from "$lib/types";
 
-import parseFrontMatter from 'front-matter'
 import type { PageLoad } from "./$types";
 import { serializePost } from "$lib/posts/serializers";
 const mdPosts = import.meta.glob("$fixtures/posts-md/*.md", { eager: true, query: 'raw', import: 'default' })

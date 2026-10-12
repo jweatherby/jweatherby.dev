@@ -111,10 +111,13 @@ Use a Stripe sandbox (test keys) and a Preview deployment with test-mode variabl
    - Resend the `charge.refunded` event: the response is `{"ok":true,"alreadyRevoked":…}` and no second run starts.
    - A sandbox's dispatch goes to the real repo. Close that PR instead of merging it.
 
-**Check during the first test run:**
+**What the first sandbox run settled** (2026-10-12, Managed Payments on):
 
-- The docs don't say whether Managed Payments allows writing invoice or subscription metadata. If step 3's metadata writes fail, the webhook keeps returning 500. Without subscription metadata, revocation needs another home, too.
-- Managed Payments makes Stripe the merchant of record and handles disputes. Check whether `charge.refunded` and `charge.dispute.closed` still reach this endpoint, and whether `invoicePayments.list` finds the invoice from the refunded charge's PaymentIntent. If refunds don't arrive, revoke by hand as before: `bun run license:revoke --id stripe-<subscription id> --expires <remry_expires> --reason refund` in the Remry repo.
+- Managed Payments **does** allow writing invoice and subscription metadata. Both objects carried `remry_license_id` and `remry_expires` after the first paid invoice, so the dedupe marker and the revocation stamp both have a home.
+- The buyer's **real email address** reaches this endpoint. Link is the merchant of record and sends its own receipts, but the Stripe customer and invoice still carry the address typed at checkout, so the key email goes to the right place.
+- A key issued here verifies against the public key shipped in the app, and a redelivered `invoice.paid` answers `{"ok":true,"alreadyIssued":true}` without sending a second email.
+
+**Still unproven:** refunds and disputes. Whether `charge.refunded` and `charge.dispute.closed` reach this endpoint under Managed Payments, and whether `invoicePayments.list` finds the invoice from the refunded charge's PaymentIntent, is untested. If refunds don't arrive, revoke by hand: `bun run license:revoke --id stripe-<subscription id> --expires <remry_expires> --reason refund` in the Remry repo.
 
 ### Before going live
 
