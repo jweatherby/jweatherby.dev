@@ -54,12 +54,18 @@
     <ul>
       <!-- <li>
         <a href="https://paperwall.io" target="_blank">Paperwall</a> - An aggregator
-        / paywall solution providing pay-per-read access to articles
+        / paywall solution providing single access to articles through a shared-billing platform.
       </li> -->
       <li>
-        <a href="https://isitbusy.today" target="_blank">Is It Busy?</a> An AI native
-        app that aggregates multiple sources of information to present a city&apos;s busyness
-        on any given day
+        <a href="https://github.com/remry-ai/remry" target="_blank">Remry</a> A local,
+        structured notebook that your AI assistant writes to over MCP. Works with
+        Claude today.
+      </li>
+      <li>
+        <a href="https://isitbusy.today" target="_blank">Is It Busy?</a> An AI
+        native app that aggregates multiple sources of information to present a
+        city&apos;s busyness on any given day -
+        <button disabled class="secondary deprecated">shut down</button>
       </li>
       <li>
         <a href="https://tendee.co" target="_blank">Tendee</a> - A versatile scheduling
@@ -83,12 +89,11 @@
     </ul>
     <p>
       If you'd like to follow along with what I'm currently working on, or get
-      in touch, you can find me on 
-      <a href="https://jweatherby.substack.com" target="_blank">Substack</a
-      >, 
+      in touch, you can find me on
+      <a href="https://jweatherby.substack.com" target="_blank">Substack</a>,
       <a href="https://bsky.app/profile/jweatherby.bsky.social" target="_blank"
         >Bluesky</a
-      >, or 
+      >, or
       <a href="https://www.linkedin.com/in/jamieweatherby/" target="_blank"
         >LinkedIn</a
       >. You can also get in touch
@@ -102,20 +107,28 @@
   <ul>
     {#each posts as post (post.slug)}
       <li>
-        <a href={resolve("/posts/[postSlug]", { postSlug: post.slug })}>{post.meta.title}</a> - {post.meta.dateCreated.toLocaleDateString(
-          "en-ca",
-          { day: "numeric", month: "short", year: "numeric" },
-        )}
+        <a href={resolve("/posts/[postSlug]", { postSlug: post.slug })}
+          >{post.meta.title}</a
+        >
+        - {post.meta.dateCreated.toLocaleDateString("en-ca", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        })}
       </li>
     {/each}
   </ul>
   <ul class="hidden-posts">
     {#each unpubPosts as post (post.slug)}
       <li>
-        <a href={resolve("/posts/[postSlug]", { postSlug: post.slug })}>{post.meta.title}</a> - {post.meta.dateCreated.toLocaleDateString(
-          "en-ca",
-          { day: "numeric", month: "short", year: "numeric" },
-        )}
+        <a href={resolve("/posts/[postSlug]", { postSlug: post.slug })}
+          >{post.meta.title}</a
+        >
+        - {post.meta.dateCreated.toLocaleDateString("en-ca", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        })}
       </li>
     {/each}
   </ul>
