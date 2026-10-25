@@ -100,7 +100,7 @@ export const handleStripeWebhook = async (
       return json(200, { ok: true, ignored: "license revoked" });
     }
 
-    const key = signLicenseKey(payload, deps.privateKeyPem);
+    const key = await signLicenseKey(payload, deps.privateKeyPem);
     await deps.sendLicenseEmail(licenseEmail(payload, key));
     // The subscription carries the license and its latest expiry. Never moved earlier, in
     // case an older invoice's event arrives after a renewal's.

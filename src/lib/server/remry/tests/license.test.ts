@@ -21,16 +21,15 @@ const payload: LicensePayload = {
 };
 
 describe("signLicenseKey", () => {
-  it("makes keys the Remry app accepts", () => {
-    const key = signLicenseKey(payload, TEST_LICENSE_PRIVATE_KEY);
+  it("makes keys the Remry app accepts", async () => {
+    const key = await signLicenseKey(payload, TEST_LICENSE_PRIVATE_KEY);
     expect(key.startsWith("WN1.")).toBe(true);
     expect(readLicensePayload(key, TEST_LICENSE_PUBLIC_KEY)).toEqual(payload);
   });
 
-  it("signs the base64url payload text, so a changed payload fails", () => {
-    const [prefix, , signature] = signLicenseKey(
-      payload,
-      TEST_LICENSE_PRIVATE_KEY,
+  it("signs the base64url payload text, so a changed payload fails", async () => {
+    const [prefix, , signature] = (
+      await signLicenseKey(payload, TEST_LICENSE_PRIVATE_KEY)
     ).split(".");
     const forged = Buffer.from(
       JSON.stringify({ ...payload, expires: "2099-01-01" }),
@@ -43,9 +42,9 @@ describe("signLicenseKey", () => {
     ).toBeNull();
   });
 
-  it("is deterministic, so the thanks page and the email agree", () => {
-    expect(signLicenseKey(payload, TEST_LICENSE_PRIVATE_KEY)).toBe(
-      signLicenseKey({ ...payload }, TEST_LICENSE_PRIVATE_KEY),
+  it("is deterministic, so the thanks page and the email agree", async () => {
+    expect(await signLicenseKey(payload, TEST_LICENSE_PRIVATE_KEY)).toBe(
+      await signLicenseKey({ ...payload }, TEST_LICENSE_PRIVATE_KEY),
     );
   });
 });

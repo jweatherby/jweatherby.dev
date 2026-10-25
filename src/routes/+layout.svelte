@@ -14,31 +14,6 @@
     href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css"
   />
 
-  <!-- for PROD -->
-  <script
-    src="https://assets.paperwall.io/paperwall-bootstrap-v1.min.js"
-    integrity="sha256-vTsIoxugrpZh4erU/NlGs1XgGq3ks5rorx6VJepE7+I="
-    crossorigin="anonymous"
-  ></script>
-
-  <script type="application/javascript">
-    window.onload = () =>
-      buildWall({
-        // siteToken: "Qhf7zPQWSi4", // paperwall.io
-
-        // sandbox.paperwall.io
-        mode: "sandbox",
-        siteToken: "cFVyMdqPz3w",
-        articleFinder: {
-          selector: "blog-post",
-          postUrls: [/\/posts\/.*/],
-        },
-        theme: {
-          siteName: "jweatherby.dev",
-          siteLogo: "/images/jw.dev-logo-sq.png",
-        },
-      });
-  </script>
 </svelte:head>
 
 <nav class="container no-print">
@@ -48,6 +23,7 @@
     </li>
   </ul>
   <ul>
+    <li><a href="https://blog.jweatherby.dev">Blog</a></li>
     <li>
       <a role="button" href={resolve("/contact")}>Contact</a>
     </li>

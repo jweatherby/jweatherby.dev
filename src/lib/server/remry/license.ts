@@ -5,8 +5,9 @@
 // rejects every key sold here; ./tests/license.test.ts checks keys from here with the app's logic.
 //
 // Key format: WN1.<base64url payload JSON>.<base64url Ed25519 signature of the payload part>
-
-import { createPrivateKey, sign } from "node:crypto";
+//
+// Signs with Web Crypto rather than node:crypto, so it runs the same on Cloudflare Workers and
+// in tests. Ed25519 signatures are deterministic, so the key matches the app's signer exactly.
 
 /** What a key carries, signed. Dates are YYYY-MM-DD (UTC); a license is good through `expires`. */
 export interface LicensePayload {
@@ -21,18 +22,41 @@ export interface LicensePayload {
 }
 
 const PREFIX = "WN1";
+const PEM_HEADER = "-----BEGIN PRIVATE KEY-----";
+const PEM_FOOTER = "-----END PRIVATE KEY-----";
 
-export const signLicenseKey = (
+const base64url = (bytes: Uint8Array): string => {
+  let binary = "";
+  for (const byte of bytes) binary += String.fromCharCode(byte);
+  return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+};
+
+const pemToDer = (pem: string): Uint8Array<ArrayBuffer> => {
+  const base64 = pem
+    .replace(PEM_HEADER, "")
+    .replace(PEM_FOOTER, "")
+    .replace(/\s+/g, "");
+  return Uint8Array.from(atob(base64), (c) => c.charCodeAt(0));
+};
+
+export const signLicenseKey = async (
   payload: LicensePayload,
   privateKeyPem: string,
-): string => {
-  const body = Buffer.from(JSON.stringify(payload)).toString("base64url");
-  const signature = sign(
-    null,
-    Buffer.from(body),
-    createPrivateKey(privateKeyPem),
-  ).toString("base64url");
-  return `${PREFIX}.${body}.${signature}`;
+): Promise<string> => {
+  const body = base64url(new TextEncoder().encode(JSON.stringify(payload)));
+  const key = await crypto.subtle.importKey(
+    "pkcs8",
+    pemToDer(privateKeyPem),
+    { name: "Ed25519" },
+    false,
+    ["sign"],
+  );
+  const signature = await crypto.subtle.sign(
+    { name: "Ed25519" },
+    key,
+    new TextEncoder().encode(body),
+  );
+  return `${PREFIX}.${body}.${base64url(new Uint8Array(signature))}`;
 };
 
 /**
@@ -43,10 +67,17 @@ export const signLicenseKey = (
 export const readPrivateKeyPem = (value: string | undefined): string => {
   const raw = value?.trim();
   if (!raw) throw new Error("REMRY_LICENSE_PRIVATE_KEY is not set");
-  const pem = raw.includes("-----BEGIN")
-    ? raw.replace(/\\n/g, "\n")
-    : Buffer.from(raw, "base64").toString("utf8");
-  if (!pem.includes("-----BEGIN PRIVATE KEY-----")) {
+  let pem: string;
+  if (raw.includes("-----BEGIN")) {
+    pem = raw.replace(/\\n/g, "\n");
+  } else {
+    try {
+      pem = atob(raw);
+    } catch {
+      pem = "";
+    }
+  }
+  if (!pem.includes(PEM_HEADER)) {
     throw new Error("REMRY_LICENSE_PRIVATE_KEY is not a PKCS8 PEM");
   }
   return pem;

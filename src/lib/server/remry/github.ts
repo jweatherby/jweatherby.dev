@@ -19,7 +19,9 @@ export const githubDispatcher =
   async (revocation) => {
     // Checked here, not at startup, so a missing token only fails refunds, never sales.
     if (!deps.token) throw new Error("GITHUB_DISPATCH_TOKEN is not set");
-    const response = await deps.fetch(
+    // Called unbound: Workers throw "Illegal invocation" for deps.fetch(...).
+    const send = deps.fetch;
+    const response = await send(
       `https://api.github.com/repos/${deps.repo ?? REMRY_REPO}/dispatches`,
       {
         method: "POST",

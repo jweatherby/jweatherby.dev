@@ -1,7 +1,5 @@
 <script lang="ts">
   import { resolve } from "$app/paths";
-  import { page } from "$app/state";
-  import type { IPost } from "$lib/types";
 
   import settings from "$settings";
   const metaInfo = {
@@ -11,13 +9,6 @@
     image: settings.ROOT_DOMAIN + "/images/family-pic.png",
   };
 
-  const posts = page.data.posts.filter(
-    (p: IPost) => p.meta.isPublished,
-  ) as IPost[];
-  posts.sort((p1, p2) => (p2.meta.dateCreated < p1.meta.dateCreated ? -1 : 1));
-  const unpubPosts = page.data.posts.filter(
-    (p: IPost) => !p.meta.isPublished,
-  ) as IPost[];
 </script>
 
 <svelte:head>
@@ -90,7 +81,7 @@
     <p>
       If you'd like to follow along with what I'm currently working on, or get
       in touch, you can find me on
-      <a href="https://jweatherby.substack.com" target="_blank">Substack</a>,
+      <a href="https://blog.jweatherby.dev" target="_blank">Substack</a>,
       <a href="https://bsky.app/profile/jweatherby.bsky.social" target="_blank"
         >Bluesky</a
       >, or
@@ -103,41 +94,12 @@
 </article>
 
 <article>
-  <h3 class="blog-title">Blog posts</h3>
-  <ul>
-    {#each posts as post (post.slug)}
-      <li>
-        <a href={resolve("/posts/[postSlug]", { postSlug: post.slug })}
-          >{post.meta.title}</a
-        >
-        - {post.meta.dateCreated.toLocaleDateString("en-ca", {
-          day: "numeric",
-          month: "short",
-          year: "numeric",
-        })}
-      </li>
-    {/each}
-  </ul>
-  <ul class="hidden-posts">
-    {#each unpubPosts as post (post.slug)}
-      <li>
-        <a href={resolve("/posts/[postSlug]", { postSlug: post.slug })}
-          >{post.meta.title}</a
-        >
-        - {post.meta.dateCreated.toLocaleDateString("en-ca", {
-          day: "numeric",
-          month: "short",
-          year: "numeric",
-        })}
-      </li>
-    {/each}
-  </ul>
+  <h3>Writing</h3>
+  <p>My blog posts, old and new, now live on Substack.</p>
+  <a role="button" href="https://blog.jweatherby.dev" target="_blank">Read the blog</a>
 </article>
 
 <style lang="scss">
-  .hidden-posts {
-    display: none;
-  }
   .my-info {
     margin-top: 2rem;
   }

@@ -37,7 +37,13 @@ export interface RemryStripe {
 
 export const remryStripe = (stripe: Stripe): RemryStripe => ({
   constructEvent: (rawBody, signature, secret) =>
-    stripe.webhooks.constructEventAsync(rawBody, signature, secret),
+    stripe.webhooks.constructEventAsync(
+      rawBody,
+      signature,
+      secret,
+      undefined,
+      Stripe.createSubtleCryptoProvider(),
+    ),
   retrieveInvoice: (id) => stripe.invoices.retrieve(id),
   retrieveCustomer: (id) => stripe.customers.retrieve(id),
   setInvoiceMetadata: async (id, metadata) => {

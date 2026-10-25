@@ -1,4 +1,4 @@
-// Remry licensing's Vercel environment variables (see README: Remry Pro licensing). Read per
+// Remry licensing's Cloudflare Worker variables and secrets (see README: Remry Pro licensing). Read per
 // request, server-side only, so a missing one fails that request with a 500, not the build.
 
 import Stripe from "stripe";
@@ -11,7 +11,7 @@ export interface RemryEnv {
   readonly productId: string | undefined;
 }
 
-type Env = Readonly<Record<string, string | undefined>>;
+export type Env = Readonly<Record<string, string | undefined>>;
 
 export const required = (env: Env, name: string): string => {
   const value = env[name];
@@ -19,8 +19,12 @@ export const required = (env: Env, name: string): string => {
   return value;
 };
 
-export const remryEnv = (env: Env = process.env): RemryEnv => ({
-  stripe: remryStripe(new Stripe(required(env, "STRIPE_SECRET_KEY"))),
+export const remryEnv = (env: Env): RemryEnv => ({
+  stripe: remryStripe(
+    new Stripe(required(env, "STRIPE_SECRET_KEY"), {
+      httpClient: Stripe.createFetchHttpClient(),
+    }),
+  ),
   privateKeyPem: readPrivateKeyPem(env.REMRY_LICENSE_PRIVATE_KEY),
   productId: env.REMRY_STRIPE_PRODUCT_ID || undefined,
 });

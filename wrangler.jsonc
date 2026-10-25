@@ -1,0 +1,22 @@
+// Cloudflare Worker for jweatherby.dev: the prerendered site is served as static assets, and
+// the Worker handles /api/* and the old /posts/* redirects. Build with `bun run build`, which
+// writes .svelte-kit/cloudflare; deploy with `bunx wrangler deploy` (CI does this on main).
+//
+// Secrets are set with `bunx wrangler secret put <NAME>` (see README), never here.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "jweatherby-dev",
+  "main": ".svelte-kit/cloudflare/_worker.js",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".svelte-kit/cloudflare"
+  },
+  // Needs the jweatherby.dev zone on this Cloudflare account. Wrangler creates the DNS record.
+  "routes": [
+    { "pattern": "jweatherby.dev", "custom_domain": true },
+    { "pattern": "www.jweatherby.dev", "custom_domain": true }
+  ],
+  "observability": { "enabled": true }
+}

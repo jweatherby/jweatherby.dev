@@ -55,7 +55,7 @@ export const licenseForSession = async (
 
   return {
     ok: true,
-    key: signLicenseKey(payload, deps.privateKeyPem),
+    key: await signLicenseKey(payload, deps.privateKeyPem),
     name: payload.name,
     maskedEmail: maskEmail(payload.email),
     expires: payload.expires,

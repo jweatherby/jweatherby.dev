@@ -1,6 +1,6 @@
-// The email that carries a Remry Pro key, sent the way the contact form sends mail: Fastmail SMTP.
+// The email that carries a Remry Pro key, sent the way the contact form sends mail: Fastmail JMAP.
 
-import nodemailer from "nodemailer";
+import type { SendEmail } from "../email/jmap.js";
 import type { LicensePayload } from "./license.js";
 
 export interface LicenseEmail {
@@ -11,7 +11,7 @@ export interface LicenseEmail {
 
 export type SendLicenseEmail = (email: LicenseEmail) => Promise<void>;
 
-const SENDER = "jamie@jweatherby.dev";
+export const SENDER = "jamie@jweatherby.dev";
 
 export const licenseEmail = (
   payload: LicensePayload,
@@ -38,19 +38,12 @@ export const licenseEmail = (
   ].join("\n"),
 });
 
-export const fastmailSender = (password: string): SendLicenseEmail => {
-  const transporter = nodemailer.createTransport({
-    host: "smtp.fastmail.com",
-    port: 465,
-    secure: true,
-    auth: { user: SENDER, pass: password },
-  });
-  return async (email) => {
-    await transporter.sendMail({
-      from: `Remry <${SENDER}>`,
+export const licenseSender =
+  (send: SendEmail): SendLicenseEmail =>
+  (email) =>
+    send({
+      from: { name: "Remry", email: SENDER },
       to: email.to,
       subject: email.subject,
       text: email.text,
     });
-  };
-};

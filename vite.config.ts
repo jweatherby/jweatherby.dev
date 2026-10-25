@@ -1,7 +1,7 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import path from 'path';
+import path from 'node:path';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
