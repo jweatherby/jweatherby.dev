@@ -1,4 +1,6 @@
-// The blog moved to Substack. Old /posts/<slug> links redirect to each post's new home.
+// For when the blog moves to Substack: where each old /posts/<slug> link should go.
+// Not wired up yet. The posts are served here until blog.jweatherby.dev works; then replace
+// the posts routes with +server.ts files that redirect(301, substackUrlFor(slug), { external: true }).
 //
 // Fill in a post's Substack path (e.g. "/p/structuring-your-code") once it's published there.
 // A post without one, or a slug not listed, goes to the Substack front page.

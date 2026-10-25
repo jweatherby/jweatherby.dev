@@ -1,8 +1,7 @@
 # jweatherby.dev
 
-A SvelteKit site on Cloudflare Workers. Pages are prerendered and served as static assets; the Worker
-handles `/api/*` and redirects old `/posts/*` links to the blog, which now lives on Substack at
-[blog.jweatherby.dev](https://blog.jweatherby.dev).
+A SvelteKit site on Cloudflare Workers. Pages, including the blog posts in `src/fixtures/posts-md/`, are
+prerendered and served as static assets; the Worker handles `/api/*`.
 
 ## Developing
 
@@ -37,12 +36,13 @@ bun run build && bunx wrangler dev
 
 ### The blog
 
-Posts moved to Substack. `src/lib/substack.ts` maps each old slug to its Substack path; a slug with no
-path, or one not listed, redirects to the Substack front page. Fill in a path as each post is published
-there, e.g. `"3-structuring-your-code": "/p/structuring-your-code"`.
+The posts are served here for now. They're moving to Substack at `blog.jweatherby.dev`, which is waiting
+on Substack to verify the domain. `blog.jweatherby.dev` is a CNAME to Substack
+(`target.substack-custom-domains.com`); in Cloudflare DNS it must be **DNS only** (grey cloud), or
+Substack can't issue its certificate.
 
-`blog.jweatherby.dev` is a CNAME to Substack (`target.substack-custom-domains.com`). In Cloudflare DNS
-it must be **DNS only** (grey cloud), or Substack can't issue its certificate.
+Once it works, `src/lib/substack.ts` has the redirect table: map each old slug to its Substack path, then
+replace the posts routes with redirects (see the comment there).
 
 ## Remry Pro licensing
 
