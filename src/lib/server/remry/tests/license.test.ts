@@ -60,8 +60,42 @@ describe("readPrivateKeyPem", () => {
     expect(readPrivateKeyPem(escaped)).toBe(TEST_LICENSE_PRIVATE_KEY);
   });
 
-  it("refuses a missing or wrong value", () => {
+  // Every form the secret might have been pasted in: each must give a key that signs keys the app accepts.
+  const base64 = Buffer.from(TEST_LICENSE_PRIVATE_KEY).toString("base64");
+  const derBody = TEST_LICENSE_PRIVATE_KEY.replace(/-----[A-Z ]+-----|\s/g, "");
+  const forms: Readonly<Record<string, string>> = {
+    "a base64-encoded PEM": base64,
+    "base64 wrapped across lines": base64.match(/.{1,20}/g)!.join("\n"),
+    "URL-safe base64 without padding": Buffer.from(TEST_LICENSE_PRIVATE_KEY).toString("base64url"),
+    "a quoted base64 PEM": `"${base64}"`,
+    "PEM text with real newlines": TEST_LICENSE_PRIVATE_KEY,
+    "PEM text with escaped newlines": TEST_LICENSE_PRIVATE_KEY.replace(/\n/g, "\\n"),
+    "PEM text with escaped CRLFs": TEST_LICENSE_PRIVATE_KEY.replace(/\n/g, "\\r\\n"),
+    "a quoted PEM": `'${TEST_LICENSE_PRIVATE_KEY}'`,
+    "just the PEM's base64 body": derBody,
+  };
+  for (const [form, value] of Object.entries(forms)) {
+    it(`accepts ${form}`, async () => {
+      const key = await signLicenseKey(payload, readPrivateKeyPem(value));
+      expect(readLicensePayload(key, TEST_LICENSE_PUBLIC_KEY)).toEqual(payload);
+    });
+  }
+
+  it("refuses a missing or wrong value, without echoing it", () => {
     expect(() => readPrivateKeyPem(undefined)).toThrow("not set");
-    expect(() => readPrivateKeyPem("bm90IGEga2V5")).toThrow("not a PKCS8 PEM");
+    expect(() => readPrivateKeyPem("  ")).toThrow("not set");
+    expect(() => readPrivateKeyPem("bm90IGEga2V5")).toThrow("neither a PEM nor base64");
+    expect(() => readPrivateKeyPem("not base64 at all!")).toThrow("neither a PEM nor base64");
+    expect(() => readPrivateKeyPem(TEST_LICENSE_PUBLIC_KEY)).toThrow(
+      'is a PUBLIC KEY PEM, not a PKCS8 "PRIVATE KEY" one',
+    );
+    expect(() =>
+      readPrivateKeyPem("-----BEGIN OPENSSH PRIVATE KEY-----\nabc\n-----END OPENSSH PRIVATE KEY-----"),
+    ).toThrow("is a OPENSSH PRIVATE KEY PEM");
+    try {
+      readPrivateKeyPem("c2VjcmV0LXZhbHVl");
+    } catch (e) {
+      expect((e as Error).message).not.toContain("c2VjcmV0LXZhbHVl");
+    }
   });
 });

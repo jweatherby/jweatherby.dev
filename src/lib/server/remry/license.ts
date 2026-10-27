@@ -60,25 +60,66 @@ export const signLicenseKey = async (
 };
 
 /**
- * The signing key from REMRY_LICENSE_PRIVATE_KEY: a PKCS8 PEM, either base64-encoded whole
- * (`base64 -i ~/.remry-license/private.pem`, the recommended form) or as PEM text with its
- * newlines escaped as `\n`.
+ * Base64 decoded as forgivingly as Node's Buffer.from(value, "base64"), which the Vercel version
+ * used: whitespace and line breaks ignored, URL-safe characters and missing padding accepted.
+ * Null when it still isn't base64.
+ */
+const decodeBase64 = (value: string): string | null => {
+  const standard = value.replace(/\s+/g, "").replace(/-/g, "+").replace(/_/g, "/");
+  const padded = standard + "=".repeat((4 - (standard.length % 4)) % 4);
+  try {
+    return atob(padded);
+  } catch {
+    return null;
+  }
+};
+
+const toPem = (base64Der: string): string => {
+  const body = base64Der.replace(/\s+/g, "").match(/.{1,64}/g)?.join("\n") ?? "";
+  return `${PEM_HEADER}\n${body}\n${PEM_FOOTER}\n`;
+};
+
+/** The label of the first PEM block in `text` ("PRIVATE KEY", "PUBLIC KEY", …), if any. */
+const pemLabel = (text: string): string | null =>
+  text.match(/-----BEGIN ([A-Z0-9 ]+)-----/)?.[1] ?? null;
+
+/**
+ * The signing key from REMRY_LICENSE_PRIVATE_KEY: a PKCS8 PEM, given as any of
+ * - the PEM base64-encoded whole (`base64 -i ~/.remry-license/private.pem`, the recommended form),
+ * - the PEM text, with real newlines or with them escaped as `\n`,
+ * - just the base64 body between the PEM's BEGIN and END lines.
+ * Surrounding quotes, as a dashboard paste sometimes leaves, are ignored.
+ * Errors name what was found, never any of the key itself.
  */
 export const readPrivateKeyPem = (value: string | undefined): string => {
-  const raw = value?.trim();
+  const raw = value?.trim().replace(/^(["'])([\s\S]*)\1$/, "$2").trim();
   if (!raw) throw new Error("REMRY_LICENSE_PRIVATE_KEY is not set");
-  let pem: string;
+
+  let pem: string | null;
   if (raw.includes("-----BEGIN")) {
-    pem = raw.replace(/\\n/g, "\n");
+    pem = raw.replace(/\\r\\n|\\n/g, "\n");
   } else {
-    try {
-      pem = atob(raw);
-    } catch {
-      pem = "";
-    }
+    const decoded = decodeBase64(raw);
+    // A DER key (ASN.1, so it starts with a SEQUENCE byte): the PEM's body without its lines.
+    pem =
+      decoded === null
+        ? null
+        : decoded.includes("-----BEGIN")
+          ? decoded.replace(/\\r\\n|\\n/g, "\n")
+          : decoded.charCodeAt(0) === 0x30
+            ? toPem(raw)
+            : null;
+  }
+
+  if (!pem) {
+    throw new Error(
+      "REMRY_LICENSE_PRIVATE_KEY is neither a PEM nor base64 of one: set it with `base64 -i ~/.remry-license/private.pem | wrangler secret put REMRY_LICENSE_PRIVATE_KEY`",
+    );
   }
   if (!pem.includes(PEM_HEADER)) {
-    throw new Error("REMRY_LICENSE_PRIVATE_KEY is not a PKCS8 PEM");
+    throw new Error(
+      `REMRY_LICENSE_PRIVATE_KEY is a ${pemLabel(pem) ?? "malformed"} PEM, not a PKCS8 "PRIVATE KEY" one`,
+    );
   }
   return pem;
 };
