@@ -57,3 +57,10 @@
     display: block;
   }
 }
+// The site is pinned to dark mode, but paper is white: print in dark text.
+@media print {
+  [data-theme="dark"] body,
+  [data-theme="dark"] body * {
+    color: #000 !important;
+  }
+}

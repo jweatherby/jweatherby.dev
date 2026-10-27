@@ -124,7 +124,7 @@
     padding: 8px 0;
   }
   input:read-only {
-    background-color: #f8f8f8;
+    background-color: var(--pico-card-sectioning-background-color);
   }
   textarea {
     resize: vertical;
