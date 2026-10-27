@@ -85,4 +85,6 @@ Hope this helps with your documentation adventures! You can find the [template h
 
 --- 
 
-*Update from just 2 years later, in 2026: with the rise of AI this year, Documentation looks extremely different than it did in 2024. Some fundamentals stay, others are irrelevant. More on that later.*
+*Update from just 2 years later, in 2026: with the rise of AI this year, documentation looks different than it did in 2024.*
+*Some fundamentals stay, others are irrelevant.*
+*More on that later.*
