@@ -1,6 +1,6 @@
 ---
-title: "DRAFT: Docs that scale"
-blurb: A documentation system designed to work within your Notion workspace.
+title: Docs that scale
+blurb: A documentation system designed to work within your Notion workspace, built to keep docs findable as your organization grows.
 imageSrc: https://images.unsplash.com/photo-1502700807168-484a3e7889d0?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 imageAlt: Notion branding with programming languages - typescript, python, sveltekit logos
 imageCredit: unsplash.com/@alexblock
@@ -8,70 +8,81 @@ dateCreated: 2024-12-07T13:22:00Z
 tags: documentation, notion
 isPublished: true
 ---
-In my role as Director of Engineering, when we were fully remote in the height of Covid, I realized our documentation was woefully inadequate and in dire need of structure and direction. According to industry benchmarks, ([DORA](https://dora.dev/capabilities/documentation-quality/), [Harvard Business Review](https://hbr.org/2022/03/what-great-hybrid-cultures-do-differently)), a good, centralized documentation platform is one of the foundations to better organizational performance. We decided it was time to improve what we had. After reviewing the different alternatives, we settled on Confluence or Notion as the final contenders.
+As Director of Engineering, when we were fully remote at the height of Covid, I realized our documentation was woefully inadequate and in dire need of structure and direction. We'd see proposals that laid out four solutions, with options scratched out and critical information buried in comments - and this was what people were expected to reference when figuring out how something worked. According to [DORA](https://dora.dev/capabilities/documentation-quality/), good documentation is one of the foundations of better organizational performance, so we decided it was time to improve what we had.
 
-Confluence was a contender because (a) we use Jira and the integration is supposed to be decent; (b) it’s relatively inexpensive and widespread. However, we happily settled on Notion because we saw its potential to create a dynamic wiki, the cleaner UI and the incredible flexibility it provides. The ability to use databases to dynamically link content in other places while still preserving a source of truth has proven to be invaluable. Also, the navbar. Being able to see everything from a centralized location is remarkably underrated.
+We looked at Confluence and Notion, and happily settled on Notion for its cleaner UI and the incredible flexibility it provided. The ability to use databases to dynamically link content across the workspace while still preserving the source of truth proved invaluable. Also, the navbar - being able to see everything from a centralized location is remarkably underrated.
 
-Our Notion workspace has been a huge success, having 500 daily active users and *minimal complaints* (there was continuous “feedback” early on, but we changed the structure and that feedback has since disappeared). "Minimal complaints" + active users is a great benchmark in software; it means things are working as expected. Different groups have their respective domains to work within, toes aren’t really stepped on, and we're able to accomplish truly innovative things with the tools Notion provides. The workspace we've architected uses a relatively simple foundation, but through the power of databases, has been able to scale nicely with our growing organizational demands.
+Our Notion workspace was a huge success, with 300 daily active users at a company of 600, and *minimal complaints*. There was continuous feedback early on, but once we reorganized the workspace around our domains (more on that below), that feedback disappeared. Different groups had their own domains to work within, teams weren't stepping on each other's toes, and we were able to accomplish truly innovative things with the tools Notion provided, like building a cataloguing service for the different services our teams managed.
+
+The workspace was built on a relatively simple foundation with two ideas: separate documents that are permanent from those that are temporary, and tie every document back to the team that owns it. Through the power of databases, it scaled nicely with our growing organizational demands. Notion was eventually sunset in favour of Confluence, to bring documentation closer to the rest of our Atlassian tooling, but the ideas behind the structure apply whatever tool you use.
 
 ## Sharing my learnings
 
-Here, I want to run through the [DRAFT Documentation](https://www.notion.so/DRAFT-Documentation-14f3b75bf3f880408a7bf8b0e7d7a4df?pvs=21) template, inspired from my learnings rolling it out to a medium-sized company. It can be used for a small team as a proof of concept and expanded from there. Please see the [Getting Started](https://www.notion.so/Getting-Started-14e3b75bf3f880d3a493fb9a29619eb0?pvs=21) section for a more in depth view of the structure and practices that has made it succeed.
+Below, I'll walk through a [documentation template](https://www.notion.so/DRAFT-Documentation-14f3b75bf3f880408a7bf8b0e7d7a4df?pvs=21) based on what I learned rolling out our workspace: the overall structure, each section's purpose, and the gotchas I encountered. A small team can use it as a proof of concept and expand from there. See the [Getting Started](https://www.notion.so/Getting-Started-14e3b75bf3f880d3a493fb9a29619eb0?pvs=21) section for a more in-depth look at the structure and practices that made it succeed.
+
+Along the way, I'll point out five principles that made the system work: **timeliness**, **feedback loops**, **reporting**, **audience** and **dashboards**.
 
 This template has a few bonuses, including:
 
 - An area to measure and track projects
-- Reasonable templates that provide prompts which may have not been considered
-- A database to catalogue your internally built software. We have a similar database in place which has helped clarify ownership, adds supplementary information, and manage our software's hygiene
+- Page templates with prompts for things you might not have considered
+- A database to catalogue your internally built software. We had a similar database in place, which helped clarify ownership, add supplementary information, and manage our software's hygiene
 
-Below, I’ll walk you through the overall structure, each section’s purpose, and any gotchas I’ve encountered.
-
-## The Structure
+## The structure
 
 ### Getting Started
 
-Getting started is where general guidelines (including what lives where), best practices and governing principles live. Any good software project has a README, where most folks will get a sense of how to work within the given structures.
+Getting Started was where the general guidelines (including what lived where), best practices and governing principles lived. Any good software project has a README that gives people a sense of how to work within its structure. This was the workspace's README.
 
 ### Wiki
 
-This is where the meat of the information will live, and requires the most governance. It is where the current policies, reference materials and diagrams live - a state of the world as it relates to the domain. It’s important to have something centralized like this, because otherwise these docs get buried in team-specific pages, or worst case, in private pages. In this template, the wiki is turned into a **Notion Wiki** and a **Teams** relation was added. This way we can tag different articles and sections with the relevant teams to provide backlinks to their team page, with filters liberally applied as needed. This is how teams can create their custom dashboards into all things relevant in the workspace. Any other tags, categorization, etc can be added - whatever makes that holistic governance and visibility as straightforward as possible. [Dixtaxis](https://diataxis.fr/) is a recommended approach to logical tagging and categorization in this context.
+This was where the meat of the information lived, and it required the most governance. It held the current policies, reference materials and diagrams: the state of the world as it related to the domain. It was important to have something centralized like this, because otherwise these docs got buried in team-specific pages or, worst case, in private pages.
 
-One of the most important principles when deciding what lives in the wiki: is it a permanent document or not? If it is a permanent doc (is true today, tomorrow, and next year), and is relevant beyond a specific team, it should probably live here.
+We set the wiki up as a **Notion Wiki** with a **Teams** relation, and the template does the same. This way, we could tag articles and sections with the relevant teams to provide backlinks to their team pages, with filters liberally applied as needed. Any other tags or categories could be added to make governance and visibility more straightforward.
+
+One of the most important principles when deciding what lived in the wiki was **timeliness**: was it a permanent document or not? If it was a permanent doc (true today, tomorrow, and next year) and was relevant beyond a specific team, it probably belonged here.
+
+Our first attempt didn't organize the wiki by domain, and that's where most of the early feedback came from. We worked with white-label products, so we split the wiki into "conceptual" and "reality". One area described our products, services and policies, with the product and architecture as designed. Another area covered the deployed instances: the reality. It made sense on paper, but to understand one product you had to piece it together from two places, and this model didn't apply to some products at all. We changed it to be domain driven: here's the product, and here's all the information around it, from the architecture to each deployment.
 
 ### Projects
 
-Projects are the opposite of Wiki docs. They are speculative, for planning, and only relevant for a short period of time. Before our documentation platform, we’d see proposals where 4 solutions are proposed, things are scratched out, critical information live in comments - and this was what people were expected to reference when figuring out how something works. This should not be the case. All information relating to the actual implementation should be available in the Wiki.
+Projects were the opposite of Wiki docs. They were speculative, used for planning, and only relevant for a short period of time. Remember those proposals with four solutions and critical information in the comments? That was fine for a project. It wasn't fine as the place people went to understand how something worked. All information about the actual implementation belonged in the Wiki.
 
-Anything in **Projects** should be relatively short lived, and when something is done, there should be effort to properly document what was actually captured somewhere more permanently.
+Anything in **Projects** was meant to be relatively short-lived. When a project was done, the team moved what was actually built into the Wiki. This was our **feedback loop**: documentation was part of the software lifecycle, not something written after the fact. Success depended on the team, but the teams who did it well reaped the benefits of clearer docs and better support flows.
 
 ### Snapshot
 
-This is a place where we can see the state of the different projects from a mile-high view. It contains graphs and metrics, designed for a leadership point-of-view. In some cases this would be private; but transparency is important. Having this publicly visible adheres to the “write in public” guiding principle of documentation.
+This was where we could see the state of the organization at a high level: the health of services over time, the state of projects, and the capacity of projects. It was designed for a leadership point of view, and covered **reporting** for anyone not part of day-to-day operations. Some organizations would keep this private, but transparency was important to us. Keeping it publicly visible followed our "write in public" principle: unless something was sensitive, write it where everyone could see it.
 
 ### People & Teams
 
-The above pieces aren’t entirely ground breaking and are captured by methodologies like the PARA documentation methodology. People and Teams is where this structure sets itself apart. By creating these 2 databases, we can break out projects and wiki items and associate them with their respective teams. The **People** association provides granular information about who is on a given team and **Teams** provides the ability to tie any piece of documentation to its respective owner. In **Projects** we have an **Involved Teams** field, which illustrates who is working on what. From here, you can filter and associate projects to only the relevant teams, shielding them from the noise of the centralized structures.
+The pieces above weren't groundbreaking; methods like Tiago Forte's [PARA](https://fortelabs.com/blog/para/) cover similar ground. People and Teams was where this structure set itself apart, by giving every doc an **audience**. With these two databases, we could break out projects and wiki items and associate them with their respective teams. **People** provided granular information about who was on a given team, and **Teams** tied any piece of documentation to its owner. In **Projects**, an **Involved Teams** field showed who was working on what. From there, we could filter projects to only the relevant teams, shielding them from the noise of the centralized structures.
 
-The **Teams** database also creates a space where teams can add their team-specific docs. Working agreements, code standards, support processes, team policies and onboarding guides can all be documented here. This is where documentation related to a specific team lives. There have been some really impressive efforts in these spaces.
+The **Teams** database also gave teams a space for their team-specific docs: working agreements, code standards, support processes, team policies and onboarding guides. Some teams built comprehensive, complete dashboards to manage their product and software work.
 
-The one gotcha here is that there’s a tendency to use the team pages for everything, including permanent docs relevant beyond the specific team. This is a detriment to the entire system. This is where the workspace architects have spent their time encouraging teams to put their docs into more widely observed spaces. The trick to tie this information back to the team page is to create views on the team page referencing those centralized documents (Projects and Wiki items), creating centralized dashboards for the teams.
+The one gotcha was the tendency to use team pages for everything, including permanent docs that were relevant beyond the team. This undermined the entire system, and it's where our workspace architects spent most of their time, encouraging teams to put their docs in more widely observed spaces. The trick to tying this information back to the team page was **dashboards**: views on the team page that referenced those centralized documents (Projects and Wiki items). The docs stayed central, and each team still got its own dashboard.
 
-## The DRAFT System
+## Guiding principles
 
-These are the 4 foundations that make up this documentation system that Notion enables. I’m calling it **DRAFT** based on these foundational components: Dashboards, Audience, Feedback loops and Timeliness.
+These were the foundations that made this documentation system work, and Notion made each of them possible.
 
-**Dashboards:** Create Dashboards everywhere based on predictable and workspace wide tagging architecture. Keep documentation central and use filters to personalize it where your and your team will most benefit
+**Dashboards:** We created dashboards everywhere, based on predictable, workspace-wide tagging. Documentation stayed central, and filters personalized it where each team would benefit most.
 
-**Reporting:** Provide snapshots and reports for those not part of the day to day operations for that mile-high view of progress across the org. 
+**Reporting:** We provided snapshots and reports for those who weren't part of day-to-day operations, giving them a high-level view of progress across the org.
 
-**Audience:** Use the Teams database to organize and tag groups as needed. Give full ownership to groups to work within their appropriate domains.
+**Audience:** We used the Teams database to organize and tag groups as needed, and gave groups full ownership to work within their own domains.
 
-**Feedback Loops**: Tie in organizational processes back into your documentation, creating perpetual feedback loops that work for you
+**Feedback loops:** We integrated documentation into the software lifecycle. A proposal started in Projects, and once it was actioned, the parts that were still true moved out of Projects and into the Wiki. Because every stage of a document's life lived in one place, nothing got lost moving between tools, and you could always trace a Wiki page back to the project that produced it.
 
-**Timeliness**: Distinguish timeliness by identifying the nature of documents: depending whether they’re transitionary or permanent, they’ll be better served in a specific place (Projects vs Wiki respectively).
+**Timeliness:** We identified whether a document was temporary or permanent. Each was better served in a specific place (Projects and Wiki, respectively).
 
 ## Takeaways
 
-As you can see, it’s a simple structure, but accounts for everything we need it for. Overall governance should be restricted to a select few, but within a specific domain (product line, software, tooling, wiki sub-sections, team pages, etc), full permissions can be granted liberally so teams are not impeded and have the flexibility to create what works for them.
+As you can see, it was a simple structure, but it accounted for everything we needed. Overall governance was restricted to a select few, but within a specific domain (product line, software, tooling, wiki sub-sections, team pages, etc.), permissions were granted liberally so teams weren't held back and had the flexibility to create what worked for them.
 
-Hope this helps with your documentation adventures! You can find the [DRAFT template here](https://www.notion.so/DRAFT-Documentation-14f3b75bf3f880408a7bf8b0e7d7a4df?pvs=21).
+Hope this helps with your documentation adventures! You can find the [template here](https://www.notion.so/DRAFT-Documentation-14f3b75bf3f880408a7bf8b0e7d7a4df?pvs=21).
+
+
+--- 
+
+*Update from just 2 years later, in 2026: with the rise of AI this year, Documentation looks extremely different than it did in 2024. Some fundamentals stay, others are irrelevant. More on that later.*
