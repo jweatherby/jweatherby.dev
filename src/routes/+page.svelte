@@ -2,7 +2,7 @@
   import { resolve } from "$app/paths";
   import { page } from "$app/state";
   import type { IPost } from "$lib/types";
-  import { substackUrlFor } from "$lib/substack";
+  import { SUBSTACK_POSTS, SUBSTACK_URL, substackUrlFor } from "$lib/substack";
 
   import settings from "$settings";
   const metaInfo = {
@@ -12,17 +12,35 @@
     image: settings.ROOT_DOMAIN + "/images/family-pic.png",
   };
 
-  const posts = page.data.posts.filter(
-    (p: IPost) => p.meta.isPublished,
-  ) as IPost[];
-  posts.sort((p1, p2) => (p2.meta.dateCreated < p1.meta.dateCreated ? -1 : 1));
-  const unpubPosts = page.data.posts.filter(
-    (p: IPost) => !p.meta.isPublished,
-  ) as IPost[];
+  interface ListedPost {
+    readonly key: string;
+    readonly href: string;
+    readonly title: string;
+    readonly dateCreated: Date;
+  }
 
   // A post that moved to Substack links there; the rest are still served here.
   const postHref = (slug: string): string =>
     substackUrlFor(slug) ?? resolve("/posts/[postSlug]", { postSlug: slug });
+
+  const listed = (p: IPost): ListedPost => ({
+    key: p.slug,
+    href: postHref(p.slug),
+    title: p.meta.title,
+    dateCreated: p.meta.dateCreated,
+  });
+
+  const allPosts = page.data.posts as IPost[];
+  const posts: ListedPost[] = [
+    ...allPosts.filter((p) => p.meta.isPublished).map(listed),
+    ...SUBSTACK_POSTS.map((p) => ({
+      key: p.path,
+      href: new URL(p.path, SUBSTACK_URL).href,
+      title: p.title,
+      dateCreated: p.dateCreated,
+    })),
+  ].sort((p1, p2) => (p2.dateCreated < p1.dateCreated ? -1 : 1));
+  const unpubPosts = allPosts.filter((p) => !p.meta.isPublished).map(listed);
 </script>
 
 <svelte:head>
@@ -110,11 +128,11 @@
 <article>
   <h3 class="blog-title">Blog posts</h3>
   <ul>
-    {#each posts as post (post.slug)}
+    {#each posts as post (post.key)}
       <li>
         <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- postHref resolves internal links -->
-        <a href={postHref(post.slug)}>{post.meta.title}</a>
-        - {post.meta.dateCreated.toLocaleDateString("en-ca", {
+        <a href={post.href}>{post.title}</a>
+        - {post.dateCreated.toLocaleDateString("en-ca", {
           day: "numeric",
           month: "short",
           year: "numeric",
@@ -123,11 +141,11 @@
     {/each}
   </ul>
   <ul class="hidden-posts">
-    {#each unpubPosts as post (post.slug)}
+    {#each unpubPosts as post (post.key)}
       <li>
         <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- postHref resolves internal links -->
-        <a href={postHref(post.slug)}>{post.meta.title}</a>
-        - {post.meta.dateCreated.toLocaleDateString("en-ca", {
+        <a href={post.href}>{post.title}</a>
+        - {post.dateCreated.toLocaleDateString("en-ca", {
           day: "numeric",
           month: "short",
           year: "numeric",

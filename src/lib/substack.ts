@@ -14,6 +14,18 @@ export const MOVED_POSTS: Readonly<Record<string, string>> = {
   "9-engineering-goals": "/p/the-big-3-of-engineering-goals",
 };
 
+/** A post written on Substack, with no copy here. The home page lists it with the others. */
+export interface SubstackPost {
+  readonly title: string;
+  readonly path: string;
+  readonly dateCreated: Date;
+}
+
+// New posts, written on Substack. Add a line for each one to list it on the home page.
+export const SUBSTACK_POSTS: readonly SubstackPost[] = [
+  { title: "Why I built Remry", path: "/p/why-i-built-remry", dateCreated: new Date("2026-10-27T13:00:00Z") },
+];
+
 /** The Substack URL of a moved post, or null when it's still served here. */
 export const substackUrlFor = (slug: string): string | null => {
   const path = Object.hasOwn(MOVED_POSTS, slug) ? MOVED_POSTS[slug] : undefined;

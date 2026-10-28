@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { MOVED_POSTS, redirectFor, substackUrlFor } from "../substack.js";
+import { MOVED_POSTS, SUBSTACK_POSTS, redirectFor, substackUrlFor } from "../substack.js";
 
 describe("substackUrlFor", () => {
   it("gives a moved post's Substack page", () => {
@@ -19,6 +19,16 @@ describe("substackUrlFor", () => {
 
   it("maps every moved post to a /p/ path", () => {
     for (const path of Object.values(MOVED_POSTS)) expect(path).toMatch(/^\/p\/[a-z0-9-]+$/);
+  });
+});
+
+describe("SUBSTACK_POSTS", () => {
+  it("gives every new post a title, a /p/ path and a date", () => {
+    for (const post of SUBSTACK_POSTS) {
+      expect(post.title).not.toBe("");
+      expect(post.path).toMatch(/^\/p\/[a-z0-9-]+$/);
+      expect(Number.isNaN(post.dateCreated.getTime())).toBe(false);
+    }
   });
 });
 
