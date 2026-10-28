@@ -36,13 +36,19 @@ bun run build && bunx wrangler dev
 
 ### The blog
 
-The posts are served here for now. They're moving to Substack at `blog.jweatherby.dev`, which is waiting
-on Substack to verify the domain. `blog.jweatherby.dev` is a CNAME to Substack
-(`target.substack-custom-domains.com`); in Cloudflare DNS it must be **DNS only** (grey cloud), or
-Substack can't issue its certificate.
+Posts are moving to Substack at [blog.jweatherby.dev](https://blog.jweatherby.dev) one at a time. To move
+one, add its old slug and Substack path to `MOVED_POSTS` in `src/lib/substack.ts`:
 
-Once it works, `src/lib/substack.ts` has the redirect table: map each old slug to its Substack path, then
-replace the posts routes with redirects (see the comment there).
+```ts
+"9-engineering-goals": "/p/the-big-3-of-engineering-goals",
+```
+
+A moved post's home-page link goes straight to Substack, and its old `/posts/<slug>` URL answers 301 there
+(`src/hooks.server.ts`). It's no longer linked here, so it isn't prerendered and the request reaches the
+Worker. Posts not listed are served here as before.
+
+`blog.jweatherby.dev` is a CNAME to `target.substack-custom-domains.com`. In Cloudflare DNS it must be
+**DNS only** (grey cloud), or Substack can't renew its certificate.
 
 ## Remry Pro licensing
 

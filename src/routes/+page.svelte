@@ -2,6 +2,7 @@
   import { resolve } from "$app/paths";
   import { page } from "$app/state";
   import type { IPost } from "$lib/types";
+  import { substackUrlFor } from "$lib/substack";
 
   import settings from "$settings";
   const metaInfo = {
@@ -18,6 +19,10 @@
   const unpubPosts = page.data.posts.filter(
     (p: IPost) => !p.meta.isPublished,
   ) as IPost[];
+
+  // A post that moved to Substack links there; the rest are still served here.
+  const postHref = (slug: string): string =>
+    substackUrlFor(slug) ?? resolve("/posts/[postSlug]", { postSlug: slug });
 </script>
 
 <svelte:head>
@@ -107,9 +112,8 @@
   <ul>
     {#each posts as post (post.slug)}
       <li>
-        <a href={resolve("/posts/[postSlug]", { postSlug: post.slug })}
-          >{post.meta.title}</a
-        >
+        <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- postHref resolves internal links -->
+        <a href={postHref(post.slug)}>{post.meta.title}</a>
         - {post.meta.dateCreated.toLocaleDateString("en-ca", {
           day: "numeric",
           month: "short",
@@ -121,9 +125,8 @@
   <ul class="hidden-posts">
     {#each unpubPosts as post (post.slug)}
       <li>
-        <a href={resolve("/posts/[postSlug]", { postSlug: post.slug })}
-          >{post.meta.title}</a
-        >
+        <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- postHref resolves internal links -->
+        <a href={postHref(post.slug)}>{post.meta.title}</a>
         - {post.meta.dateCreated.toLocaleDateString("en-ca", {
           day: "numeric",
           month: "short",

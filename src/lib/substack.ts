@@ -1,26 +1,27 @@
-// For when the blog moves to Substack: where each old /posts/<slug> link should go.
-// Not wired up yet. The posts are served here until blog.jweatherby.dev works; then replace
-// the posts routes with +server.ts files that redirect(301, substackUrlFor(slug), { external: true }).
+// The blog is moving to Substack one post at a time. A post listed here has moved:
+// - /posts/<slug> answers 301 to its Substack page (src/hooks.server.ts),
+// - the home page links straight to Substack,
+// - it isn't linked here, so it isn't prerendered and its old URL reaches the Worker
+//   (src/routes/posts/[postSlug]/+page.ts also redirects, for anything that gets past that).
+// A post not listed is still served here as before.
 //
-// Fill in a post's Substack path (e.g. "/p/structuring-your-code") once it's published there.
-// A post without one, or a slug not listed, goes to the Substack front page.
+// To move a post, add its old slug and its Substack path.
 
 export const SUBSTACK_URL = "https://blog.jweatherby.dev";
 
-export const POST_REDIRECTS: Readonly<Record<string, string | null>> = {
-  "1-being-full-stack": null,
-  "2-my-frontend-stack": null,
-  "3-structuring-your-code": null,
-  "4-quill-tips": null,
-  "5-services-offered": null,
-  "6-showboard-the-rewrite-nobody-asked-for": null,
-  "7-docs-that-scale": null,
-  "8-roles-and-expectations": null,
-  "9-engineering-goals": null,
-  "10-engineering-goals-with-ai": null,
+export const MOVED_POSTS: Readonly<Record<string, string>> = {
+  "7-docs-that-scale": "/p/docs-that-scale",
+  "9-engineering-goals": "/p/the-big-3-of-engineering-goals",
 };
 
-export const substackUrlFor = (slug: string | undefined): string => {
-  const path = slug ? POST_REDIRECTS[slug] : null;
-  return path ? new URL(path, SUBSTACK_URL).href : SUBSTACK_URL;
+/** The Substack URL of a moved post, or null when it's still served here. */
+export const substackUrlFor = (slug: string): string | null => {
+  const path = Object.hasOwn(MOVED_POSTS, slug) ? MOVED_POSTS[slug] : undefined;
+  return path ? new URL(path, SUBSTACK_URL).href : null;
+};
+
+/** Where a request path should be redirected: an old /posts/<slug> URL of a moved post. */
+export const redirectFor = (pathname: string): string | null => {
+  const slug = pathname.match(/^\/posts\/([^/]+)\/?$/)?.[1];
+  return slug ? substackUrlFor(decodeURIComponent(slug)) : null;
 };
